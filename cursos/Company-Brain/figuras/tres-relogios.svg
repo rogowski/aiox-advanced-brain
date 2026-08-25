@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" role="img">
+<rect width="760" height="300" fill="#F4F4E8"/>
+<text x="380" y="26" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="700" fill="#050505">Tr&#234;s rel&#243;gios &#8212; a cad&#234;ncia define a camada, n&#227;o o vendor</text>
+<g transform="translate(70,70)"><circle cx="70" cy="70" r="62" fill="#EFFFA8" stroke="#5A6B00" stroke-width="2"/><circle cx="70" cy="70" r="4" fill="#050505"/><line x1="70" y1="70" x2="70" y2="28" stroke="#050505" stroke-width="3" stroke-linecap="round"/><line x1="70" y1="70" x2="108" y2="70" stroke="#5A6B00" stroke-width="2" stroke-linecap="round"/></g>
+<text x="140" y="228" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="#5A6B00">Modelo</text>
+<text x="140" y="248" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">meses</text>
+<text x="140" y="266" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="500" fill="#64645D">snapshot some</text>
+<g transform="translate(300,70)"><circle cx="70" cy="70" r="62" fill="#E1F2FF" stroke="#006CAE" stroke-width="2"/><circle cx="70" cy="70" r="4" fill="#050505"/><line x1="70" y1="70" x2="48" y2="28" stroke="#050505" stroke-width="3" stroke-linecap="round"/><line x1="70" y1="70" x2="110" y2="48" stroke="#006CAE" stroke-width="2" stroke-linecap="round"/></g>
+<text x="370" y="228" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="#006CAE">Harness</text>
+<text x="370" y="248" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">trimestres</text>
+<text x="370" y="266" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="500" fill="#64645D">contrato, tools</text>
+<g transform="translate(530,70)"><circle cx="70" cy="70" r="62" fill="#FFE7DC" stroke="#BD3600" stroke-width="2"/><circle cx="70" cy="70" r="4" fill="#050505"/><line x1="70" y1="70" x2="70" y2="22" stroke="#050505" stroke-width="3" stroke-linecap="round"/><line x1="70" y1="70" x2="92" y2="110" stroke="#BD3600" stroke-width="2" stroke-linecap="round"/></g>
+<text x="600" y="228" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="#BD3600">Company brain</text>
+<text x="600" y="248" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">anos</text>
+<text x="600" y="266" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="500" fill="#64645D">fontes e governan&#231;a</text>
+<rect x="24" y="278" width="712" height="16" fill="#D1FF00"/>
+</svg>

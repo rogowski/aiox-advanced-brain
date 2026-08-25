@@ -16,7 +16,7 @@ canonical_scope: cursos/AIOX-Agent-Engineering
 - Paralelismo, routing ou waves → M3.
 - O agente esquece a wave → aula 20b (job 4, depois do M1b).
 - Harness, API ou execução fora da IDE → M4.
-- “Modelos substituíveis”, thin harness ou cérebro modular da empresa → aula 21b, depois das aulas 19, 12f e 21.
+- “Modelos substituíveis”, thin harness ou cérebro modular da empresa → aula 21b, depois das aulas 19, 12f e 21. Score no disco + DAGs da execução → `/3camadas` (`skills/3camadas/SKILL.md`).
 - Projetar o company brain (conhecimento institucional, ACL, projeção para vários agents) → `cursos/Company-Brain/`; a 21b só introduz a tese.
 - Banco, deploy, CI/CD ou readiness → M5.
 

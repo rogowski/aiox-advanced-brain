@@ -1,0 +1,4 @@
+interface:
+  display_name: "/3camadas"
+  short_description: "Chão do sistema — motor, painel, memória"
+  default_prompt: "Use /3camadas: JSON e HTML em docs/reports/ do projeto. HTML para o dono (chão, motor, painel, memória). Sem /tmp. Sem jargão de aula na página."

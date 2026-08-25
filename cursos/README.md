@@ -29,7 +29,7 @@ Tooling local de maintainer: `dev/` (gitignored; não distribuído em `cursos/`)
 Os cursos usam Markdown com **wikilinks entre notas**. A forma recomendada de estudar é abrir esta pasta (ou um curso específico) como **vault no [Obsidian](https://obsidian.md)**:
 
 1. Instale o Obsidian.
-2. **Open folder as vault** → para o **Graph colorido completo** (cursos + skills + squads), abra a **raiz do repositório**. Alternativas: `cursos/`, `cursos/Introducao-a-Arquitetura-de-Sistemas/`, `cursos/AIOX-Fundamentals/`, `cursos/AIOX Advanced/`, `cursos/AIOX-Agent-Engineering/`, `cursos/AIOX-Design/`, `cursos/AIOX-Productizacao/`, `cursos/AIOX-Advanced-Squads/`, `cursos/AIOX-Enterprise/` ou `cursos/Obsidian-IA/`.
+2. **Open folder as vault** → para o **Graph colorido completo** (cursos + skills + squads), abra a **raiz do repositório**. Alternativas: `cursos/`, `cursos/Introducao-a-Arquitetura-de-Sistemas/`, `cursos/AIOX-Fundamentals/`, `cursos/AIOX Advanced/`, `cursos/AIOX-Agent-Engineering/`, `cursos/AIOX-Design/`, `cursos/AIOX-Productizacao/`, `cursos/Company-Brain/`, `cursos/AIOX-Advanced-Squads/`, `cursos/AIOX-Enterprise/` ou `cursos/Obsidian-IA/`.
 3. Comece por `00-HOME.md` (raiz) ou pelo `README.md` do curso; use Graph view com as cores do acervo.
 4. Mapas: `cursos/MOC-Acervo-AIOX.md`, `cursos/MOC-Skills.md`, `cursos/MOC-Squads.md`.
 
@@ -47,6 +47,7 @@ No GitHub ou em editores genéricos os arquivos abrem, mas o grafo de ~2.000 lin
 | **AIOX Agent Engineering** | Rota de aplicação: projetar, construir, orquestrar e operar capacidades agentic | `cursos/AIOX-Agent-Engineering/README.md` |
 | **AIOX Design** | Rota de aplicação: repertório → contrato → Storybook → governança e prova visual | `cursos/AIOX-Design/README.md` |
 | **AIOX Productização** | Rota de aplicação: capacidade comprovada → oferta, distribuição, formato e monetização | `cursos/AIOX-Productizacao/README.md` |
+| **Company Brain** | Rota de aplicação: cérebro digital modular da empresa que alimenta agents | `cursos/Company-Brain/README.md` |
 | **AIOX Enterprise — Visão Operacional e Prontidão** | Preview: diagnosticar se a operação já pede infraestrutura mantida | `cursos/AIOX-Enterprise/README.md` |
 
 ## Jornada completa: núcleo comum + rotas de aplicação
@@ -56,7 +57,7 @@ No GitHub ou em editores genéricos os arquivos abrem, mas o grafo de ~2.000 lin
 1. **Obsidian + IA** — faça o onboarding completo se o vault for novo; quem já domina Obsidian pode usar a evidência de entrada como diagnóstico.
 2. **Introdução à Arquitetura de Sistemas** — faça completo se os termos técnicos ainda travam; use o mapa de termos para revisão seletiva.
 3. **AIOX Fundamentals** — instale/audite o Core, conheça os agents e conclua o primeiro ciclo local.
-4. **AIOX Advanced — 29 aulas / 6 módulos (5 de conteúdo + Capstone)** para dominar método, contexto, SDC, determinismo e brownfield.
+4. **AIOX Advanced — 30 aulas / 6 módulos (5 de conteúdo + Capstone)** para dominar método, contexto, SDC, determinismo e brownfield.
 
 Depois do núcleo comum, escolha uma ou combine rotas de aplicação:
 
@@ -64,8 +65,9 @@ Depois do núcleo comum, escolha uma ou combine rotas de aplicação:
 - **AIOX Agent Engineering:** construir ou colocar uma capacidade agentic em produção.
 - **AIOX Design:** materializar contrato visual, Storybook e governança.
 - **AIOX Productização:** transformar uma capacidade comprovada em oferta e experimento de mercado.
+- **Company Brain:** projetar e especificar o conhecimento institucional modular que alimenta agents.
 
-Esses quatro cursos são partes canônicas da jornada atual. Eles não formam uma fila universal: o gate da missão decide a rota. Agent Engineering pode levar a Productização; Agent Engineering, Design e Productização podem terminar em Squads quando a execução pedir especialistas publicados.
+Essas rotas são partes canônicas da jornada atual. Elas não formam uma fila universal: o gate da missão decide a rota. Agent Engineering pode levar a Productização; Agent Engineering, Design e Productização podem terminar em Squads quando a execução pedir especialistas publicados. A aula 21b do Agent Engineering é a porta recomendada para Company Brain.
 
 Depois do Advanced e de uma execução real, o **preview AIOX Enterprise** ajuda a decidir se a operação já pede uma base mantida. Ele diagnostica integração, governança e observabilidade recorrentes. Não entrega componentes proprietários.
 
@@ -83,7 +85,7 @@ Há três momentos na jornada de produto:
 - **Advanced:** transformar intenção em sistema entregue, com método, contexto, SDC e gates.
 - **Enterprise:** operar com infraestrutura proprietária mantida quando integrar e sustentar a base de produção já virou o gargalo.
 
-Os oito cursos formativos deste acervo desenvolvem as duas primeiras capacidades. O Enterprise não é um curso com mais módulos. É o próximo contexto para quem já constrói e precisa sustentar a operação com menos fragmentação.
+Os cursos formativos deste acervo desenvolvem as duas primeiras capacidades. O Enterprise não é um curso com mais módulos. É o próximo contexto para quem já constrói e precisa sustentar a operação com menos fragmentação.
 
 [Compare as três etapas](../JORNADA-AIOX.md) e faça o preview [AIOX Enterprise — Visão Operacional e Prontidão](AIOX-Enterprise/README.md).
 
@@ -98,6 +100,7 @@ Os oito cursos formativos deste acervo desenvolvem as duas primeiras capacidades
 | Advanced → Agent Engineering | domina o método e precisa construir/orquestrar uma capacidade própria | capability brief + caso representativo + critérios de operação |
 | Advanced → AIOX Design | possui uma story visual e precisa impedir deriva | briefing de interface + estados + aceite visual |
 | Advanced → Productização | já possui capacidade executável e evidência de valor | contrato da capacidade + prova + limitações |
+| Advanced → Company Brain | o conhecimento institucional precisa alimentar agents sem viver nos pesos | diagnóstico de sintoma + mapa de camadas + promessa do brain |
 | Agent Engineering → Productização | a capacidade executa e produz valor observável | contrato de execução + evidência + limitações |
 | Agent Engineering / Design → Advanced Squads | a missão pede um especialista publicado para continuar | briefing específico + limites da capacidade ou do sistema visual |
 | Productização → Advanced Squads | oferta e experimento pedem execução comercial especializada | decision pack + hipótese + canal + critério de parada |
@@ -112,10 +115,11 @@ Os oito cursos formativos deste acervo desenvolvem as duas primeiras capacidades
 | Taxonomia, research, criação, routing, harness e produção | `AIOX-Agent-Engineering/` | Squads 01–09 e 22–24, conforme a missão |
 | Contrato visual, taxonomia, variantes e quality gate visual | `AIOX-Design/` | Squads 13–15 |
 | Oferta, ROI, distribuição e monetização | `AIOX-Productizacao/` | Squads 19–21, quando maturidade e briefing permitirem |
+| Conhecimento institucional modular que alimenta agents | `Company-Brain/` | Especificação auditável do brain (8 seções + rubrica) |
 | Catálogo e uso dos 24 squads | `AIOX-Advanced-Squads/` | Asset correspondente em `squads/` |
 | Prontidão para operação mantida | `AIOX-Enterprise/` (vitrine) | Decisão informada; componentes proprietários não estão neste acervo |
 
-Núcleo comum: `cursos/Obsidian-IA/README.md` → `cursos/Introducao-a-Arquitetura-de-Sistemas/README.md` → `cursos/AIOX-Fundamentals/README.md` → `cursos/AIOX Advanced/README.md`. Depois: Squads, Agent Engineering, Design ou Productização conforme o gate da missão.
+Núcleo comum: `cursos/Obsidian-IA/README.md` → `cursos/Introducao-a-Arquitetura-de-Sistemas/README.md` → `cursos/AIOX-Fundamentals/README.md` → `cursos/AIOX Advanced/README.md`. Depois: Squads, Agent Engineering, Design, Productização ou Company Brain conforme o gate da missão.
 
 Matriz completa e pontes:  
 `cursos/AIOX Advanced/ponte/pre-requisitos-arquitetura.md` · `cursos/AIOX Advanced/ponte/trilhas-de-aplicacao.md` · `cursos/AIOX-Advanced-Squads/ponte/pre-requisitos-advanced.md`
@@ -124,7 +128,7 @@ Matriz completa e pontes:
 
 | Pasta | Uso |
 |-------|-----|
-| `skills/` | Skills para copiar à IDE (67); inventário: `cursos/MAPA-SKILLS.md`; core no Fundamentals |
+| `skills/` | Skills para copiar à IDE (68); inventário: `cursos/MAPA-SKILLS.md`; core no Fundamentals |
 | `squads/` | Squads para copiar ao projeto |
 | `cursos/` | Cursos navegáveis (esta pasta) |
 | `notas/` | Captura local do aluno (não polui aulas canônicas) |

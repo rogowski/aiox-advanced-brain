@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img">
+<rect width="760" height="360" fill="#F4F4E8"/>
+<text x="380" y="28" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="700" fill="#050505">Onde a empresa j&#225; esta perdendo o que sabe?</text>
+<text x="380" y="48" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#64645D">Quatro quartos. Nenhum &#233; o c&#233;rebro.</text>
+<rect x="24" y="68" width="350" height="120" rx="10" fill="#EFFFA8" stroke="#5A6B00" stroke-width="2"/>
+<text x="40" y="94" text-anchor="start" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="#5A6B00">1. Pesos do modelo</text>
+<text x="40" y="118" text-anchor="start" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">Atlas: FT-ATLAS-2024 ainda diz 30 dias</text>
+<text x="40" y="138" text-anchor="start" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">Perde na deprecia&#231;&#227;o. Sem par&#225;grafo, sem ACL.</text>
+<text x="40" y="164" text-anchor="start" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="500" fill="#64645D">Analogia: funcionario temporario com amnesia.</text>
+<rect x="386" y="68" width="350" height="120" rx="10" fill="#F6DFD8" stroke="#9D2D16" stroke-width="2"/>
+<text x="402" y="94" text-anchor="start" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="#9D2D16">2. Documento sem dono</text>
+<text x="402" y="118" text-anchor="start" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">Atlas: POL-REEMB-2023 no wiki, revogada</text>
+<text x="402" y="138" text-anchor="start" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">Existe arquivo. Ningu&#233;m &#233; dono da vig&#234;ncia.</text>
+<text x="402" y="164" text-anchor="start" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="500" fill="#64645D">Analogia: biblioteca sem bibliotec&#225;rio.</text>
+<rect x="24" y="202" width="350" height="120" rx="10" fill="#FFE7DC" stroke="#BD3600" stroke-width="2"/>
+<text x="40" y="228" text-anchor="start" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="#BD3600">3. Cabe&#231;a de gente</text>
+<text x="40" y="252" text-anchor="start" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">Atlas: SLK-ANA-2026-03-12 &#8212; Ana diz 14</text>
+<text x="40" y="272" text-anchor="start" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">Resolu&#231;&#227;o privada. Some quando a Ana sai.</text>
+<text x="40" y="298" text-anchor="start" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="500" fill="#64645D">Analogia: a regra mora num bolso.</text>
+<rect x="386" y="202" width="350" height="120" rx="10" fill="#E1F2FF" stroke="#006CAE" stroke-width="2"/>
+<text x="402" y="228" text-anchor="start" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="#006CAE">4. Store-or&#225;culo</text>
+<text x="402" y="252" text-anchor="start" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">Atlas: IDX-ALL + T-8841 + margem</text>
+<text x="402" y="272" text-anchor="start" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">Proje&#231;&#227;o promovida a fonte. Sem gate.</text>
+<text x="402" y="298" text-anchor="start" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="500" fill="#64645D">Analogia: dep&#243;sito com placa de c&#233;rebro.</text>
+</svg>

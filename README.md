@@ -34,7 +34,7 @@ Depois do Core: Context Brief + asset → executar no projeto → validar → de
 11. [Usar com Claude Code, Codex ou outro agent](#usar-com-claude-code-codex-ou-outro-agent)
 12. [Missões frequentes](#missões-frequentes)
 13. [Estrutura do repositório](#estrutura-do-repositório)
-14. [Guia das 67 skills](#guia-das-67-skills)
+14. [Guia das 68 skills](#guia-das-68-skills)
 15. [Guia dos 24 squads](#guia-dos-24-squads)
 16. [Nomes legados e aliases](#nomes-legados-e-aliases)
 17. [FAQ](#faq)
@@ -48,7 +48,7 @@ Depois do Core: Context Brief + asset → executar no projeto → validar → de
 
 - O **acervo da turma**: fundamentos técnicos + AIOX Core + método + operação em um único repositório.
 - Um **vault de curso** (Markdown + wikilinks) pensado para o [Obsidian](https://obsidian.md).
-- Uma **biblioteca de assets**: **67** skills e **24** squads para copiar para o *seu* projeto (inclui skills de vault de estudo).
+- Uma **biblioteca de assets**: **68** skills e **24** squads para copiar para o *seu* projeto (inclui skills de vault de estudo).
 - Um **roteador para agents**: mapa de decisão, `AGENT-GUIDE.md` e `agent-router.json` para escolher o squad certo a partir de linguagem natural.
 - Material com **gates e evidência** — o curso termina no artefato que funciona, não no consumo de aulas.
 
@@ -87,20 +87,21 @@ Na jornada educacional, [Introdução à Arquitetura de Sistemas](cursos/Introdu
 
 | Camada | Conteúdo (fonte: `catalog.json` v0.6.0) |
 |--------|----------------------------------------|
-| **Skills** | **67** em [`skills/`](skills/): base AIOX, entradas de squad, roteador `aiox-squads` e skills de vault/ensino |
+| **Skills** | **68** em [`skills/`](skills/): base AIOX, entradas de squad, roteador `aiox-squads` e skills de vault/ensino |
 | **Squads** | **24** canônicos em [`squads/`](squads/) |
-| **Curso método** | [AIOX Advanced](cursos/AIOX%20Advanced/README.md) — **29 aulas**, **6 módulos**, **6 quizzes**, **48 questões** |
-| **Curso Agent Engineering** | [AIOX Agent Engineering](cursos/AIOX-Agent-Engineering/README.md) — **34 aulas**, **8 módulos**, **7 quizzes**, **28 questões**, capstone |
+| **Curso método** | [AIOX Advanced](cursos/AIOX%20Advanced/README.md) — **30 aulas**, **6 módulos**, **6 quizzes**, **50 questões** |
+| **Curso Agent Engineering** | [AIOX Agent Engineering](cursos/AIOX-Agent-Engineering/README.md) — **35 aulas**, **8 módulos**, **7 quizzes**, **28 questões**, capstone |
 | **Grafo** | Milhares de wikilinks entre cursos, conceitos, skills e squads |
 | **Curso arquitetura** | [Introdução à Arquitetura de Sistemas](cursos/Introducao-a-Arquitetura-de-Sistemas/README.md) — **24 aulas**, **8 módulos**, **8 quizzes**, **32 questões** |
 | **Curso AIOX Fundamentals** | [AIOX Fundamentals](cursos/AIOX-Fundamentals/README.md) — **12 aulas**, **3 módulos**, **3 quizzes**, **15 questões**, projeto final |
 | **Curso design** | [AIOX Design](cursos/AIOX-Design/README.md) — **20 aulas**, **6 módulos**, **5 quizzes**, **20 questões**, capstone Storybook |
 | **Curso Productização** | [AIOX Productização](cursos/AIOX-Productizacao/README.md) — **6 aulas**, **3 módulos**, **2 quizzes**, **8 questões**, capstone |
+| **Curso Company Brain** | [Company Brain](cursos/Company-Brain/README.md) — **18 aulas**, **6 módulos**, **5 quizzes**, **20 questões**, capstone |
 | **Curso squads** | [AIOX Advanced Squads](cursos/AIOX-Advanced-Squads/README.md) — **25 aulas** (intro + 1 por squad), **6 módulos**, **6 quizzes**, **24 questões** |
 | **Preview Enterprise** | [AIOX Enterprise — Visão Operacional e Prontidão](cursos/AIOX-Enterprise/README.md) — **7 aulas diagnósticas**, sem componentes proprietários |
 | **Mini Obsidian+IA** | [Obsidian + IA](cursos/Obsidian-IA/README.md) — **9 aulas**, ~110–150 min (inclui Graph colorido), gate de estudo na entrada + missão operacional depois do Core |
 | **Operação** | Mapas de decisão, briefings copiáveis, exemplos de ativação, exercícios, critérios de evidência |
-| **Agents (versionados)** | [AGENTS.md](AGENTS.md) · [CLAUDE.md](CLAUDE.md) · [guia de arquitetura](cursos/Introducao-a-Arquitetura-de-Sistemas/AGENT-GUIDE.md) · [guia do Core](cursos/AIOX-Fundamentals/AGENT-GUIDE.md) · [guia de Agent Engineering](cursos/AIOX-Agent-Engineering/AGENT-GUIDE.md) · [guia de design](cursos/AIOX-Design/AGENT-GUIDE.md) · [guia de Productização](cursos/AIOX-Productizacao/AGENT-GUIDE.md) · [guia de squads](cursos/AIOX-Advanced-Squads/AGENT-GUIDE.md) · [guia Enterprise](cursos/AIOX-Enterprise/AGENT-GUIDE.md) |
+| **Agents (versionados)** | [AGENTS.md](AGENTS.md) · [CLAUDE.md](CLAUDE.md) · [guia de arquitetura](cursos/Introducao-a-Arquitetura-de-Sistemas/AGENT-GUIDE.md) · [guia do Core](cursos/AIOX-Fundamentals/AGENT-GUIDE.md) · [guia de Agent Engineering](cursos/AIOX-Agent-Engineering/AGENT-GUIDE.md) · [guia de design](cursos/AIOX-Design/AGENT-GUIDE.md) · [guia de Productização](cursos/AIOX-Productizacao/AGENT-GUIDE.md) · [guia de Company Brain](cursos/Company-Brain/AGENT-GUIDE.md) · [guia de squads](cursos/AIOX-Advanced-Squads/AGENT-GUIDE.md) · [guia Enterprise](cursos/AIOX-Enterprise/AGENT-GUIDE.md) |
 | **Manifesto** | [`catalog.json`](catalog.json) — contagens, maturidade, aliases, proveniência |
 
 **Integridade do curso (última hardening registrada):** 0 links quebrados / ambíguos / para fora de `cursos/`; sem paths absolutos de máquina na distribuição pública.
@@ -112,7 +113,7 @@ Na jornada educacional, [Introdução à Arquitetura de Sistemas](cursos/Introdu
 | Min | Faça |
 |-----|------|
 | 0–2 | [Baixe](#baixar-o-material) o repositório (Git ou ZIP). |
-| 2–5 | Abra [index.html](index.html) no navegador para o mapa visual (166 aulas · 67 skills · 24 squads), ou a raiz como **vault no Obsidian** e entre por [00-HOME.md](00-HOME.md). |
+| 2–5 | Abra [index.html](index.html) no navegador para o mapa visual (186 aulas · 68 skills · 24 squads), ou a raiz como **vault no Obsidian** e entre por [00-HOME.md](00-HOME.md). |
 | 5–8 | Abra [Como estudar — trilhas por caso](cursos/COMO-ESTUDAR.md) e identifique seu ponto de entrada. |
 | 8–12 | Se termos técnicos travam, comece por [Introdução à Arquitetura de Sistemas](cursos/Introducao-a-Arquitetura-de-Sistemas/README.md); se quer instalar e conhecer os agents, abra [AIOX Fundamentals](cursos/AIOX-Fundamentals/README.md). |
 | 12–15 | Leia o resultado, escopo e primeira aula da trilha escolhida; registre a evidência pedida pela aula. |
@@ -247,17 +248,18 @@ Introdução à Arquitetura de Sistemas
         ↓
 AIOX Fundamentals (Core, instalação e agents)
         ↓
-AIOX Advanced (29 aulas de método)
+AIOX Advanced (30 aulas de método)
         ├─ AIOX Advanced Squads — operar especialistas publicados
         ├─ AIOX Agent Engineering — construir capacidade agentic
         ├─ AIOX Design — materializar sistema visual
-        └─ AIOX Productização — levar capacidade comprovada ao mercado
+        ├─ AIOX Productização — levar capacidade comprovada ao mercado
+        └─ Company Brain — organizar conhecimento institucional para agents
 
 AIOX Advanced + operação real + gargalo recorrente
         └─ AIOX Enterprise — vitrine de prontidão
 ```
 
-As quatro primeiras etapas formam o núcleo comum. Os quatro cursos seguintes são rotas de aplicação canônicas: escolha uma ou combine várias conforme o gate e o artefato exigido pela missão.
+As quatro primeiras etapas formam o núcleo comum. Os cursos seguintes são rotas de aplicação canônicas: escolha uma ou combine várias conforme o gate e o artefato exigido pela missão.
 
 | Trilha | Para quê | Comece em |
 |--------|----------|-----------|
@@ -269,6 +271,7 @@ As quatro primeiras etapas formam o núcleo comum. Os quatro cursos seguintes s�
 | **AIOX Agent Engineering (rota de aplicação)** | Taxonomia, research, criação de squads, orquestração, harness e produção | [cursos/AIOX-Agent-Engineering/README.md](cursos/AIOX-Agent-Engineering/README.md) |
 | **AIOX Design (rota de aplicação)** | Repertório, contrato visual, Storybook, governança e qualidade de interface | [cursos/AIOX-Design/README.md](cursos/AIOX-Design/README.md) — entre quando a missão for visual |
 | **AIOX Productização (rota de aplicação)** | Wedge, oferta, ROI, distribuição, formato e estágio de monetização | [cursos/AIOX-Productizacao/README.md](cursos/AIOX-Productizacao/README.md) — exige capacidade comprovada |
+| **Company Brain (rota de aplicação)** | Cérebro digital modular da empresa que alimenta agents | [cursos/Company-Brain/README.md](cursos/Company-Brain/README.md) — especificação; recomendado AE 21b |
 | **AIOX Enterprise (vitrine de continuidade)** | Prontidão para infraestrutura mantida, sem entregar componentes proprietários | [cursos/AIOX-Enterprise/README.md](cursos/AIOX-Enterprise/README.md) — exige operação real |
 
 Arquitetura e AIOX Fundamentals não são sinônimos: uma cria linguagem técnica universal; o outro ensina a operação básica do `aiox-core`.
@@ -316,11 +319,11 @@ Nem todo asset roda “do zero” neste repositório. A fonte de verdade é `cat
 
 | Tipo | Distribuição de maturidade |
 |------|----------------------------|
-| **67 skills** | ver `skill_meta` em `catalog.json` (`portable` / `study` / `runtime-aiox` / camada `second-brain`) |
+| **68 skills** | ver `skill_meta` em `catalog.json` (`portable` / `study` / `runtime-aiox` / camada `second-brain`) |
 | **24 squads** | ~3 `study` · ~21 `partial` |
 
 **Skills portáteis (bom ponto de partida sem runtime AIOX):**
-`tech-search`, `tech-research`, `deep-strategic-planning`, `design-md`, `doc-rot`, `extract-session-heuristics`, `handoff`, `impeccable`, `skill-creator`, `slide-creator`, `survey-intel`.
+`3camadas`, `tech-search`, `tech-research`, `deep-strategic-planning`, `design-md`, `doc-rot`, `extract-session-heuristics`, `handoff`, `impeccable`, `skill-creator`, `slide-creator`, `survey-intel`.
 
 **Regra de ouro:** presença no acervo ≠ “funciona sozinho no laptop”. Confira a label em `catalog.json`, a aula do squad e o `SKILL.md` / `config.yaml` antes de prometer entrega.
 
@@ -419,10 +422,11 @@ Aula por squad: pasta [`cursos/AIOX-Advanced-Squads/aulas/`](cursos/AIOX-Advance
 │   ├── README.md
 │   ├── Introducao-a-Arquitetura-de-Sistemas/ # Base técnica (24 aulas)
 │   ├── AIOX-Fundamentals/      # AIOX Core básico (12 aulas)
-│   ├── AIOX Advanced/         # Método (29 aulas ativas)
-│   ├── AIOX-Agent-Engineering/ # Capacidades agentic (34 aulas)
+│   ├── AIOX Advanced/         # Método (30 aulas ativas)
+│   ├── AIOX-Agent-Engineering/ # Capacidades agentic (35 aulas)
 │   ├── AIOX-Design/           # Contrato visual (20 aulas, Storybook)
 │   ├── AIOX-Productizacao/    # Oferta e mercado (6 aulas)
+│   ├── Company-Brain/         # Conhecimento institucional modular (18 aulas)
 │   ├── AIOX-Advanced-Squads/  # Operação + agent-router
 │   ├── AIOX-Enterprise/       # Vitrine diagnóstica do próximo contexto
 │   ├── Obsidian-IA/           # Vault + Context Brief + execução + retorno
@@ -439,7 +443,7 @@ Aula por squad: pasta [`cursos/AIOX-Advanced-Squads/aulas/`](cursos/AIOX-Advance
 
 ---
 
-## Guia das 67 skills
+## Guia das 68 skills
 
 Inventário canônico = lista `skills` em `catalog.json`. Abaixo, o “use quando” de cada uma.
 
@@ -478,6 +482,7 @@ Inventário canônico = lista `skills` em `catalog.json`. Abaixo, o “use quand
 
 ### Pesquisa, estratégia e conhecimento
 
+- [`3camadas`](skills/3camadas/SKILL.md) — `/3camadas`: analisa e pontua um repo real contra a tese 21b (modelo substituível, thin harness, company brain modular). **Use quando:** precisa de score no disco, não de um slide.
 - [`tech-search`](skills/tech-search/SKILL.md) — Pesquisa técnica autocontida com decomposição, buscas paralelas, avaliação e síntese. **Use quando:** precisa responder uma pergunta técnica bem delimitada com rapidez e fontes.
 - [`tech-research`](skills/tech-research/SKILL.md) — Conduz pesquisa técnica profunda, multi-wave, com scoring de cobertura, verificação de citações e fontes acadêmicas. **Use quando:** a decisão exige um dossier auditável e evidência graduada.
 - [`roundtable`](skills/roundtable/SKILL.md) — Reúne revisores com perspectivas diferentes e produz consenso ou divergências explícitas. **Use quando:** uma decisão importante não deve depender de uma única leitura.

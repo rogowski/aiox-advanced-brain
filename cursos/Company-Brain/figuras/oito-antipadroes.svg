@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" role="img">
+<rect width="760" height="340" fill="#F4F4E8"/>
+<text x="380" y="26" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="700" fill="#050505">A Atlas j&#225; comprou os oito &#8212; residual vazio</text>
+<rect x="16" y="48" width="178" height="120" rx="8" fill="#F6DFD8" stroke="#9D2D16" stroke-width="2"/>
+<text x="105" y="74" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" fill="#9D2D16">Dump</text>
+<text x="105" y="98" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">40 mil chunks</text>
+<text x="105" y="118" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#64645D">IDX-ALL no prompt</text>
+<rect x="202" y="48" width="178" height="120" rx="8" fill="#F6DFD8" stroke="#9D2D16" stroke-width="2"/>
+<text x="291" y="74" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" fill="#9D2D16">Vector-oracle</text>
+<text x="291" y="98" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">&#237;ndice = verdade</text>
+<text x="291" y="118" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#64645D">j&#225; temos c&#233;rebro</text>
+<rect x="388" y="48" width="178" height="120" rx="8" fill="#F6DFD8" stroke="#9D2D16" stroke-width="2"/>
+<text x="477" y="74" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" fill="#9D2D16">Janela-como-prova</text>
+<text x="477" y="98" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">1M tokens</text>
+<text x="477" y="118" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#64645D">capacidade != uso</text>
+<rect x="574" y="48" width="178" height="120" rx="8" fill="#F6DFD8" stroke="#9D2D16" stroke-width="2"/>
+<text x="663" y="74" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" fill="#9D2D16">Autoridade global</text>
+<text x="663" y="98" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">estagi&#225;rio ve</text>
+<text x="663" y="118" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#64645D">MARGEM-CLIENTE</text>
+<rect x="16" y="184" width="178" height="120" rx="8" fill="#F6DFD8" stroke="#9D2D16" stroke-width="2"/>
+<text x="105" y="210" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" fill="#9D2D16">Harness-brain</text>
+<text x="105" y="234" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">if reembolso</text>
+<text x="105" y="254" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#64645D">regra no chassis</text>
+<rect x="202" y="184" width="178" height="120" rx="8" fill="#F6DFD8" stroke="#9D2D16" stroke-width="2"/>
+<text x="291" y="210" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" fill="#9D2D16">Modelo-verdade</text>
+<text x="291" y="234" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">FT-ATLAS-2024</text>
+<text x="291" y="254" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#64645D">pesos como locator</text>
+<rect x="388" y="184" width="178" height="120" rx="8" fill="#F6DFD8" stroke="#9D2D16" stroke-width="2"/>
+<text x="477" y="210" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" fill="#9D2D16">Escrita-sem-gate</text>
+<text x="477" y="234" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">T-8841 vira SOP</text>
+<text x="477" y="254" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#64645D">falha bruta = fato</text>
+<rect x="574" y="184" width="178" height="120" rx="8" fill="#F6DFD8" stroke="#9D2D16" stroke-width="2"/>
+<text x="663" y="210" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" fill="#9D2D16">Vendor-funda&#231;&#227;o</text>
+<text x="663" y="234" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">produto = m&#243;dulo</text>
+<text x="663" y="254" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#64645D">mente o rel&#243;gio</text>
+</svg>

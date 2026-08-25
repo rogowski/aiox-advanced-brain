@@ -8,7 +8,7 @@ tags: [curso/aiox-advanced, ponte, jornada]
 
 # Depois do Advanced — escolha a rota de aplicação
 
-O Advanced encerra o **núcleo comum**. A próxima decisão depende do resultado que a missão exige; não existe um quinto curso obrigatório para todos.
+O Advanced encerra o **núcleo comum**. A próxima decisão depende do resultado que a missão exige; não existe uma rota obrigatória para todos.
 
 | Se você precisa… | Entre em | Gate de entrada | Evidência de saída |
 |------------------|----------|-----------------|--------------------|
@@ -16,6 +16,7 @@ O Advanced encerra o **núcleo comum**. A próxima decisão depende do resultado
 | construir, orquestrar ou publicar uma capacidade agentic própria | `cursos/AIOX-Agent-Engineering/README.md` | capability brief + caso representativo | capacidade executável com contrato, gates e limites |
 | materializar contrato visual e impedir deriva de interface | `cursos/AIOX-Design/README.md` | story visual + estados + aceite | DESIGN.md + Storybook + ciclo visual |
 | transformar uma capacidade comprovada em oferta | `cursos/AIOX-Productizacao/README.md` | capacidade executável + evidência de valor | decision pack + experimento de mercado |
+| especificar o conhecimento institucional que alimenta agents | `cursos/Company-Brain/README.md` | Advanced concluído; recomendado AE M1b + 21b | especificação auditável: mapa, ledger, governança, interface e menor mecanismo |
 
 ## Como as rotas se combinam
 

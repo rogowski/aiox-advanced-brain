@@ -29,14 +29,16 @@ flowchart LR
     X -->|"construir capacidade"| E["AIOX Agent Engineering<br/>capacidade agentic"]
     X -->|"sistema visual"| D["AIOX Design<br/>contrato + Storybook"]
     X -->|"capacidade já comprovada"| P["AIOX Productização<br/>oferta + mercado"]
+    X -->|"conhecimento institucional"| C["Company Brain<br/>cérebro da empresa"]
     E -->|"levar ao mercado"| P
+    E -->|"desenhar o brain"| C
     E -->|"operar especialistas"| S
     D -->|"operar especialistas"| S
     P -->|"squads comerciais"| S
     X -.->|"operação real + gargalo recorrente"| Q["AIOX Enterprise<br/>vitrine de prontidão"]
 ```
 
-As quatro primeiras caixas formam o **núcleo comum**. Depois do Advanced, Squads, Agent Engineering, Design e Productização são **rotas de aplicação canônicas**. A vitrine AIOX Enterprise exige Advanced + operação real: ela diagnostica continuidade, não entrega o runtime proprietário.
+As quatro primeiras caixas formam o **núcleo comum**. Depois do Advanced, Squads, Agent Engineering, Design, Productização e Company Brain são **rotas de aplicação canônicas**. A vitrine AIOX Enterprise exige Advanced + operação real: ela diagnostica continuidade, não entrega o runtime proprietário.
 
 | Resultado que você precisa | Rota de aplicação |
 |----------------------------|-------------------|
@@ -44,6 +46,7 @@ As quatro primeiras caixas formam o **núcleo comum**. Depois do Advanced, Squad
 | Construir, orquestrar ou publicar uma capacidade própria | AIOX Agent Engineering |
 | Materializar contrato visual e impedir deriva | AIOX Design |
 | Transformar uma capacidade comprovada em oferta | AIOX Productização |
+| Especificar o conhecimento institucional que alimenta agents | Company Brain |
 | Decidir se a operação já pede infraestrutura mantida | AIOX Enterprise — vitrine diagnóstica |
 
 ## Contrato de cada etapa
@@ -58,6 +61,7 @@ As quatro primeiras caixas formam o **núcleo comum**. Depois do Advanced, Squad
 | [AIOX Agent Engineering](AIOX-Agent-Engineering/README.md) | precisa construir ou operar uma capacidade que o catálogo publicado não resolve | capacidade executável com contrato, gates, runtime ou bloqueio diagnosticado |
 | [AIOX Design](AIOX-Design/README.md) | precisa transformar direção visual em contrato e componentes governáveis | `DESIGN.md` + catálogo + Storybook rodando + ciclo visual |
 | [AIOX Productização](AIOX-Productizacao/README.md) | já possui capacidade executável e precisa decidir oferta, canal ou monetização | decision pack + experimento com hipótese, métrica e critério de parada |
+| [Company Brain](Company-Brain/README.md) | agents usam política velha, dump de corpus ou conhecimento preso no modelo | especificação do brain (mapa, ledger, governança, interface) |
 | [AIOX Enterprise — vitrine](AIOX-Enterprise/README.md) | encerrou o Advanced, já executou missão real e o gargalo virou integração, governança ou observabilidade recorrente | decisão de prontidão sustentada por evidência + próximo passo explícito |
 
 ## Escolha sua trilha pelo caso

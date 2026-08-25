@@ -98,7 +98,7 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1px;
-      margin: -1.45rem 0 3.4rem;
+      margin: 0 0 3.4rem;
       border: 1px solid var(--line);
       background: var(--line);
     }
@@ -112,10 +112,6 @@
     .chapter-map a:hover, .chapter-map a:focus-visible { background: var(--lime-soft); }
     :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
     ::selection { background: var(--lime); color: var(--ink); }
-
-    .story { margin: 1.4rem 0 1.85rem; }
-    .story p { font-size: 1rem; line-height: 1.72; }
-    .story p + p { margin-top: .9rem; }
 
     .teach-steps {
       margin: 1.4rem 0;
@@ -191,15 +187,14 @@
     ul, ol { padding-left: 1.35rem; }
     li + li { margin-top: .35rem; }
 
-    .narrative {
-      margin: 1.15rem 0 1.45rem;
-    }
-    .narrative p {
+    .story, .narrative { margin: 1.15rem 0 1.45rem; }
+    .story p, .narrative p {
       margin: .9rem 0;
       font-size: 1rem;
       line-height: 1.72;
     }
-    .narrative .lead {
+    .story p + p, .narrative p + p { margin-top: .9rem; }
+    .story .lead, .narrative .lead {
       font-size: 1.05rem;
       line-height: 1.65;
     }
@@ -342,20 +337,6 @@
     .deprecation-item strong { display: block; margin: .6rem 0 .25rem; font-size: .9rem; }
     .deprecation-item p { margin: 0; color: var(--muted); font-size: .78rem; line-height: 1.45; }
 
-    .factory-map { display: grid; grid-template-columns: repeat(5, 1fr); gap: .55rem; margin: 1.6rem 0 .8rem; }
-    .factory-part { position: relative; min-height: 10.5rem; padding: .85rem; border: 1px solid var(--line); background: var(--card); }
-    .factory-part:not(:last-child)::after { content: "\2192"; position: absolute; z-index: 2; top: 1.15rem; right: -.62rem; color: var(--orange); background: var(--bg); font-family: var(--mono); font-weight: 800; }
-    .factory-part .physical { display: block; color: var(--muted); font-family: var(--mono); font-size: .6rem; letter-spacing: .08em; text-transform: uppercase; }
-    .factory-part strong { display: block; margin: .45rem 0 .6rem; font-size: .88rem; line-height: 1.25; }
-    .factory-part p { margin: 0; color: var(--muted); font-size: .75rem; line-height: 1.4; }
-    .factory-part:nth-child(1) { border-top: 1px solid var(--orange); }
-    .factory-part:nth-child(2) { border-top: 1px solid var(--blue); }
-    .factory-part:nth-child(3) { border-top: 1px solid var(--ink); }
-    .factory-part:nth-child(4) { border-top: 1px solid var(--lime); }
-    .factory-part:nth-child(1) strong { color: var(--orange); }
-    .factory-part:nth-child(2) strong { color: var(--blue); }
-    .factory-part:nth-child(5) { color: var(--bg); background: var(--ink); }
-    .factory-part:nth-child(5) p, .factory-part:nth-child(5) .physical { color: var(--surface); }
 
     .analogy-note { margin: .8rem 0 1.5rem; padding: 1rem 1.1rem; border: 1px dashed var(--line); background: var(--card); }
     .analogy-note strong { display: block; margin-bottom: .3rem; font-family: var(--mono); font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; }
@@ -382,6 +363,9 @@
 
     .ablation-quote { display: grid; grid-template-columns: 1.45fr .55fr; margin: 1.4rem 0; border: 1px solid var(--line); background: var(--card); }
     .ablation-quote blockquote { margin: 0; padding: 1.25rem 1.35rem .75rem; font-size: 1.15rem; font-weight: 680; line-height: 1.35; letter-spacing: -.015em; }
+    .ablation-quote .quote-original { margin: 0; }
+    .ablation-quote .quote-translation { margin: .9rem 0 0; padding-top: .8rem; border-top: 1px solid var(--line); font-size: .96rem; font-weight: 520; line-height: 1.5; letter-spacing: 0; }
+    .ablation-quote .quote-translation span { display: block; margin-bottom: .3rem; color: var(--orange); font-family: var(--mono); font-size: .6rem; font-weight: 760; letter-spacing: .1em; text-transform: uppercase; }
     .ablation-quote .quote-source { margin: 0; padding: 0 1.35rem 1.15rem; color: var(--muted); font-family: var(--mono); font-size: .65rem; }
     .ablation-quote .quote-source a { color: inherit; }
     .ablation-badge { grid-column: 2; grid-row: 1 / span 2; display: grid; align-content: center; padding: 1.1rem; color: var(--bg); background: var(--ink); text-align: center; }
@@ -461,7 +445,49 @@
     .objections details p { margin: 0; padding: 0 1rem 1rem; color: var(--muted); font-size: .86rem; }
 
     figure { margin: 2rem 0; text-align: center; }
-    figure svg { display: block; width: 100%; height: auto; }
+    figure > svg { display: block; width: 100%; height: auto; }
+    .mermaid-wrap {
+      margin: 1.5rem 0 0;
+      padding: 1rem .85rem;
+      border: 1px solid var(--line);
+      background: var(--card);
+      overflow-x: auto;
+      text-align: left;
+    }
+    .mermaid-wrap .mermaid { margin: 0; }
+    .mermaid-wrap svg { display: block; min-width: 38rem; height: auto; }
+    .mermaid-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem 1.1rem;
+      margin: .85rem 0 0;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: .62rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .mermaid-legend b {
+      display: inline-block;
+      width: .7rem;
+      height: .7rem;
+      margin-right: .35rem;
+      vertical-align: -1px;
+      border: 1px solid var(--ink);
+    }
+    .mermaid-legend .l-brain { background: var(--orange-soft); border-color: var(--orange); }
+    .mermaid-legend .l-harness { background: var(--blue-soft); border-color: var(--blue); }
+    .mermaid-legend .l-model { background: var(--lime); }
+    .mermaid-legend .l-world { background: var(--surface); }
+    .mermaid-fallback {
+      margin: .9rem 0 0;
+      padding-left: 1.2rem;
+      color: var(--muted);
+      font-size: .86rem;
+      line-height: 1.5;
+    }
+    .mermaid-wrap.is-ready .mermaid-fallback { display: none; }
+    .mermaid-wrap.is-offline .mermaid { display: none; }
     figcaption { margin-top: .8rem; color: var(--muted); font-family: var(--mono); font-size: .65rem; letter-spacing: .16em; text-transform: uppercase; }
     .mobile-flow { display: none; }
     svg .zone { fill: #ececdf; stroke: #cecec2; stroke-width: 1.5; }
@@ -476,6 +502,79 @@
     svg .line-soft { fill: none; stroke: var(--muted); stroke-width: 1.1; stroke-dasharray: 5 4; }
 
     .cite { color: var(--muted); font-size: .78rem; }
+
+    .apply-box {
+      margin: 1.6rem 0 2rem;
+      border: 1px solid var(--ink);
+      background: var(--card);
+    }
+    .apply-box header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: .6rem 1.2rem;
+      padding: 1rem 1.2rem;
+      margin: 0;
+      border-bottom: 1px solid var(--ink);
+    }
+    .apply-box header h3 { margin: 0; font-size: 1.05rem; }
+    .skill-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      padding: .28rem .55rem;
+      border: 1px solid var(--ink);
+      background: var(--lime);
+      color: var(--ink);
+      font-family: var(--mono);
+      font-size: .68rem;
+      letter-spacing: .04em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .skill-chip:hover { background: var(--lime-soft); color: var(--ink); }
+    .apply-box .apply-body { padding: 1rem 1.2rem 1.2rem; }
+    .apply-box .apply-body p { margin: .55rem 0; }
+    .prompt-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 1rem 0 .4rem;
+    }
+    .prompt-toolbar span {
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: .66rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .prompt-toolbar button {
+      margin: 0;
+      padding: .35rem .7rem;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: var(--bg);
+      font-family: var(--mono);
+      font-size: .66rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .prompt-toolbar button:hover { background: var(--orange); border-color: var(--orange); }
+    .prompt-block {
+      margin: 0;
+      padding: 1rem 1.1rem;
+      overflow: auto;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--ink);
+      font-family: var(--mono);
+      font-size: .78rem;
+      line-height: 1.55;
+      white-space: pre-wrap;
+    }
 
     .worked {
       margin: 1.6rem 0;
@@ -554,7 +653,7 @@
       .ablation-loop li { min-height: 0; }
       .lean-evidence div + div { border-top: 1px solid #333; border-left: 0; }
       .signal { min-height: auto; }
-      .portability-road, .change-map, .promotion-pipeline, .factory-map, .gate-order { grid-template-columns: 1fr; align-items: stretch; }
+      .portability-road, .change-map, .promotion-pipeline, .gate-order { grid-template-columns: 1fr; align-items: stretch; }
       .portability-step:nth-child(n) { min-height: auto; }
       .trim-keep { grid-template-columns: 1fr; }
       .trim-keep > div + div { border-top: 1px solid var(--line); border-left: 0; }
@@ -562,8 +661,6 @@
       .change-card strong { min-height: auto; }
       .promotion-stage { min-height: auto; }
       .promotion-stage:not(:last-child)::after { content: "\2193"; top: auto; right: 1rem; bottom: -.65rem; background: var(--bg); }
-      .factory-part { min-height: auto; }
-      .factory-part:not(:last-child)::after { content: "\2193"; top: auto; right: 1rem; bottom: -.65rem; background: var(--bg); }
       .evidence-case { grid-template-columns: 1fr 1fr; }
       .evidence-case > p { grid-column: 1 / -1; }
       .library-compare { grid-template-columns: 1fr; }
@@ -572,7 +669,8 @@
       .policy-arrow { transform: rotate(90deg); }
       .pair-table { display: block; overflow-x: auto; }
       .teach-steps li { grid-template-columns: 2rem 1fr; }
-      figure svg { display: none; }
+      figure > svg { display: none; }
+      .mermaid-wrap svg { min-width: 28rem; }
       .mobile-flow { display: grid; gap: .65rem; text-align: left; }
       .mobile-node { padding: .9rem 1rem; border: 1.5px solid var(--ink); background: var(--card); }
       .mobile-node.brain { border-color: var(--orange); background: var(--orange-soft); }
@@ -590,7 +688,7 @@
       body { padding: 0; background: #fff; }
       main { max-width: none; }
       .brand-row nav { display: none; }
-      .core, .worked, .quiz-q, .readiness, figure, .signal, .ownership-card, .portability-step, .brain-module, .promotion-stage, .deprecation-item, .factory-part, .verdict, .evidence-case, .change-test, .domain-case, .slice, .objections details, .ablation-quote, .ablation-loop li, .evidence-duel article, .reading-bridge a { break-inside: avoid; }
+      .core, .worked, .quiz-q, .readiness, figure, .mermaid-wrap, .signal, .ownership-card, .portability-step, .brain-module, .promotion-stage, .deprecation-item, .verdict, .evidence-case, .change-test, .domain-case, .slice, .objections details, .ablation-quote, .ablation-loop li, .evidence-duel article, .reading-bridge a { break-inside: avoid; }
       a { color: var(--ink); text-decoration: none; }
     }
   </style>
@@ -600,16 +698,16 @@
     <div class="brand-row">
       <img src="../squads/design-ops/scripts/extract-from-url/assets/aiox/AIOX-Black.svg" alt="AIOX">
       <nav aria-label="Materiais da aula">
-        <a href="0001-o-modelo-passa-o-sistema-fica-visual-draft.html">Draft visual</a>
         <a href="../cursos/AIOX-Agent-Engineering/aulas/21b-modelos-substituiveis-harness-fino-cerebro-modular.md">Markdown</a>
         <a href="../reference/0001-arquitetura-tres-camadas.html">Referência</a>
+        <a href="#aplicar">Prompt</a>
       </nav>
     </div>
 
     <header>
       <h1>O modelo passa. O sistema fica.</h1>
-      <p class="sub">Como separar modelos substituíveis, um harness fino e o cérebro modular da empresa, e por que essa separação ficou urgente com o avanço dos LLMs.</p>
-      <div class="meta"><span>Aula 21b</span><span>Agent Engineering · 2026</span><span>110 minutos</span><span>intermediário → avançado</span><span>M4 · runtime fora da IDE</span></div>
+      <p class="sub">Por que o modelo deve poder mudar sem levar junto as regras, a memória e o modo de operar da empresa.</p>
+      <div class="meta"><span>Aula 21b</span><span>Agent Engineering · 2026</span><span id="reading-time">90 minutos</span><span>intermediário → avançado</span><span>M4 · runtime fora da IDE</span></div>
     </header>
 
     <div class="thesis-formula" aria-label="Tese: models mais thin harness mais modular company brain">
@@ -623,8 +721,8 @@
     </div>
 
     <div class="core">
-      <p><strong>A ideia central desta aula.</strong> Separe o que muda em meses, o que governa a operação por trimestres e o que deve acumular por anos. O modelo raciocina. O harness controla a execução. O company brain preserva o conhecimento institucional. Quando essas responsabilidades têm contratos próprios, trocar de modelo vira uma decisão testável, não uma reconstrução da empresa.</p>
-      <p>Ao final, você deverá conseguir localizar uma falha, medir o acoplamento, distinguir poda de amnésia e planejar uma troca reversível por eval offline, shadow e canary.</p>
+      <p><strong>A ideia central.</strong> O modelo faz o trabalho de raciocínio. O harness é o painel que libera ferramentas, impõe limites e confirma o resultado. O company brain é a memória organizada da empresa: fontes, políticas e histórico. Quando cada parte tem um endereço claro, trocar o modelo deixa de ser uma reforma.</p>
+      <p>Ao final desta aula, diante de uma falha, você vai saber perguntar se o problema está no motor, no painel ou na memória. E vai levar um protocolo para testar outro modelo: primeiro em casos controlados, depois em tráfego real sem poder agir e só então em uma fatia pequena da operação.</p>
     </div>
 
     <nav class="chapter-map" aria-label="Mapa deste capítulo">
@@ -635,18 +733,17 @@
     </nav>
 
     <div class="story">
-      <p>Esta página é a aula em voz alta: números, cenas, analogias e o caminho de volta para o seu sistema. Os diagramas aceleram o olhar. Os textos seguintes ensinam o julgamento. Se você só “passar o olho” nos cards, vai sair com vocabulário. Se acompanhar as histórias, sai com um teste.</p>
-      <p>Imagine um prédio com três calendários na parede da recepção. O primeiro, de meses, troca o nome do motor da semana. O segundo, de trimestres, anota quem pode ligar a linha, quem assina o estorno, qual sensor dispara a parada. O terceiro, de anos, guarda o desenho da peça, a política vigente e o histórico do que já deu errado. O erro clássico desta década é colar os três calendários num único Post-it: o identificador do modelo. Quando o Post-it some, a empresa descobre que a fábrica morava na cabeça do motor alugado.</p>
+      <p>Na recepção de uma fábrica existem três calendários pendurados na mesma parede. O primeiro conta meses e registra qual motor está instalado na linha. O segundo conta trimestres e anota quem pode dar a partida, quem assina um estorno e qual sensor manda parar tudo. O terceiro conta anos e guarda o desenho da peça, a política vigente e o histórico do que já deu errado.</p>
+      <p>O erro caro desta década é colar os três calendários num Post-it só e escrever nesse Post-it o nome do modelo. Enquanto o Post-it está lá, tudo funciona. No dia em que o fornecedor aposenta aquele nome, a empresa descobre que a fábrica inteira morava na cabeça de um motor alugado.</p>
     </div>
 
     <h2 id="evidencia"><span class="n">01</span>Por que isso importa justamente agora</h2>
-    <p>A cada nova geração de LLMs, fica tentador colocar mais responsabilidade dentro do modelo: mais documentos no contexto, mais instruções no prompt, mais liberdade para agir. O problema é que o componente que mais evolui também é o que possui a menor estabilidade contratual.</p>
-    <p>Pense no modelo como um funcionário temporário excepcional. Ele lê rápido, escreve bem e improvisar é o talento dele. Você não demite o temporário porque ele é brilhante. Você também não entrega a ele a chave do cofre, o livro-razão e a definição de “pronto”. O avanço dos modelos aumenta a tentação de fazer exatamente isso, porque o temporário desta semana parece mais confiável que o da anterior. A arquitetura existe para que o talento dele não vire o endereço da empresa.</p>
+    <p>A cada nova geração, surge a vontade de colocar mais coisas dentro do modelo: documentos, regras e liberdade para agir. Só que o modelo é justamente a parte que muda mais rápido. Ele melhora, fica mais barato e também pode ser aposentado pelo fornecedor.</p>
+    <p>Pense nele como um funcionário temporário excepcional. Ele lê rápido, escreve bem e improvisa. Isso não significa entregar a ele a chave do cofre, o arquivo da empresa e o poder de decidir quando o trabalho terminou. A arquitetura existe para aproveitar o talento sem transformar o temporário no endereço da empresa.</p>
     <div class="story">
       <p>Imagine a segunda-feira em que o temporário acerta três tickets difíceis seguidos. Na terça, alguém diz: “deixa ele responder direto o cliente”. Na quarta, outro alguém cola a política de junho no prompt “para ele não errar”. Na quinta, o estorno de Ana sai porque o temporário “já sabia o limite”. Na sexta o fornecedor avisa que aquele snapshot some em noventa dias. Aí a empresa descobre que o temporário não era só rápido: ele tinha virado a agenda, o arquivo morto e o caixa. Ninguém planejou isso. Foi o caminho mais curto entre um acerto e um atalho.</p>
-      <p>O ClockBench do AI Index conta a mesma história com outro figurino. Há sistemas que ganham ouro em matemática e ainda assim leem mal um relógio analógico. Inteligência irregular avisa que você não promove um colega a tesoureiro porque ele escreve bem. Você promove por fitness no trabalho, e ainda assim guarda a chave no painel, não no bolso dele.</p>
     </div>
-    <p>Preços caem, modelos menores alcançam antigos modelos grandes, fornecedores se aproximam em alguns benchmarks e se afastam em outros. Ao mesmo tempo, snapshots e APIs são aposentados. Isso transforma qualquer integração direta com um modelo físico em uma dependência de meia-vida curta.</p>
+    <p>Os preços caem, modelos menores alcançam os antigos gigantes e nenhum fornecedor vence em todo tipo de tarefa. Ao mesmo tempo, versões e APIs são aposentadas. Se as regras da empresa estiverem coladas ao nome de um modelo, cada avanço do mercado vira uma migração.</p>
 
     <div class="signal-strip" aria-label="Seis sinais da velocidade e irregularidade dos modelos">
       <article class="signal">
@@ -657,22 +754,22 @@
       <article class="signal">
         <span class="number">142×</span>
         <span class="source">O menor modelo acima de 60% no MMLU caiu de 540 bilhões para 3,8 bilhões de parâmetros. <a href="https://hai.stanford.edu/news/ai-index-2025-state-of-ai-in-10-charts">AI Index 2025</a>.</span>
-        <p class="implication">Capability antiga cabe cada vez mais em motores menores.</p>
+        <p class="implication">A mesma capacidade passa a caber em motores menores.</p>
       </article>
       <article class="signal">
         <span class="number">+30 pp</span>
         <span class="source">Ganho dos modelos de fronteira em apenas um ano no Humanity's Last Exam. <a href="https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance">AI Index 2026</a>.</span>
-        <p class="implication">Benchmarks fixos envelhecem junto com o scaffolding.</p>
+        <p class="implication">Rankings e apoios feitos para eles envelhecem rápido.</p>
       </article>
       <article class="signal">
         <span class="number">25 Elo</span>
         <span class="source">Quatro empresas líderes estavam agrupadas nesse intervalo no Arena em março de 2026. <a href="https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance">AI Index 2026</a>.</span>
-        <p class="implication">O vencedor agregado importa menos que o fitness local.</p>
+        <p class="implication">O resultado na sua tarefa importa mais que o ranking geral.</p>
       </article>
       <article class="signal">
         <span class="number">50,6%</span>
         <span class="source">Melhor resultado no ClockBench, contra 90,1% humano, embora sistemas já atinjam ouro em matemática. <a href="https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance">AI Index 2026</a>.</span>
-        <p class="implication">Inteligência é irregular; uma capability não garante outra.</p>
+        <p class="implication">Ser ótimo em uma capacidade não garante as demais.</p>
       </article>
       <article class="signal">
         <span class="number">≈ 1/3</span>
@@ -681,24 +778,19 @@
       </article>
     </div>
 
-    <div class="narrative">
-      <p class="lead">Lidos em conjunto, esses números não descrevem uma corrida com uma linha de chegada. Eles descrevem um mercado em que a fronteira avança, o preço da capacidade antiga despenca e diferentes modelos continuam fortes em tipos diferentes de trabalho.</p>
-      <p>Isso muda a natureza da decisão arquitetural. Quando uma capability que custava caro passa a caber num modelo pequeno, você deveria conseguir capturar o ganho trocando a rota. Se fatos, regras, tools e memória estiverem misturados ao modelo anterior, a queda de preço não vira economia: vira um projeto de migração. O mesmo vale para um novo modelo que seja melhor em pesquisa, mas pior em tool calling. Sem fronteiras claras, a empresa precisa escolher um vencedor único; com fronteiras claras, ela pode escolher por workload.</p>
-      <p>É por isso que o avanço dos LLMs aumenta o valor do sistema ao redor deles. Quanto mais rápido o motor melhora, maior a vantagem de manter fora dele aquilo que precisa permanecer verdadeiro: quem pode agir, qual política está vigente, como o resultado será verificado e qual evidência sustenta uma resposta.</p>
-    </div>
-
     <div class="story">
-      <p>Leia os seis números como um único argumento, não como um mural de marketing. Preço e tamanho caem: a tarefa que ontem pedia o motor “de fronteira” cabe amanhã num motor menor. Benchmarks fixos envelhecem: o ranking que você decalcou no harness vira arqueologia. Quatro empresas se apertam no topo: “qual marca ganhou o Arena” responde menos do que “qual motor passa no <em>seu</em> gate”. E ainda assim um terço das tentativas agentic falha: mais inteligência não aposentou o painel de controle.</p>
-      <p>Se a capacidade estiver soldada ao identificador físico, cada um desses deslocamentos vira migração. Se o contrato estiver fora do motor, cada deslocamento vira opção de upgrade. A diferença não é filosófica. É a diferença entre reformar a fábrica e trocar o motor da estação.</p>
+      <p class="lead">Lidos em conjunto, esses seis números não descrevem uma corrida com linha de chegada. Descrevem um mercado em que a fronteira avança, o preço da capacidade de ontem despenca e modelos diferentes continuam fortes em tipos diferentes de trabalho.</p>
+      <p>O ClockBench é o figurino mais honesto dessa irregularidade: há sistemas que ganham ouro em matemática e ainda assim leem mal um relógio analógico. Ser brilhante numa tarefa não prova competência na tarefa ao lado, e é por isso que o temporário é avaliado no trabalho que ele vai fazer, não no currículo geral. A chave do cofre é outra conversa: ela fica no painel mesmo depois que ele passa no teste, porque autoridade nunca foi um prêmio por desempenho.</p>
+      <p>Quando uma capacidade que custava caro passa a caber num modelo pequeno, colher o ganho deveria ser só trocar a rota. Só que isso depende de as fronteiras existirem. Se fatos, regras, ferramentas e memória estiverem misturados ao modelo anterior, a queda de preço não vira economia, vira obra, e a empresa acaba obrigada a eleger um vencedor único em vez de escolher por tipo de trabalho. Daí a inversão que sustenta a aula inteira: quanto mais rápido o motor muda, mais valor tem o sistema que mantém fora dele quem pode agir, qual política vale, como o resultado será verificado e qual evidência sustenta a resposta.</p>
     </div>
 
     <div class="note">
       <strong>O paradoxo</strong>
-      Quanto melhor o modelo fica, menos sentido faz codificar suas limitações atuais num harness enorme. Mas quanto mais autonomia ele recebe, mais importantes ficam os invariantes que não podem ser probabilísticos: autoridade, orçamento, rastreabilidade, validade do conhecimento e prova de resultado.
+      Quanto melhor o modelo fica, menos sentido faz manter um harness enorme só para compensar limitações antigas. Mas, quanto mais liberdade ele recebe, mais firmes precisam ser as regras que não podem depender de “talvez”: autoridade, orçamento, histórico, validade do conhecimento e prova do resultado.
     </div>
     <div class="analogy-note">
       <strong>O temporário e o cofre</strong>
-      <p>Um operador novo e mais hábil pode deixar de precisar da “lista de 40 passos para não se perder”. Isso não autoriza retirar o intertravamento da prensa. Scaffolding cognitivo envelhece. Autoridade, orçamento e prova de resultado não envelhecem no mesmo relógio.</p>
+      <p>Um operador novo e mais hábil pode deixar de precisar da “lista de 40 passos para não se perder”. Isso não autoriza retirar a trava de segurança da prensa. Apoios de raciocínio envelhecem. Autoridade, orçamento e prova do resultado não envelhecem no mesmo ritmo.</p>
     </div>
 
     <h3>Meia-vida operacional: produtos físicos desaparecem</h3>
@@ -710,17 +802,12 @@
       <article class="deprecation-item"><span class="window">6 meses</span><strong>o1-mini</strong><p>Aviso em 28/abr; desligamento em 27/out de 2025.</p></article>
     </div>
 
-    <div class="narrative">
-      <p>Um identificador como <code>o1-mini</code> ou qualquer snapshot equivalente deve ser tratado como código de inventário: aponta para uma implementação disponível agora. Ele não deveria aparecer dentro da definição de uma política, da memória de um cliente ou do critério que diz se o trabalho terminou corretamente. Essas coisas possuem uma vida útil diferente.</p>
-      <p>O alias de capacidade cria essa distância. A aplicação pede, por exemplo, <code>review-seguranca</code>; a configuração resolve qual modelo ocupa a rota; e o eval decide se um substituto pode assumir. Assim, a deprecação ainda exige trabalho, mas o trabalho fica concentrado no lugar certo em vez de contaminar todo o sistema.</p>
+    <div class="story">
+      <p>Um identificador como <code>o1-mini</code> é código de inventário: aponta para uma implementação disponível agora. Três meses é pouco tempo para descobrir que a política de reembolso, o tom de voz e o “jeito certo de pedir exceção” moravam dentro desse número de série. O fornecedor avisou. Quem errou foi quem tratou o snapshot como arquivo morto da firma.</p>
+      <p>O alias de capacidade cria a distância. A aplicação pede <code>review-seguranca</code>; a configuração resolve qual modelo ocupa a rota; o eval decide se um substituto pode assumir. A deprecação ainda dá trabalho, mas o trabalho fica no lugar certo. Use o melhor motor disponível e troque quando aparecer outro melhor. O nome físico vive na configuração. Fato, regra e definição de sucesso vivem em outro endereço, com outra durabilidade.</p>
     </div>
 
     <p class="cite">Veja também os ciclos oficiais de deprecação da <a href="https://developers.openai.com/api/docs/deprecations">OpenAI</a> e da <a href="https://platform.claude.com/docs/en/about-claude/model-deprecations">Anthropic</a>.</p>
-
-    <div class="story">
-      <p>Três meses é pouco tempo para uma empresa descobrir que a política de reembolso, o tom de voz e o “jeito certo de pedir exceção” estavam no snapshot. É o equivalente a alugar um gerador, gravar o procedimento de segurança na carcaça dele e, no dia da devolução, perceber que o procedimento foi embora junto. O fornecedor avisou. O contrato de aluguel sempre avisou. Quem errou foi quem tratou o número de série como arquivo morto da firma.</p>
-      <p>Por isso a frase desta aula não é “não use modelos de fronteira”. É: o nome físico é configuração. Fato canônico, regra de negócio e definição de sucesso moram noutro endereço.</p>
-    </div>
 
     <div class="analogy-note">
       <strong>O gerador alugado</strong>
@@ -728,10 +815,10 @@
     </div>
 
     <h2 id="arquitetura"><span class="n">02</span>O modelo mental: três camadas, três relógios</h2>
-    <p>A forma mais simples de separar as responsabilidades é observar o ritmo em que cada uma deveria mudar. Modelos, preços e parâmetros mudam em meses. Políticas de execução e tools amadurecem em trimestres. Conhecimento, decisões e processos acumulam por anos.</p>
+    <p>A forma mais simples de separar responsabilidades é observar o ritmo de cada mudança. Modelos e preços mudam em meses. O modo de executar e as ferramentas amadurecem em trimestres. Conhecimento, decisões e processos acumulam por anos.</p>
     <div class="story">
-      <p>Antes do diagrama, faça o teste do relógio em voz alta. “Vamos trocar o modelo na terça.” Se essa frase também implica reescrever a política de estorno, o relógio do brain foi roubado pelo modelo. “Vamos exigir duas aprovações.” Se isso exige reindexar o Drive, o harness e o brain estão no mesmo fuso. “A política de junho não vale mais.” Se o único jeito de o agent parar de citá-la for um fine-tune, a empresa está tentando gravar validade nos pesos: o endereço mais caro e mais opaco possível.</p>
-      <p>O diagrama abaixo não é um organograma de times. É um mapa de <em>quem absorve a próxima mudança</em>. Leia da esquerda para a direita: o brain escolhe o dossiê; o harness governa a execução; o adapter chama um motor; o eval decide se aquele motor ainda merece a estação.</p>
+      <p>Antes de olhar o diagrama, faça o teste do relógio. Diga em voz alta “vamos trocar o modelo na terça”. Se essa frase também obriga alguém a reescrever a política de estorno, o relógio de meses está puxando o relógio de anos. Agora diga “a política de junho não vale mais”. Se o agente só para de citá-la depois que o modelo for retreinado, a validade de uma regra foi guardada no endereço mais caro e mais lento de corrigir que existe na empresa.</p>
+      <p>O diagrama a seguir não mostra times nem serviços. Ele mostra <em>onde cada mudança deve parar</em>. Da esquerda para a direita, o brain prepara o dossiê, o harness controla a execução, o adapter conversa com o motor e o teste decide se aquele motor merece a estação.</p>
     </div>
 
     <figure>
@@ -746,81 +833,142 @@
         <rect class="node-brain" x="75" y="130" width="210" height="120"/>
         <text class="t" x="180" y="160" text-anchor="middle">COMPANY BRAIN</text>
         <text class="t-small" x="180" y="184" text-anchor="middle">fontes · fatos · processos</text>
-        <text class="t-small" x="180" y="202" text-anchor="middle">validade · ACL · proveniência</text>
+        <text class="t-small" x="180" y="202" text-anchor="middle">validade · acesso · origem</text>
         <text class="t" x="180" y="230" text-anchor="middle">relógio: anos</text>
 
         <rect class="node-harness" x="345" y="105" width="210" height="170"/>
         <text class="t" x="450" y="140" text-anchor="middle">THIN HARNESS</text>
         <text class="t-small" x="450" y="166" text-anchor="middle">tools · limites · estado</text>
-        <text class="t-small" x="450" y="184" text-anchor="middle">auth · traces · outcome</text>
+        <text class="t-small" x="450" y="184" text-anchor="middle">permissão · registro · prova</text>
         <text class="t" x="450" y="215" text-anchor="middle">relógio: trimestres</text>
         <rect class="node-model" x="392" y="230" width="116" height="30"/>
         <text class="t" x="450" y="250" text-anchor="middle">EVAL GATE</text>
 
         <rect class="node-model" x="615" y="130" width="210" height="120"/>
         <text class="t" x="720" y="160" text-anchor="middle">MODELO</text>
-        <text class="t-small" x="720" y="184" text-anchor="middle">capability · custo · latência</text>
-        <text class="t-small" x="720" y="202" text-anchor="middle">routing · adapter · fallback</text>
+        <text class="t-small" x="720" y="184" text-anchor="middle">capacidade · custo · tempo</text>
+        <text class="t-small" x="720" y="202" text-anchor="middle">rota · integração · plano B</text>
         <text class="t" x="720" y="230" text-anchor="middle">relógio: meses</text>
 
         <line class="line" x1="285" y1="190" x2="338" y2="190" marker-end="url(#arrow)"/>
         <line class="line" x1="555" y1="190" x2="608" y2="190" marker-end="url(#arrow)"/>
         <path class="line-soft" d="M720 260 C720 326, 450 330, 450 278" marker-end="url(#arrow)"/>
-        <text class="cap" x="585" y="335" text-anchor="middle">OUTCOME · SEGURANÇA · CUSTO · LATÊNCIA</text>
+        <text class="cap" x="585" y="335" text-anchor="middle">RESULTADO · SEGURANÇA · CUSTO · TEMPO</text>
         <text class="cap" x="450" y="397" text-anchor="middle">O MODELO PASSA. OS CONTRATOS E O CONHECIMENTO FICAM.</text>
       </svg>
-      <div class="mobile-flow" role="img" aria-label="O company brain fornece contexto autorizado ao thin harness, que governa a chamada ao modelo substituível. Evals verificam outcome, segurança, custo e latência.">
+      <div class="mobile-flow" role="img" aria-label="O company brain fornece contexto autorizado ao thin harness, que governa a chamada ao modelo substituível. Evals verificam resultado, segurança, custo e latência.">
         <div class="mobile-node brain">
           <strong>Company brain</strong>
-          <span>Fontes · fatos · processos · validade · ACL · proveniência</span>
+          <span>Fontes · fatos · processos · validade · acesso · origem</span>
           <em>Relógio: anos</em>
         </div>
         <div class="mobile-arrow">↓ contexto pequeno e autorizado</div>
         <div class="mobile-node harness">
           <strong>Thin harness</strong>
-          <span>Tools · limites · estado · auth · traces · outcome</span>
+          <span>Ferramentas · limites · estado · permissão · registro · prova</span>
           <em>Relógio: trimestres</em>
         </div>
-        <div class="mobile-arrow">↓ contrato + adapter</div>
+        <div class="mobile-arrow">↓ contrato + integração</div>
         <div class="mobile-node model">
           <strong>Modelo</strong>
-          <span>Capability · custo · latência · routing · fallback</span>
+          <span>Capacidade · custo · tempo · rota · plano B</span>
           <em>Relógio: meses</em>
         </div>
-        <div class="mobile-return">↺ Eval gate · outcome · segurança · custo · latência</div>
+        <div class="mobile-return">↺ Teste · resultado · segurança · custo · tempo</div>
       </div>
       <figcaption>O contexto entra, o modelo age e o gate fecha a volta.</figcaption>
     </figure>
 
-    <div class="narrative">
+    <div class="story">
       <p class="lead">Os três relógios são uma regra de desenho, não apenas uma metáfora. Quando duas responsabilidades mudam em ritmos muito diferentes, prendê-las no mesmo componente faz a mais rápida arrastar a mais lenta.</p>
-      <p>Se o conhecimento institucional estiver embutido no prompt específico de um modelo, cada troca de modelo ameaça política, memória e linguagem de operação ao mesmo tempo. Se approvals e stop rules estiverem escondidos em documentos recuperados, toda atualização de conteúdo vira uma mudança de controle. O acoplamento aparece como retrabalho porque uma alteração local não consegue permanecer local.</p>
-      <p>Separar não significa isolar as camadas. Elas cooperam por contratos: o brain entrega um pacote de contexto autorizado; o harness concede tools e limites; o adapter traduz a chamada; o modelo propõe ações; o gate observa o outcome. A diferença é que cada camada continua dona de uma espécie de verdade.</p>
+      <p>Se o conhecimento institucional estiver embutido no prompt de um modelo específico, cada troca de motor ameaça ao mesmo tempo a política, a memória e a linguagem da operação. Se as aprovações e as regras de parada estiverem escondidas dentro de documentos recuperados, qualquer atualização de conteúdo passa a ser uma mudança de controle sem que ninguém tenha decidido isso. O acoplamento sempre aparece na forma de retrabalho, porque uma alteração que deveria ser local não consegue permanecer local.</p>
+      <p>Separar não significa isolar. As camadas cooperam por contratos: o brain entrega um pacote de contexto autorizado, o harness concede as ferramentas e os limites dentro dos quais aquele pacote pode ser usado, o adapter traduz a chamada para o formato do fornecedor da vez e o gate observa o que aconteceu no mundo depois que o modelo agiu. O que muda é que cada camada continua dona de um tipo próprio de verdade, e nenhuma precisa hospedar a verdade das outras para funcionar.</p>
     </div>
+
+    <h3 id="conexoes">Como as peças se ligam numa execução</h3>
+    <p>O diagrama dos relógios mostra donos. Este mostra o fio: o que viaja de uma caixa para a outra, e o que não atravessa a costura.</p>
+    <figure>
+      <div class="mermaid-wrap" data-mermaid>
+        <pre class="mermaid">
+flowchart TB
+  subgraph B["Company brain"]
+    direction TB
+    ID["Identidade e missão"]
+    ACL["ACL antes da busca"]
+    SRC["Fontes, fatos, validade"]
+    PACK["Dossiê citável"]
+    BOX["Caixa de revisão"]
+    ID --> ACL --> SRC --> PACK
+  end
+
+  subgraph H["Thin harness"]
+    direction TB
+    CTX["Contexto, tools, limites"]
+    AD["Adapter"]
+    RUN["Execução e registro"]
+    GATE["Gate: resultado, segurança, custo, tempo"]
+    CTX --> AD --> RUN --> GATE
+  end
+
+  subgraph M["Modelo"]
+    THINK["Raciocínio"]
+  end
+
+  subgraph W["Ambiente"]
+    WORLD["Efeito no mundo"]
+  end
+
+  PACK -->|"pacote autorizado"| CTX
+  AD -->|"traduz o contrato"| THINK
+  THINK -->|"pedido de tool"| RUN
+  RUN --> WORLD
+  WORLD -->|"prova"| GATE
+  GATE -->|"candidato"| BOX
+  BOX -.->|"só o aprovado"| SRC
+
+  classDef brain fill:#FFE7DC,stroke:#BD3600,color:#050505,rx:0,ry:0
+  classDef harness fill:#E1F2FF,stroke:#006CAE,color:#050505,rx:0,ry:0
+  classDef model fill:#D1FF00,stroke:#050505,color:#050505,rx:0,ry:0
+  classDef world fill:#E9E9DC,stroke:#050505,color:#050505,rx:0,ry:0
+  class ID,ACL,SRC,PACK,BOX brain
+  class CTX,AD,RUN,GATE harness
+  class THINK model
+  class WORLD world
+        </pre>
+        <p class="mermaid-legend" aria-hidden="true"><span><b class="l-brain"></b>Brain</span><span><b class="l-harness"></b>Harness</span><span><b class="l-model"></b>Modelo</span><span><b class="l-world"></b>Ambiente</span></p>
+        <ol class="mermaid-fallback">
+          <li>Identidade e missão entram no brain. ACL decide o que pode ser buscado.</li>
+          <li>O brain monta um dossiê curto e citável. Isso vai ao harness, não ao modelo cru.</li>
+          <li>O harness junta contexto, tools e limites. O adapter só traduz o contrato.</li>
+          <li>O modelo raciocina e pede tools. O harness executa e registra.</li>
+          <li>O ambiente devolve o efeito. O gate mede resultado, segurança, custo e tempo.</li>
+          <li>O que volta ao brain é candidato. Só o aprovado altera fontes, fatos ou processos.</li>
+        </ol>
+      </div>
+      <figcaption>Traço cheio: o run. Traço pontilhado: aprendizado com freio.</figcaption>
+    </figure>
 
     <div class="ownership-map" aria-label="Mapa de responsabilidade das três camadas">
       <article class="ownership-card model">
         <strong>Modelo substituível</strong>
-        <p class="question">Qual motor tem fitness para esta classe de tarefa?</p>
+        <p class="question">Qual motor funciona melhor para este tipo de tarefa?</p>
         <p class="not-owner"><b>Não possui:</b> fatos canônicos, autoridade ou definição de sucesso.</p>
       </article>
       <article class="ownership-card harness">
         <strong>Thin harness</strong>
         <p class="question">Como o run começa, age, para e prova o resultado?</p>
-        <p class="not-owner"><b>Não possui:</b> uma cópia do negócio ou inteligência paralela permanente.</p>
+        <p class="not-owner"><b>Não possui:</b> uma cópia das regras do negócio nem outro “cérebro” escondido.</p>
       </article>
       <article class="ownership-card brain">
         <strong>Company brain</strong>
         <p class="question">Que conhecimento vigente pode chegar à execução?</p>
-        <p class="not-owner"><b>Não possui:</b> um depósito único tratado como oráculo.</p>
+        <p class="not-owner"><b>Não possui:</b> um depósito bruto tratado como verdade automática.</p>
       </article>
     </div>
 
-    <div class="narrative">
-      <p>Uma maneira prática de encontrar o dono é perguntar o que precisa continuar correto quando outra camada muda. Troque o modelo: a regra de reembolso deve continuar verdadeira. Atualize a regra: a autorização para efetuar pagamentos deve continuar funcionando. Mude o fluxo de aprovação: o histórico das decisões não pode desaparecer. Aquilo que precisa sobreviver à mudança provavelmente pertence a outra fronteira.</p>
-    </div>
     <div class="story">
-      <p>Três pessoas na mesma reunião, três relógios na mesa. A de operações quer um motor mais barato até sexta. A de risco quer duas assinaturas a partir de segunda. A de compliance quer que a política de junho continue auditável daqui a três anos. Se as três demandas caírem no mesmo arquivo (o prompt do snapshot) a reunião vira um cabo de guerra: cada vitória de uma apaga o relógio das outras. Quando cada uma leva a demanda para a sua camada, a reunião fica prosaica. Troca-se o alias. Versiona-se a política. Ajusta-se o workflow. Ninguém precisa “vencer” o temporário para preservar a empresa.</p>
+      <p>Uma maneira prática de encontrar o dono é perguntar o que precisa continuar correto quando outra camada muda. Troque o modelo: a regra de reembolso deve continuar verdadeira. Atualize a regra: a autorização para pagar deve continuar funcionando. Mude o fluxo de aprovação: o histórico das decisões não pode desaparecer. O que precisa sobreviver à mudança provavelmente pertence a outra fronteira.</p>
+      <p>Três pessoas na mesma reunião, três relógios na mesa. Operações quer um motor mais barato até sexta. Risco quer duas assinaturas a partir de segunda. Compliance quer que a política de junho continue auditável daqui a três anos. Se as três demandas caírem no mesmo arquivo, em geral o prompt colado ao snapshot, a reunião vira cabo de guerra. Quando cada demanda vai para a sua camada, a mesma reunião fica prosaica: troca-se o alias, versiona-se a política, ajusta-se o fluxo. Ninguém precisa vencer o temporário para preservar a empresa.</p>
     </div>
 
     <h3>Analogia mestra: uma fábrica que troca o motor sem perder a fábrica</h3>
@@ -832,24 +980,16 @@
         <tr><th>Na fábrica</th><th>Na arquitetura</th><th>Por que existe</th></tr>
       </thead>
       <tbody>
-        <tr><td>Motor da estação</td><td>Modelo</td><td>Fornece capacidade para um workload delimitado.</td></tr>
+        <tr><td>Motor da estação</td><td>Modelo</td><td>Fornece capacidade para um tipo de tarefa bem definido.</td></tr>
         <tr><td>Eixo e acoplamento</td><td>Adapter</td><td>Faz a interface física encaixar, e só isso.</td></tr>
         <tr><td>Painel, sensores, intertravamentos</td><td>Thin harness</td><td>Controla partida, parada, autoridade, limites e prova.</td></tr>
         <tr><td>Desenhos, tolerâncias, SOPs, histórico</td><td>Company brain</td><td>Preserva o conhecimento que define o trabalho correto.</td></tr>
         <tr><td>Teste de aceitação</td><td>Eval</td><td>Prova que aquele motor executa <em>aquela</em> estação.</td></tr>
-        <tr><td>Giro desacoplado</td><td>Shadow</td><td>Observa o candidato sem deixar peça sair da linha.</td></tr>
-        <tr><td>Uma estação em baixo volume</td><td>Canary</td><td>Limita o dano enquanto mede a operação real.</td></tr>
-        <tr><td>Chave seletora do motor anterior</td><td>Rollback</td><td>Preserva a opção de voltar sem reconstruir a fábrica.</td></tr>
+        <tr><td>Giro sem carga</td><td>Shadow (sombra)</td><td>Observa o candidato sem deixar peça sair da linha.</td></tr>
+        <tr><td>Uma estação em baixo volume</td><td>Canary (piloto)</td><td>Limita o dano enquanto mede a operação real.</td></tr>
+        <tr><td>Chave do motor anterior</td><td>Rollback (volta)</td><td>Preserva a opção de voltar sem reconstruir a fábrica.</td></tr>
       </tbody>
     </table>
-
-    <div class="factory-map" aria-label="Analogia entre uma fábrica e a arquitetura de três camadas">
-      <article class="factory-part"><span class="physical">desenhos · SOPs</span><strong>Company brain</strong><p>Define material, tolerância, versão e histórico do trabalho.</p></article>
-      <article class="factory-part"><span class="physical">painel · sensores</span><strong>Thin harness</strong><p>Controla partida, parada, limites, intertravamentos e prova.</p></article>
-      <article class="factory-part"><span class="physical">eixo · acoplamento</span><strong>Adapter</strong><p>Faz a interface encaixar sem afirmar que o desempenho é igual.</p></article>
-      <article class="factory-part"><span class="physical">motor A ou B</span><strong>Modelo</strong><p>Fornece capacidade para uma estação e pode ser trocado.</p></article>
-      <article class="factory-part"><span class="physical">teste da peça</span><strong>Eval gate</strong><p>Mede tolerância, falha, custo, tempo e segurança.</p></article>
-    </div>
 
     <div class="analogy-note">
       <strong>Onde a analogia ensina</strong>
@@ -858,43 +998,37 @@
 
     <div class="warning">
       <strong>Onde a analogia termina</strong>
-      LLMs são mais variáveis que motores. Uma execução boa não basta: evals precisam de múltiplos trials, slices e observação de trajetória.
+      LLMs são mais variáveis que motores. Uma execução boa não basta: o teste precisa se repetir, separar tipos de caso e observar o caminho usado até a resposta.
     </div>
 
-    <div class="narrative">
-      <p>O ponto mais importante da fábrica é o teste da peça. Um eixo compatível só prova que o motor encaixa; não prova que a linha continua produzindo dentro da tolerância. Em sistemas agentic, a interface comum cumpre o papel do eixo. Ela reduz o custo mecânico da troca, mas é o conjunto de evals que demonstra se qualidade, segurança, latência e custo permanecem aceitáveis.</p>
-      <p>Também por isso “modelo melhor” não autoriza remover o painel de controle. Um motor mais eficiente pode dispensar uma compensação mecânica antiga, mas não torna supérfluo o botão de emergência. Modelos mais capazes podem eliminar scaffolding cognitivo; não eliminam autenticação, limites financeiros, idempotência ou verificação do estado real.</p>
-    </div>
-
-    <h2><span class="n">03</span>Camada 1: o modelo é substituível por workload</h2>
-    <p>“Substituível” não significa que todos os modelos são iguais. Significa que um candidato pode ocupar <em>um papel delimitado</em> depois de passar por um gate representativo. A unidade de substituição não é “o sistema inteiro”; é uma classe de tarefa.</p>
     <div class="story">
-      <p>Na fábrica, ninguém promove um motor “para a empresa inteira”. Promove-se o motor da estação de rebarba, ou o da estação de solda. O mesmo bloco pode passar no teste de rebarba e falhar no de solda: torque suficiente para uma, vibração inaceitável para a outra. Declarar o motor “o melhor do catálogo” é o equivalente a ler o leaderboard e copiar o alias para todas as rotas.</p>
-      <p>Por isso o nome interno da rota não é <code>gpt-x</code>. É <code>bulk-mecanico</code>, <code>review-seguranca</code>, <code>research-grounded</code>. O identificador físico mora na configuração. O papel mora no contrato: tools, schema, idioma, latência, custo, segurança, fallback.</p>
+      <p>O ponto mais importante da fábrica é o teste da peça. Um eixo compatível só prova que o motor encaixa; não prova que a linha continua produzindo dentro da tolerância. Em sistemas agentic, a interface comum cumpre o papel do eixo. Ela reduz o custo mecânico da troca, mas é o conjunto de evals que demonstra se qualidade, segurança, latência e custo permanecem aceitáveis.</p>
+      <p>Também por isso “modelo melhor” não autoriza remover o painel de controle. Um motor mais eficiente pode dispensar uma compensação mecânica antiga, mas não torna supérfluo o botão de emergência. Modelos mais capazes podem eliminar andaimes cognitivos; não eliminam autenticação, limites financeiros, idempotência ou verificação do estado real.</p>
     </div>
 
-    <div class="narrative">
-      <p class="lead">A palavra <em>substituível</em> descreve uma opção operacional, não uma crença de que todos os modelos se equivalem. Você possui essa opção apenas quando consegue apresentar outro candidato ao mesmo contrato, medir o trabalho real e voltar ao anterior se o resultado piorar.</p>
-      <p>Isso desloca a conversa de marca para função. Um modelo pode ser excelente ao resumir milhares de tickets e inadequado para revisar permissões. Outro pode raciocinar melhor, mas não sustentar o schema exigido por uma tool. A empresa não precisa transformar essas diferenças numa escolha total. Ela precisa definir rotas suficientemente estreitas para que cada diferença se torne mensurável.</p>
+    <h2><span class="n">03</span>Camada 1: o modelo é substituível por tipo de tarefa</h2>
+    <p>“Substituível” não significa que todos os modelos são iguais. Significa que um candidato pode assumir <em>um papel bem definido</em> depois de passar por um teste parecido com o trabalho real. A troca não acontece no sistema inteiro de uma vez. Acontece tarefa por tarefa.</p>
+    <div class="story">
+      <p>Na fábrica, ninguém promove um motor “para a empresa inteira”. Promove-se o da rebarba ou o da solda. O mesmo bloco pode passar num teste e falhar no outro. Declarar o motor “o melhor do catálogo” é ler o ranking e copiar o alias para todas as rotas. Por isso o nome interno da rota não é <code>gpt-x</code>. É <code>bulk-mecanico</code>, <code>review-seguranca</code> ou <code>research-grounded</code>. O nome do modelo fica na configuração. A conversa sai da marca e vai para a função: rotas estreitas o bastante para que cada diferença se torne mensurável.</p>
     </div>
 
     <h3>Declare o papel antes do modelo</h3>
-    <p>Em vez de espalhar um identificador físico pela aplicação, dê um nome ao papel: <code>bulk-mecanico</code>, <code>review-seguranca</code>, <code>research-grounded</code>. Para cada papel, declare tool calling, structured output, modalidades, idioma, latência, custo, segurança e fallback.</p>
+    <p>Em vez de espalhar o nome de um modelo pela aplicação, dê nome ao papel: <code>bulk-mecanico</code>, <code>review-seguranca</code>, <code>research-grounded</code>. Para cada papel, registre ferramentas necessárias, formato da resposta, idioma, limite de tempo e custo, regras de segurança e plano B.</p>
 
     <div class="example-list">
-      <div class="example"><strong>Bulk mecânico</strong><p>Um modelo barato preserva o pass rate em renames e formatação. Ele pode assumir essa rota atrás do mesmo contrato.</p></div>
+      <div class="example"><strong>Bulk mecânico</strong><p>Um modelo barato mantém a taxa de acerto em renames e formatação. Ele pode assumir essa rota usando o mesmo contrato.</p></div>
       <div class="example"><strong>Review crítico</strong><p>O mesmo modelo falha ao revisar permissões. A rota permanece num modelo mais forte e num reviewer independente.</p></div>
       <div class="example"><strong>Decisão</strong><p>O sistema não “escolhe uma marca”. Ele classifica a tarefa, consulta a política de routing e mede o resultado.</p></div>
     </div>
 
-    <div class="narrative">
+    <div class="story">
       <p>O contrato da rota funciona como uma descrição de vaga. Ele declara o trabalho, as ferramentas necessárias, o formato de entrega, os limites de custo e os riscos que vetam contratação. O nome físico do modelo é quem ocupa a vaga naquele momento. Quando a descrição e a pessoa se confundem, substituir exige reescrever o cargo; quando estão separadas, candidatos diferentes podem ser avaliados pelo mesmo trabalho.</p>
-      <p>Essa separação também impede uma armadilha comum: escolher primeiro o modelo que está no topo de um leaderboard e depois adaptar todos os problemas ao perfil dele. O movimento correto é inverso. Primeiro se define o outcome da rota e sua tolerância a falhas; depois se procura o menor candidato que satisfaz o gate.</p>
+      <p>Essa separação também impede uma armadilha comum: escolher primeiro o modelo que está no topo de um ranking e depois adaptar todos os problemas ao perfil dele. O movimento correto é o inverso. Primeiro se define o resultado esperado da rota e sua tolerância a falhas; depois se procura o menor candidato que satisfaz o gate.</p>
     </div>
 
     <div class="warning">
       <strong>Adapter não é equivalência</strong>
-      Uma API comum normaliza payloads, respostas e erros. Ela não garante a mesma escolha de tool, atenção, segurança ou estabilidade. <strong>Adapter prova forma; eval prova comportamento.</strong> O <a href="https://arxiv.org/abs/2406.18665">RouteLLM</a> mostra que routing pode economizar muito, e que routers desalinhados com o workload podem ficar próximos do aleatório.
+      Uma API comum faz pedidos e respostas terem o mesmo formato. Ela não garante a mesma escolha de ferramenta, atenção, segurança ou estabilidade. <strong>Adapter prova encaixe; eval prova comportamento.</strong> O <a href="https://arxiv.org/abs/2406.18665">RouteLLM</a> mostra que escolher modelos por rota pode economizar muito, e mostra também que uma rota treinada para o problema errado passa a escolher quase ao acaso.
     </div>
 
     <div class="analogy-note">
@@ -903,33 +1037,33 @@
     </div>
 
     <h3>A escada da portabilidade</h3>
-    <p>Portabilidade não é um selo binário. Ela amadurece da separação mecânica até a capacidade de trocar em produção e voltar atrás. O erro mais caro desta escada é chegar ao primeiro degrau (o adapter) e anunciar no Slack: “somos agnósticos”. Agnosticismo de plugue não é agnosticismo de peça.</p>
+    <p>Portabilidade não é uma resposta de sim ou não. Ela amadurece em degraus, do simples encaixe mecânico até a capacidade de trocar em produção e voltar atrás no mesmo dia. O erro mais caro é subir o primeiro degrau, o adapter, e já anunciar que a empresa é agnóstica de modelo. Fazer o plugue caber não prova que a máquina trabalha bem.</p>
     <div class="story">
       <p>Pense num soquete versus solda. Soldar o motor na bancada (nível 0) torna cada troca uma reforma. Colocar um soquete (nível 1) deixa o próximo motor entrar sem furar a mesa. Declarar a tensão, a rotação e o fallback (nível 2) impede de plugar um motor de brinquedo numa prensa. O ensaio sob carga (nível 3) prova a peça. O primeiro turno supervisionado, com a chave do motor antigo na mão (nível 4), prova a operação. Parar no soquete e chamar isso de “multi-cloud de modelos” é teatro de tomada.</p>
     </div>
 
     <ol class="portability-road" aria-label="Escada da portabilidade em cinco níveis">
-      <li class="portability-step"><span class="level">0 · soldado</span><strong>ID físico espalhado</strong><span>Trocar exige refactor.</span></li>
+      <li class="portability-step"><span class="level">0 · soldado</span><strong>ID físico espalhado</strong><span>Trocar exige reescrever o código.</span></li>
       <li class="portability-step"><span class="level">1 · adapter</span><strong>Forma normalizada</strong><span>Payload, resposta e erro.</span></li>
-      <li class="portability-step"><span class="level">2 · capability</span><strong>Rota declarada</strong><span>Tools, schema, limites e fallback.</span></li>
-      <li class="portability-step"><span class="level">3 · eval</span><strong>Fitness provado</strong><span>Workload, thresholds e trials.</span></li>
-      <li class="portability-step"><span class="level">4 · operação</span><strong>Troca reversível</strong><span>Shadow, canary, telemetria e rollback.</span></li>
+      <li class="portability-step"><span class="level">2 · requisitos</span><strong>Rota declarada</strong><span>Ferramentas, formato, limites e plano B.</span></li>
+      <li class="portability-step"><span class="level">3 · teste</span><strong>Desempenho provado</strong><span>Casos reais, limites e repetições.</span></li>
+      <li class="portability-step"><span class="level">4 · operação</span><strong>Troca reversível</strong><span>Sombra, piloto, observação e volta segura.</span></li>
     </ol>
 
-    <div class="narrative">
-      <p>Os níveis explicam por que muitas arquiteturas se dizem agnósticas cedo demais. No nível do adapter, duas chamadas possuem a mesma forma; ainda não sabemos se produzem o mesmo comportamento. No nível de capability, sabemos que o candidato parece elegível; ainda não sabemos como reage aos casos difíceis. O eval offline testa fitness, mas só shadow e canary revelam efeitos de tráfego, latência, distribuição e ambiente real.</p>
+    <div class="story">
+      <p>Os níveis explicam por que muitas arquiteturas se dizem agnósticas cedo demais. No nível do adapter, duas chamadas possuem a mesma forma; ainda não sabemos se produzem o mesmo comportamento. No nível de capacidade, sabemos que o candidato parece elegível; ainda não sabemos como reage aos casos difíceis. O eval offline testa aptidão, mas só shadow e canary revelam efeitos de tráfego, latência, distribuição e ambiente real.</p>
       <p>A maturidade não está em eliminar toda dependência de fornecedor. Está em saber onde ela existe, o que ela compra e como será testada na saída. Uma extensão proprietária pode valer muito. O risco começa quando o sistema depende dela sem registrar essa dívida e sem distinguir a parte portátil da parte específica.</p>
     </div>
 
     <h3>O mesmo candidato pode passar numa rota e falhar em outra</h3>
-    <p>Simulação didática: os números ilustram a estrutura do gate, não resultados de um provider real.</p>
+    <p>Simulação didática: os números ilustram a estrutura do gate, não resultados de um fornecedor real.</p>
 
     <div class="verdict-grid" aria-label="Dois vereditos para o mesmo modelo candidato">
       <article class="verdict pass">
         <header><small>rota 1</small><strong>Bulk mecânico</strong></header>
         <dl>
-          <dt>Threshold</dt><dd>≥ 94%</dd>
-          <dt>Baseline</dt><dd>96/100</dd>
+          <dt>Limiar</dt><dd>≥ 94%</dd>
+          <dt>Referência</dt><dd>96/100</dd>
           <dt>Candidato</dt><dd>95/100</dd>
           <dt>Custo / 100 runs</dt><dd>US$ 14 → 4</dd>
           <dt>p95</dt><dd>10,8 s → 6,2 s</dd>
@@ -939,8 +1073,8 @@
       <article class="verdict fail">
         <header><small>rota 2</small><strong>Review de segurança</strong></header>
         <dl>
-          <dt>Threshold crítico</dt><dd>≥ 95%</dd>
-          <dt>Baseline</dt><dd>29/30</dd>
+          <dt>Limiar crítico</dt><dd>≥ 95%</dd>
+          <dt>Referência</dt><dd>29/30</dd>
           <dt>Candidato</dt><dd>26/30</dd>
           <dt>Custo / 100 runs</dt><dd>US$ 18 → 6</dd>
           <dt>p95</dt><dd>14,1 s → 8,4 s</dd>
@@ -949,21 +1083,17 @@
       </article>
     </div>
 
-    <p>Uma média global esconderia quatro riscos críticos não detectados. Segurança é veto; custo e latência só escolhem entre candidatos que já passaram.</p>
+    <p>Uma média global esconderia os quatro riscos críticos. Segurança funciona como veto, e custo e velocidade só entram na conversa para desempatar candidatos que já passaram no teste.</p>
     <div class="story">
-      <p>Conte a história em voz de chão de fábrica. O mesmo motor B passou no ensaio da estação de rebarba: 95 peças em 100 dentro da tolerância, mais barato, mais rápido. Na estação de solda, a que não pode soltar uma junta crítica, ele deixou passar quatro falhas que o motor A pegava. Ninguém “tira a média das duas estações”. Ninguém “compensa” a junta ruim com a economia da rebarba. Você promove B onde o gate passou e mantém A onde o gate é veto. Isso não é indecisão. É a unidade correta de decisão: o workload.</p>
+      <p>O mesmo motor B passou na rebarba, com 95 peças em 100 dentro da tolerância, por menos dinheiro e em menos tempo. Na solda, deixou passar quatro falhas críticas que o motor A detectava. Ninguém compensa uma junta ruim com a economia da rebarba. B entra onde passou; A permanece onde a falha é veto. Manter dois motores não é indecisão: é decidir por tipo de tarefa.</p>
+      <p>O candidato não recebeu uma nota única, e uma média agregada apagaria exatamente o que importa. Somados, 95 acertos mecânicos e quatro vulnerabilidades ainda produzem um número competitivo, porque a média não sabe que cada tipo de erro pesa diferente. Limiares e vetos existem para escrever essa assimetria <em>antes</em> do teste, enquanto ninguém está olhando para o preço. Definidos depois do resultado, eles acabam moldados pelo candidato mais barato.</p>
     </div>
 
-    <div class="narrative">
-      <p>Observe que o candidato não recebeu uma nota única. Ele foi promovido em bulk e rejeitado em segurança. Essa é a consequência prática de avaliar por workload: o sistema pode aproveitar a economia onde a distribuição de falhas é aceitável sem transportar o mesmo risco para uma rota crítica.</p>
-      <p>Uma média agregada apagaria exatamente o que importa. Se o candidato executa 95 tarefas mecânicas e deixa passar quatro vulnerabilidades críticas, o número global pode parecer competitivo. Mas, naquela rota, cada falso negativo tem um peso operacional diferente. Thresholds e vetos precisam expressar essa assimetria antes do teste, para que custo menor não seduza a equipe depois do resultado.</p>
-    </div>
-
-    <p class="cite">O <a href="https://arxiv.org/abs/2406.18665">RouteLLM</a> reportou economia superior a 2× em alguns testes sem perda substancial de qualidade. Também mostrou que dados de routing desalinhados com o workload podem degradar a escolha.</p>
+    <p class="cite">O <a href="https://arxiv.org/abs/2406.18665">RouteLLM</a> reportou economia superior a 2× em alguns testes sem perda substancial de qualidade. Também mostrou que dados de roteamento desalinhados com o tipo de trabalho podem degradar a escolha.</p>
 
     <div class="fact">
       <strong>Lock-in consciente</strong>
-      O menor denominador comum também aprisiona: pode amputar reasoning controls, cache, citações, computer use ou structured output nativo. Separe núcleo portátil, extensões opcionais, veto de promoção e dívida de saída. Uma capability exclusiva pode justificar lock-in; o problema é ele permanecer invisível.
+      Usar apenas o que todos os fornecedores oferecem também limita: você pode perder controles de raciocínio, cache, citações, uso do computador ou saída estruturada nativa. Separe o núcleo portátil das extensões opcionais e registre o custo de sair. Uma capacidade exclusiva pode justificar dependência; o problema é descobrir essa dependência tarde demais.
     </div>
     <div class="analogy-note">
       <strong>A ferramenta que só encaixa numa marca</strong>
@@ -971,41 +1101,36 @@
     </div>
 
     <h2><span class="n">04</span>Camada 2: thin harness não significa harness frágil</h2>
-    <p>O harness é o plano de controle. Ele deve ser fino nas suposições sobre aquilo que o modelo “não consegue fazer”, porque essas suposições envelhecem. Mas precisa ser firme nos invariantes que não podem depender de comportamento probabilístico.</p>
+    <p>O harness é o painel de controle. Ele deve carregar poucas regras criadas apenas para compensar aquilo que o modelo antigo “não conseguia fazer”, porque essas limitações envelhecem. Ao mesmo tempo, precisa ser firme no que não pode depender da boa vontade do modelo: acesso, dinheiro, parada e prova.</p>
     <div class="story">
-      <p>Volte à fábrica. Há dois tipos de “espessura” no painel. A primeira é a lista amarelada que alguém colou quando o motor antigo “sempre pulava o passo 7”: decomposição rígida, parser extra, prompt de 12 páginas para compensar retrieval ruim. Quando o motor novo já faz o passo 7 sozinho, essa lista deixa de ser segurança e passa a ser atrito: o operador lê 12 páginas e ainda assim erra o que importa. A segunda espessura é o intertravamento: sem sensor de presença, a prensa não arma. Essa não sai porque o motor ficou mais esperto. Sairia só se a física da prensa mudasse.</p>
-      <p>“Thin” é o nome da disciplina que distingue as duas listas. Não é o nome de um repositório pequeno.</p>
-    </div>
-
-    <div class="narrative">
-      <p class="lead">O harness existe para transformar capacidade probabilística em operação governada. Ele monta o contexto de trabalho, oferece tools, mantém estado, aplica limites, registra a trajetória e verifica se o efeito realmente aconteceu.</p>
-      <p>O adjetivo <em>thin</em> não reduz essa responsabilidade. Ele separa dois tipos de estrutura que costumam ser confundidos. O primeiro é scaffolding cognitivo: instruções, decomposições e correções criadas para ajudar um modelo a raciocinar. O segundo é controle operacional: permissões, orçamento, idempotência, aprovação e rollback. O primeiro deve disputar continuamente seu lugar; o segundo permanece enquanto o risco existir.</p>
+      <p class="lead">O harness existe para transformar capacidade probabilística em operação governada. Ele monta o contexto, oferece tools, mantém estado, aplica limites, registra a trajetória e verifica se o efeito realmente aconteceu.</p>
+      <p>Há dois tipos de espessura no painel. A primeira é a lista amarelada que alguém colou quando o motor antigo “sempre pulava o passo 7”: sequência rígida, parser extra, prompt de doze páginas para compensar uma busca ruim. Quando o motor novo já faz o passo 7 sozinho, a lista vira atrito. A segunda é a trava: sem o sensor de presença, a prensa não arma. Essa não sai porque o motor ficou mais esperto. Só sai se o risco deixar de existir. <em>Thin</em> é o nome da disciplina que distingue as duas listas, não o nome de um repositório pequeno. Instruções criadas para ajudar o modelo a raciocinar disputam o próprio lugar. Permissão, orçamento, idempotência, aprovação e volta segura permanecem enquanto o risco existir.</p>
     </div>
 
     <div class="trim-keep" aria-label="O que pode sair e o que deve permanecer no harness">
       <div class="trim">
         <h3>Pode sair quando a evidência permitir</h3>
         <ul>
-          <li>decomposição rígida que o modelo já executa;</li>
-          <li>parser redundante diante de structured output;</li>
-          <li>prompt enorme que compensava retrieval ruim;</li>
-          <li>evaluator sem relação com o outcome.</li>
+          <li>sequência rígida que o modelo já faz sozinho;</li>
+          <li>parser repetido quando a saída já vem estruturada;</li>
+          <li>prompt enorme que compensava uma busca ruim;</li>
+          <li>avaliação que não mede o resultado real.</li>
         </ul>
       </div>
       <div class="keep">
         <h3>Permanece como invariante</h3>
         <ul>
           <li>contrato de entrada, saída e erro;</li>
-          <li>auth, ACL, aprovação e least privilege;</li>
-          <li>budget, timeout, stop rule e kill switch;</li>
-          <li>trace, idempotência, outcome e rollback.</li>
+          <li>identidade, acesso, aprovação e permissão mínima;</li>
+          <li>orçamento, tempo máximo, regra de parada e botão de emergência;</li>
+          <li>registro, ação sem duplicação, prova do resultado e volta segura.</li>
         </ul>
       </div>
     </div>
 
-    <p>A <a href="https://www.anthropic.com/engineering/harness-design-long-running-apps">Anthropic</a> documentou esse envelhecimento: componentes do harness codificavam limites de modelos anteriores; modelos mais novos permitiram remover parte do scaffolding. O aprendizado não é “remova controles”. É testar quais hipóteses ainda são verdadeiras.</p>
+    <p>A <a href="https://www.anthropic.com/engineering/harness-design-long-running-apps">Anthropic</a> documentou esse envelhecimento: partes do harness compensavam limites de modelos anteriores; modelos mais novos permitiram retirar vários desses apoios. A lição não é “remova controles”. É testar quais compensações ainda fazem diferença.</p>
 
-    <div class="narrative">
+    <div class="story">
       <p>Essa distinção explica por que contar linhas de código é uma métrica fraca. Um harness pode ter bastante código porque reconcilia transações, registra traces e protege efeitos irreversíveis, e ainda assim ser fino. Outro pode ter poucas linhas, mas carregar um prompt monolítico que mistura política, memória, estratégia de raciocínio e formatação específica de provider. O segundo é menor no arquivo e mais espesso na arquitetura.</p>
     </div>
 
@@ -1013,14 +1138,18 @@
     <p>Em julho de 2026, Boris Cherny, criador do Claude Code, descreveu a manutenção do próprio harness. A frase existe, mas costuma circular sem o método que vem depois.</p>
 
     <div class="ablation-quote">
-      <blockquote lang="en">“Every six months, delete your CLAUDE.md. Delete your skills. Delete your hooks. See what the model does.”</blockquote>
+      <blockquote>
+        <p class="quote-original" lang="en">“Every six months, delete your CLAUDE.md. Delete your skills. Delete your hooks. See what the model does.”</p>
+        <p class="quote-translation" lang="pt-BR"><span>Tradução livre</span>“A cada seis meses, apague o seu CLAUDE.md. Apague suas skills. Apague seus hooks. Veja o que o modelo faz.”</p>
+      </blockquote>
       <p class="quote-source">Boris Cherny · <a href="https://www.youtube.com/watch?v=qyPCVqFUyDo&t=412s">Y Combinator, 06:52</a></p>
-      <div class="ablation-badge"><span>o verbo técnico é</span><strong>ablar</strong><small>retirar, medir e devolver apenas o que prova efeito</small></div>
+      <div class="ablation-badge"><span>o nome técnico é</span><strong>ablação</strong><small>retirar, medir e devolver apenas o que prova efeito</small></div>
     </div>
 
-    <p>Na mesma resposta, Cherny explica que a equipe remove o system prompt e o recompõe linha por linha. Uma instrução volta quando o modelo tropeça repetidamente sem ela. Portanto, “apagar” não significa perder o conhecimento: significa testar se a compensação escrita para o modelo anterior ainda é necessária.</p>
+    <p>Na mesma resposta, Cherny explica que a equipe remove o system prompt e o recompõe linha por linha. Uma instrução volta quando o modelo erra repetidamente sem ela. Portanto, “apagar” não significa perder conhecimento. Significa testar se uma compensação escrita para o modelo anterior ainda ajuda.</p>
     <div class="story">
-      <p>A analogia caseira é a receita da avó. Ao longo dos anos alguém foi acrescentando “mais um fio de azeite”, “não esquece de tampar”, “no fogão antigo era preciso 40 minutos”. Um dia você troca o fogão. Se jogar o caderno no lixo, perde o sal que a comida realmente precisa. Se recusar tocar no caderno, o prato novo fica pesado de instruções que compensavam o fogão velho. Ablação é o jantar controlado: tira <em>uma família</em> de notas, cozinha o mesmo prato várias vezes, devolve só o que o paladar e o convidado sentiu faltar. O rollback é a fotocópia do caderno na gaveta. Sem fotocópia, “apagar” é amnésia. Com fotocópia e métrica, é ciência de cozinha.</p>
+      <p>A analogia caseira é a receita da avó. Ao longo dos anos alguém acrescentou “mais um fio de azeite”, “não esquece de tampar”, “no fogão antigo eram 40 minutos”. Um dia você troca o fogão. Jogar o caderno fora elimina instruções inúteis, mas também pode levar junto o sal que ainda faz falta. Preservar tudo mantém correções para um fogão que já não existe.</p>
+      <p>Ablação é o jantar controlado: tire <em>um grupo</em> de notas, cozinhe o mesmo prato várias vezes e devolva apenas o que fez falta. A volta segura é a fotocópia do caderno na gaveta. Sem cópia, apagar é amnésia. Com cópia e medida, é experimento.</p>
     </div>
 
     <div class="warning">
@@ -1032,13 +1161,13 @@
       <li><strong>Versione</strong>Preserve a configuração atual e o rollback.</li>
       <li><strong>Retire</strong>Remova uma família de regras ou tools por vez.</li>
       <li><strong>Execute</strong>Use tarefas reais, retidas e repetidas.</li>
-      <li><strong>Compare</strong>Meça outcome, trajetória, risco, tokens e custo.</li>
+      <li><strong>Compare</strong>Meça resultado, trajetória, risco, tokens e custo.</li>
       <li><strong>Reintroduza</strong>Só o que corrige falha recorrente.</li>
     </ol>
 
-    <div class="narrative">
+    <div class="story">
       <p>Arquivos como <code>CLAUDE.md</code> e <code>AGENTS.md</code> crescem por sedimentação. Uma falha acontece, alguém acrescenta uma regra, o modelo muda, o incidente é esquecido e a regra continua sendo enviada para toda tarefa. Depois de muitos ciclos, o arquivo deixa de ser um conjunto de requisitos atuais e vira o registro arqueológico de tudo que um modelo anterior já fez errado.</p>
-      <p>Por isso a cadência de seis meses é melhor entendida como um gatilho de manutenção do que como uma lei do calendário. O objetivo não é obter um arquivo vazio. É renovar o ônus da prova: fatos não inferíveis e constraints úteis permanecem; workarounds antigos voltam apenas quando uma tarefa representativa demonstra que ainda compram qualidade, segurança ou eficiência.</p>
+      <p>Por isso a cadência de seis meses é melhor entendida como um gatilho de manutenção do que como uma lei do calendário. O objetivo não é obter um arquivo vazio. É renovar o ônus da prova: fatos não inferíveis e restrições úteis permanecem; compensações antigas voltam apenas quando uma tarefa representativa demonstra que ainda compram qualidade, segurança ou eficiência.</p>
       <p>A ablação também precisa ser reversível. Se a equipe apaga tudo e troca o modelo no mesmo experimento, não consegue atribuir a melhora ou a regressão a nenhuma causa. Versionar, retirar uma família por vez e comparar trajetórias pareadas transforma faxina de prompt em engenharia.</p>
     </div>
 
@@ -1052,7 +1181,7 @@
       <div><strong>−41–66%</strong><span>tokens totais</span></div>
       <div><strong>−33–67%</strong><span>custo</span></div>
     </div>
-    <p class="cite">Fonte: <a href="https://developers.openai.com/api/docs/guides/latest-model#favor-leaner-prompts">OpenAI: Favor leaner prompts</a>. O efeito precisa ser revalidado no seu modelo, prompt e workload.</p>
+    <p class="cite">Fonte: <a href="https://developers.openai.com/api/docs/guides/latest-model#favor-leaner-prompts">OpenAI: Favor leaner prompts</a>. O efeito precisa ser revalidado no seu modelo, prompt e tipo de trabalho.</p>
 
     <h3>Mas o arquivo de instrução também pode ajudar</h3>
     <div class="evidence-duel" aria-label="Dois estudos com resultados diferentes sobre arquivos AGENTS.md">
@@ -1060,29 +1189,30 @@
       <article><span class="result">−28,64% runtime</span><strong>124 PRs · 10 repositórios</strong><p>Outro <a href="https://arxiv.org/abs/2601.20404">estudo de AGENTS.md</a> associou instruções a menos runtime mediano e 16,58% menos output tokens, com conclusão comparável.</p></article>
     </div>
 
-    <p>Os resultados não se anulam; eles impedem o dogma. Um arquivo relevante pode poupar exploração. Um arquivo redundante pode mandar o agente reler, testar e navegar sem melhorar o outcome. A unidade de decisão é sempre <strong>arquivo + modelo + repo + tarefa</strong>.</p>
+    <p>Os resultados não se anulam; eles impedem o dogma. Um arquivo relevante pode poupar exploração. Um arquivo redundante pode mandar o agente reler, testar e navegar sem melhorar o resultado. A unidade de decisão é sempre <strong>arquivo + modelo + repo + tarefa</strong>.</p>
     <div class="story">
-      <p>Há um modo concreto pelo qual o excesso prejudica, e nenhum deles é “o arquivo passou de 200 linhas, portanto é pecado”. O número 200 da Anthropic é densidade de sinal, não teologia.</p>
+      <p>O excesso pode atrapalhar de várias formas, mas “passou de 200 linhas” não é uma delas. O número citado pela Anthropic é uma referência de densidade: cada linha precisa merecer a atenção que consome.</p>
     </div>
     <ol class="harm-list">
-      <li><strong>Atenção deslocada.</strong> A regra irrelevante compete com a tarefa, o código e a evidência. Lost in the Middle também vale para instruções.</li>
+      <li><strong>Atenção deslocada.</strong> A regra irrelevante compete com a tarefa, o código e a evidência.</li>
       <li><strong>Regras em tensão.</strong> Cada frase é razoável; juntas pedem coisas incompatíveis. O modelo escolhe em silêncio.</li>
-      <li><strong>Multiplicação por turno.</strong> Prefixo, schema e tool description são reprocessados a cada volta do loop.</li>
-      <li><strong>Hipótese vencida.</strong> Workaround do modelo anterior continua depois que a capability mudou.</li>
-      <li><strong>Agência suprimida.</strong> A sequência fixa impede outra estratégia, outra tool, outra ordem de investigação.</li>
-      <li><strong>Acoplamento do adapter.</strong> Formatação otimizada para um provider degrada o candidato seguinte.</li>
+      <li><strong>Multiplicação por turno.</strong> Instruções, formatos e descrições de ferramentas voltam a ser lidos em cada rodada.</li>
+      <li><strong>Hipótese vencida.</strong> A correção do modelo anterior continua depois que a capacidade mudou.</li>
+      <li><strong>Caminho engessado.</strong> A sequência fixa impede outra estratégia, ferramenta ou ordem de investigação.</li>
+      <li><strong>Dependência escondida.</strong> Um formato otimizado para um fornecedor prejudica o candidato seguinte.</li>
       <li><strong>Observabilidade mascarada.</strong> Mais camadas escondem qual regra causou a regressão.</li>
     </ol>
-    <p>O stress test <a href="https://arxiv.org/abs/2507.11538">IFScale</a> (20 modelos, até 500 instruções verificáveis) encontrou só 68% de aderência no melhor modelo na densidade máxima. A tarefa é sintética e o extremo não define um teto de linhas. Ensina o básico: <strong>caber na janela não prova que todas as instruções serão seguidas</strong>.</p>
+    <p>O teste <a href="https://arxiv.org/abs/2507.11538">IFScale</a> (20 modelos, até 500 instruções verificáveis) encontrou só 68% de aderência no melhor modelo na maior densidade. É um teste artificial e não define um limite universal de linhas. Mas ensina o básico: <strong>caber na janela não prova que todas as instruções serão seguidas</strong>.</p>
 
     <div class="story">
-      <p>Há um preprint que dá nome de rua a essa sensação. Em <a href="https://arxiv.org/html/2607.03691v2"><cite>Don't Blame the Large Language Model</cite></a>, os pesquisadores fixaram o modelo e deixaram o harness evoluir: trinta e cinco versões, cinquenta tarefas. As versões mais novas quase dobraram tokens e tool calls, e a resolução não acompanhou. É um domínio, é preprint, não é sentença universal. Ainda assim a cena é fácil de reconhecer no galpão: cada vez que o motor falhava, alguém acrescentava um gabarito, uma morsa, uma lista. Depois de um ano a bancada está duas vezes mais cheia e o número de peças boas é o mesmo. O reflexo da equipe é culpar o motor. O paper pede outra pergunta: o painel engordou sem comprar outcome?</p>
-      <p>IFScale completa o retrato pelo outro lado. Caber quinhentas regras na janela é como colar quinhentos adesivos no vidro da cabine. O operador ainda enxerga a pista? O melhor modelo do teste seguiu 68% no extremo. A lição não é “nunca passe de N linhas”. É que densidade de instrução e aderência não caminham juntas para sempre. Uma regra que ninguém consegue apontar o efeito é um adesivo a mais no vidro.</p>
+      <p>Um preprint recente dá nome a essa sensação. Em <a href="https://arxiv.org/html/2607.03691v2"><cite>Don't Blame the Large Language Model</cite></a>, os pesquisadores mantiveram o mesmo modelo e observaram trinta e cinco versões do harness em cinquenta tarefas. As versões mais novas quase dobraram o consumo de tokens e as chamadas de ferramentas, mas a taxa de resolução não acompanhou.</p>
+      <p>É um estudo preliminar, em um domínio específico; não é uma lei. Mesmo assim, a cena é conhecida: a cada falha do motor, alguém acrescenta um gabarito, uma morsa ou uma lista. Depois de um ano, a bancada tem o dobro de peças e entrega a mesma quantidade de trabalho bom. Antes de culpar o motor, pergunte: o painel cresceu sem melhorar o resultado?</p>
+      <p>O IFScale completa o retrato pelo outro lado. Caber quinhentas regras na janela é como colar quinhentos adesivos no vidro da cabine: em algum ponto o operador para de enxergar a pista, mesmo que tecnicamente ainda caiba mais um adesivo. Uma regra cujo efeito ninguém consegue apontar é sempre o próximo adesivo.</p>
     </div>
 
-    <div class="narrative">
+    <div class="story">
       <p>Os dois estudos apontam para mecanismos diferentes. Uma instrução que revela o comando certo, uma convenção incomum ou uma restrição invisível reduz busca e evita erro. Já uma instrução que repete o que o modelo deduz do repositório, prescreve uma sequência desnecessária ou conflita com outra fonte aumenta o caminho até a resposta. O arquivo não é bom ou ruim por existir; seu valor depende do quanto reduz incerteza relevante.</p>
-      <p>Há ainda um efeito multiplicador. Instruções always-on, schemas de tools e exemplos podem ser reprocessados em vários turnos de um loop. Uma pequena redundância inicial se converte em milhares de tokens, novas decisões e oportunidades de conflito ao longo de uma execução longa. O custo de contexto deve ser medido por trajetória completa, não apenas pelo tamanho do primeiro prompt.</p>
+      <p>Há ainda um efeito multiplicador. Instruções sempre ativas, esquemas de ferramentas e exemplos podem ser reprocessados em vários turnos de um loop. Uma pequena redundância inicial se converte em milhares de tokens, novas decisões e oportunidades de conflito ao longo de uma execução longa. O custo de contexto deve ser medido por trajetória completa, não apenas pelo tamanho do primeiro prompt.</p>
     </div>
 
     <div class="evidence-case" aria-label="Resultado reportado de desacoplamento entre brain, hands e sessão">
@@ -1094,7 +1224,7 @@
 
     <div class="note">
       <strong>Teste rápido</strong>
-      Se a regra existe porque “o modelo costuma se perder”, ela precisa de uma hipótese, uma métrica e uma condição de remoção. Se existe porque “ninguém pode pagar R$ 10 mil sem aprovação”, ela é um invariante operacional e fica no harness.
+      Se a regra existe porque “o modelo costuma se perder”, ela precisa de uma hipótese, uma medida e uma condição para sair. Se existe porque “ninguém pode pagar R$ 10 mil sem aprovação”, ela é uma trava operacional e fica no harness.
     </div>
 
     <h3>Quatro mudanças revelam se o harness está espesso</h3>
@@ -1102,138 +1232,117 @@
       <article class="change-test"><span class="test-id">01</span><strong>Troque o modelo.</strong><p>Se política de negócio também muda, raciocínio e domínio estão colados.</p></article>
       <article class="change-test"><span class="test-id">02</span><strong>Atualize uma política.</strong><p>Se exige reescrever o loop, conhecimento vazou para execução.</p></article>
       <article class="change-test"><span class="test-id">03</span><strong>Exija duas aprovações.</strong><p>Se exige reindexar documentos, workflow e brain estão misturados.</p></article>
-      <article class="change-test"><span class="test-id">04</span><strong>Troque o ambiente.</strong><p>Se a sessão ou a memória some, hands e brain estão acoplados.</p></article>
+      <article class="change-test"><span class="test-id">04</span><strong>Troque o ambiente.</strong><p>Se a sessão ou a memória some, execução e memória estão acopladas.</p></article>
     </div>
 
     <p>“Thin” não mede linhas. Mede quantos motivos diferentes obrigam o mesmo componente a mudar.</p>
 
     <div class="story">
-      <p>Faça os quatro testes como se fosse uma segunda-feira no chão. De manhã chega um motor novo: se a tolerância da peça também “precisa ser reescrita”, o desenho estava no firmware. Ao meio-dia o engenheiro baixa o limite de rebarba: se isso obriga a recompilar o loop da linha, o SOP vazou para o painel. À tarde o sindicato exige duas assinaturas na alavanca: se a única forma de cumprir é reindexar a biblioteca, o workflow estava escondido nos livros. À noite a linha muda de galpão: se a sessão some e, com ela, some o histórico de decisões, as mãos e o cérebro da fábrica viajavam no mesmo caminhão.</p>
-      <p>Nenhum desses testes pergunta quantos relés tem o quadro. Todos perguntam a mesma coisa: quando um motivo muda, quantos outros são arrastados sem necessidade? Um harness fino pode ser grande. Um harness espesso pode caber num arquivo. A diferença é o número de razões distintas que obrigam o mesmo componente a abrir uma PR.</p>
+      <p>Faça os quatro testes numa segunda-feira imaginária. De manhã chega um motor novo e, se a tolerância da peça também “precisa ser reescrita”, o desenho estava preso ao motor. Ao meio-dia o engenheiro muda o limite de rebarba e, se isso obriga a reescrever o loop inteiro, a regra de negócio já tinha vazado para dentro do painel.</p>
+      <p>À tarde passam a ser exigidas duas assinaturas, e se a única forma de cumprir a exigência é refazer o índice da biblioteca, o fluxo de aprovação estava escondido nos livros. À noite a linha muda de galpão e, se a sessão some levando o histórico junto, execução e memória viajavam no mesmo caminhão. Nenhum dos quatro testes pergunta quantos relés existem no quadro. Todos perguntam a mesma coisa: quando um motivo muda, quantos outros são arrastados sem necessidade?</p>
     </div>
 
     <h3>Quatro planos, quatro motivos para mudar</h3>
     <div class="plane-stack" aria-label="Quatro planos do harness">
-      <div class="plane"><strong>Execução</strong><span class="question">O que acontece?</span><span class="scope">Contexto de trabalho, model turn, tools, observações e estado.</span></div>
-      <div class="plane"><strong>Controle</strong><span class="question">O que é permitido?</span><span class="scope">Auth, budgets, routing, approvals, stop rules e blast radius.</span></div>
-      <div class="plane"><strong>Evidência</strong><span class="question">Como sabemos?</span><span class="scope">Trace, graders, tool calls e outcome observado no ambiente.</span></div>
-      <div class="plane"><strong>Mudança</strong><span class="question">Como evolui?</span><span class="scope">Candidatos, datasets, shadow, canary, promoção e rollback.</span></div>
+      <div class="plane"><strong>Execução</strong><span class="question">O que acontece?</span><span class="scope">Contexto da tarefa, rodada do modelo, ferramentas, observações e estado.</span></div>
+      <div class="plane"><strong>Controle</strong><span class="question">O que é permitido?</span><span class="scope">Identidade, orçamento, rota, aprovação, parada e alcance do dano.</span></div>
+      <div class="plane"><strong>Evidência</strong><span class="question">Como sabemos?</span><span class="scope">Registro da execução, avaliações, ferramentas usadas e resultado no ambiente.</span></div>
+      <div class="plane"><strong>Mudança</strong><span class="question">Como evolui?</span><span class="scope">Candidatos, casos de teste, sombra, piloto, promoção e volta segura.</span></div>
     </div>
 
-    <p>A espessura perigosa não é quantidade de código. É quantidade de motivos diferentes presos no mesmo componente. Se trocar o modelo também altera autorização e retrieval, o harness possui acoplamento oculto.</p>
+    <p>Esses quatro planos não precisam virar quatro serviços nem quatro repositórios. Precisam apenas não dividir o mesmo arquivo, porque cada um deles muda por um motivo próprio e num ritmo próprio.</p>
 
     <div class="story">
-      <p>Pense no prédio de controle da fábrica como um edifício de quatro andares. No térreo acontece o turno: contexto da peça, movimento do motor, tools, observações, estado da linha. No primeiro andar ficam as chaves: quem pode ligar, quanto orçamento a estação gasta, quando a prensa para, qual o raio de explosão se algo der errado. No segundo andar está o laboratório: traces, calibres, filmagem da tool call, a peça medida no mundo, não o “deu certo” dito em voz alta. No terceiro andar mora o escritório de mudança: qual motor está em trial, qual dataset vale, quem observa sem carga, quem libera o canary, onde está a chave do motor antigo.</p>
-      <p>Se você amontoar as quatro mesas numa sala só, trocar o motor também mexe nas chaves, nos calibres e na agenda do trial. Um retrieve novo altera a stop rule. Um grader novo reescreve o loop. O diagnóstico vira arqueologia: ninguém sabe se a peça saiu torta porque o motor mudou, porque a autorização mudou, ou porque o laboratório passou a medir outra coisa. Separar andares não é luxo de organograma. É o direito de abrir uma porta sem derrubar as outras três.</p>
-    </div>
-
-    <div class="narrative">
-      <p>Separar os quatro planos deixa o diagnóstico mais barato. Uma falha de execução pode ser investigada sem reescrever a política de autorização. Um novo modelo pode entrar pelo plano de mudança sem alterar como o outcome é provado. E uma melhoria de observabilidade não precisa interferir no contexto que o modelo recebe. A consequência não é apenas elegância: é a capacidade de mudar uma coisa sem perder a explicação do que aconteceu.</p>
+      <p>Pense no prédio de controle como um edifício de quatro andares. No térreo acontece o turno: contexto da peça, movimentos do motor, ferramentas, observações e estado da linha. No primeiro andar ficam as chaves: quem pode ligar, quanto pode gastar, quando a prensa deve parar e até onde um erro pode chegar.</p>
+      <p>No segundo andar está o laboratório: registros da execução, calibres, ferramentas usadas e a peça medida no mundo real, não o “deu certo” dito pelo operador. No terceiro mora o escritório de mudança, com o motor que está em teste, os casos que valem, quem autoriza o piloto e onde ficou guardada a chave do motor anterior.</p>
+      <p>Se você amontoar as quatro mesas numa sala só, trocar o motor também mexe nas chaves, nos calibres e na agenda do piloto. Uma busca nova altera a regra de parada. Um avaliador novo reescreve o loop. O diagnóstico vira arqueologia: ninguém sabe se a peça saiu torta porque o motor mudou, porque a autorização mudou, ou porque o laboratório passou a medir outra coisa. Separar andares não é luxo de organograma. É o direito de abrir uma porta sem derrubar as outras três.</p>
     </div>
 
     <div class="analogy-note">
       <strong>O hospital e a anestesia</strong>
-      <p>O approval gate não é um Post-it no ombro do cirurgião dizendo “tenha cuidado com o bisturi”. É o timeout do anestesista: o cirurgião pode ser brilhante; o gás ainda tem protocolo, dose e quem assina. Um cirurgião mais talentoso não ganha o direito de pular o checklist. Um modelo mais capaz não ganha, por isso, a alavanca financeira. Autoridade mora no andar das chaves, não no talento do térreo.</p>
+      <p>O gate de aprovação não é um Post-it no ombro do cirurgião dizendo “tenha cuidado com o bisturi”. É o timeout do anestesista: o cirurgião pode ser brilhante; o gás ainda tem protocolo, dose e quem assina. Um cirurgião mais talentoso não ganha o direito de pular o checklist. Um modelo mais capaz não ganha, por isso, a alavanca financeira. Autoridade mora no andar das chaves, não no talento do térreo.</p>
     </div>
 
     <div class="note">
       <strong>Teste de remoção</strong>
-      Para cada scaffolding cognitivo, escreva hipótese, métrica, experimento e condição de remoção. Sem esse contrato, uma compensação temporária vira arqueologia permanente.
+      Para cada apoio criado para “ajudar o modelo a pensar”, escreva hipótese, medida, experimento e condição de remoção. Sem esse contrato, uma compensação temporária vira arqueologia permanente.
     </div>
     <div class="story">
       <p>O teste de remoção é o oposto do “deixa que não atrapalha”. Alguém, num incidente de março, colou um Post-it: “sem esta decomposição o modelo perde o passo 7”. Em dezembro o Post-it ainda está lá, agora laminado, citado em três skills, copiado para o <code>AGENTS.md</code>. Ninguém lembra o incidente. Ninguém tem a métrica. Ninguém escreveu “remover quando”. O Post-it virou constituição. Constituição sem hipótese é o jeito mais educado de transformar uma compensação temporária em dívida permanente.</p>
-      <p>O contrato cabe num cartão. Hipótese: sem esta decomposição, o modelo perde etapas críticas. Métrica: pass rate do outcome mais violações de sequência. Experimento: o candidato sem a decomposição, em cinquenta casos retidos, vários trials. Remover quando: três rodadas sem regressão material. Se você não consegue preencher o cartão, a regra ainda não mereceu o direito de ser always-on. Enforcement (a chave, o cap, o kill switch) não entra nesse cartão: ele não disputa lugar. Disputa lugar aquilo que existe porque um modelo antigo se perdia.</p>
+      <p>O contrato cabe num cartão. Hipótese: sem esta sequência, o modelo perde etapas críticas. Medida: taxa de sucesso e violações de ordem. Experimento: retirar a sequência e executar cinquenta casos antigos, várias vezes. Condição para remover: três rodadas sem piora relevante.</p>
+      <p>Se você não consegue preencher o cartão, aquela regra ainda não mereceu ficar sempre ativa. Travas reais como limite de valor, permissão e botão de emergência não entram nesse experimento em nenhuma hipótese. O que precisa provar seu lugar é a instrução que só existe porque um modelo antigo se perdia.</p>
     </div>
 
-    <h2><span class="n">05</span>Camada 3: o company brain entrega contexto, não o depósito</h2>
-    <p>O cérebro modular da empresa é o conhecimento institucional fora dos pesos do modelo. “Modular” significa separar jobs, autoridade e ritmo de atualização, não comprar um banco único e chamá-lo de cérebro.</p>
+    <h2><span class="n">05</span>Camada 3: o company brain entrega um dossiê, não o depósito</h2>
+    <p>O cérebro modular da empresa mantém o conhecimento institucional fora do modelo. “Modular” significa separar tipos de memória, regras de acesso e ritmos de atualização. Não significa comprar um banco único e chamá-lo de cérebro.</p>
     <div class="story">
-      <p>Se o modelo é o temporário e o harness é o painel da linha, o company brain é a biblioteca da fábrica: desenhos, atas de tolerância, SOP, o caderno do turno que deu errado. Ninguém entrega a biblioteca inteira ao operador no começo do expediente. Uma bibliotecária pergunta quem é, o que veio fazer, o que pode ler, qual edição vale hoje e qual página prova cada número. No fim do turno, as anotações do operador não voltam coladas no original: entram numa caixa de revisão.</p>
-      <p>Essa cena recusa dois atalhos ao mesmo tempo. O primeiro é o dump: “manda o Drive que o modelo se vira”. O segundo é o oráculo: “o índice já <em>é</em> a verdade”. Índice é mapa. Fonte é território. Se o mapa queimar e o território existir, você redesenha o mapa. Se o território <em>era</em> o mapa, você descobriu que não tinha empresa: tinha backup de marketing.</p>
-    </div>
-
-    <div class="narrative">
-      <p class="lead">O company brain existe porque o modelo sabe muitas coisas, mas não sabe automaticamente qual é a verdade institucional desta empresa, para esta pessoa, neste momento e nesta missão.</p>
-      <p>Os pesos do modelo preservam conhecimento geral e padrões aprendidos no treinamento. Eles não são um bom lugar para uma política que mudou ontem, para uma decisão que precisa ser revogada ou para um contrato que apenas algumas pessoas podem ler. O brain mantém esse conhecimento atualizável, versionado e governado fora do modelo. O modelo continua responsável por interpretar; o sistema passa a ser responsável por entregar a evidência correta.</p>
-      <p>“Modular” importa porque conhecimento não possui um único formato nem um único ciclo de vida. Um contrato assinado é prova; o fato extraído dele é memória semântica; o procedimento que orienta uma revisão é memória procedural; o resultado de uma execução é episódio. Colocar tudo no mesmo índice apaga diferenças de autoridade, temporalidade e validação.</p>
+      <p class="lead">O company brain existe porque o modelo sabe muitas coisas, mas não sabe automaticamente qual é a verdade institucional desta empresa, para esta pessoa, neste momento e nesta missão. Os pesos guardam padrão geral. Não são um bom lugar para a política que mudou ontem, para a decisão que precisa ser revogada ou para o contrato que só algumas pessoas podem ler.</p>
+      <p>Se o modelo é o temporário e o harness é o painel, o brain é a biblioteca da fábrica. Ninguém entrega a biblioteca inteira no começo do expediente. A bibliotecária pergunta quem é, o que veio fazer, o que pode ler, qual edição vale e qual página prova cada número. No fim do turno, as anotações não voltam coladas no original: entram na caixa de revisão. Isso recusa dois atalhos. O dump: “manda o Drive que o modelo se vira”. O oráculo: “o índice já <em>é</em> a verdade”. Índice é mapa. Fonte é território. Se o mapa queimar e o território existir, você redesenha o mapa. Se o território <em>era</em> o mapa, você não tinha empresa: tinha backup de marketing.</p>
     </div>
 
     <div class="brain-grid" aria-label="Seis módulos do company brain">
-      <article class="brain-module"><span class="module-id">01 · prova</span><strong>Fontes canônicas</strong><p>Política original, contrato, tabela ou evento sustentam o que foi dito.</p></article>
-      <article class="brain-module"><span class="module-id">02 · fatos</span><strong>Memória semântica</strong><p>Fatos e relações apontam de volta para a fonte que os prova.</p></article>
-      <article class="brain-module"><span class="module-id">03 · como</span><strong>Memória procedural</strong><p>SOPs, skills, rubricas e exemplos preservam o modo de trabalhar.</p></article>
-      <article class="brain-module"><span class="module-id">04 · tempo</span><strong>Memória episódica</strong><p>Execuções, decisões, feedback e outcomes registram o que ocorreu.</p></article>
-      <article class="brain-module"><span class="module-id">05 · acesso</span><strong>Projeções</strong><p>Índices lexicais, vetoriais ou grafos recuperam sem ler tudo.</p></article>
-      <article class="brain-module"><span class="module-id">06 · regra</span><strong>Governança</strong><p>ACL, validade, supersessão, conflito e exclusão controlam o uso.</p></article>
+      <article class="brain-module"><span class="module-id">01 · prova</span><strong>Fontes originais</strong><p>Política, contrato, tabela ou evento sustentam o que foi dito.</p></article>
+      <article class="brain-module"><span class="module-id">02 · fatos</span><strong>Fatos organizados</strong><p>Fatos e relações apontam de volta para a fonte que os prova.</p></article>
+      <article class="brain-module"><span class="module-id">03 · como</span><strong>Jeito de trabalhar</strong><p>SOPs, skills, rubricas e exemplos preservam o modo de fazer.</p></article>
+      <article class="brain-module"><span class="module-id">04 · tempo</span><strong>Histórico de execuções</strong><p>Decisões, feedback e resultados registram o que ocorreu.</p></article>
+      <article class="brain-module"><span class="module-id">05 · acesso</span><strong>Mapas de busca</strong><p>Índices e grafos ajudam a encontrar sem precisar ler tudo.</p></article>
+      <article class="brain-module"><span class="module-id">06 · regra</span><strong>Regras de uso</strong><p>Acesso, validade, substituição, conflito e exclusão controlam o que vale.</p></article>
     </div>
 
-    <div class="narrative">
-      <p>Esses módulos não precisam corresponder a seis produtos ou bancos. Eles representam seis trabalhos que o sistema precisa fazer sem confundi-los. Uma pasta versionada pode ser suficiente para fontes canônicas; uma tabela pode guardar fatos estruturados; um índice vetorial pode acelerar recuperação. A arquitetura começa pela responsabilidade e só depois escolhe a tecnologia.</p>
-      <p>A distinção mais importante é entre fonte e projeção. O índice vetorial, o grafo e a síntese existem para encontrar ou navegar conhecimento; eles não se tornam automaticamente a prova. Se uma projeção estiver errada, ela deve poder ser reconstruída a partir da fonte. Se um claim não aponta para a evidência que o sustenta, o sistema produz fluência sem auditabilidade.</p>
-    </div>
     <div class="story">
-      <p>Ande pela biblioteca como se cada módulo fosse uma sala com uma fechadura diferente. Na sala da prova ficam os originais: o PDF assinado, o contrato, a tabela que o financeiro publica. Ninguém “resume” aquilo sem deixar o original no lugar. Na sala dos fatos, um cartão diz “Ana é plano ouro” e, no verso, o locator da página que prova. Na sala do como, o SOP de estorno (o jeito de trabalhar, não o fato do cliente). Na sala do tempo, o caderno do turno: o que aconteceu com o ticket T-8841, quem aprovou, o que o ambiente devolveu. Na sala dos mapas, os índices: útil para achar, perigoso se alguém os tratar como território. Na sala das regras, o carimbo: quem lê, quem escreve, o que venceu, o que conflita, o que deve desaparecer.</p>
-      <p>O erro clássico é fundir as seis salas num corredor só e chamar o corredor de “vector store”. Aí o mapa vira oráculo, o episódio vira política, e o original some atrás de um embedding. Quando o mapa queima, você deveria redesenhar o mapa. Se o território era o mapa, você descobre que a empresa não tinha biblioteca: tinha um índice de marketing com confiança demais.</p>
+      <p>Ande pela biblioteca como se cada módulo fosse uma sala. Na sala da prova ficam os originais: o PDF assinado, o contrato e a tabela publicada pelo financeiro. Ninguém resume o documento sem manter o original. Na sala dos fatos, um cartão diz “Ana é plano ouro” e aponta para a página que prova isso. Na sala do “como”, fica o procedimento de estorno.</p>
+      <p>Na sala do tempo, o caderno do turno registra o que aconteceu com o ticket T-8841, quem aprovou e qual foi a resposta do sistema. Na sala dos mapas ficam os índices: úteis para encontrar, perigosos se tratados como fonte. Na sala das regras, o carimbo decide quem lê, quem escreve, qual versão vale e o que precisa desaparecer.</p>
+      <p>O erro clássico é fundir as seis salas num corredor só e chamar o corredor de vector store. A partir daí o episódio de terça vira política de quarta, a anotação apressada do operador ganha o mesmo peso do contrato assinado e o original desaparece atrás de um embedding que ninguém sabe reconstruir. Nenhuma dessas confusões é um problema de busca. Todas são problemas de autoridade.</p>
     </div>
 
-    <p>O <a href="https://arxiv.org/abs/2309.02427">CoALA</a> posiciona o language model dentro de uma arquitetura maior de memória. O <a href="https://arxiv.org/abs/2005.11401">paper original de RAG</a> separa memória paramétrica de memória recuperável. E <a href="https://arxiv.org/abs/2307.03172">Lost in the Middle</a> mostra por que uma janela maior não garante que o modelo use bem toda a evidência.</p>
+    <p>Três trabalhos ajudam a sustentar essa separação. O <a href="https://arxiv.org/abs/2309.02427">CoALA</a> coloca o modelo dentro de uma arquitetura maior de memória. O <a href="https://arxiv.org/abs/2005.11401">paper original de RAG</a> separa o que está aprendido no modelo do que pode ser buscado em fontes externas. E <a href="https://arxiv.org/abs/2307.03172">Lost in the Middle</a> mostra por que uma janela maior não garante bom uso de toda a evidência.</p>
 
     <div class="warning">
       <strong>Brain não é dump</strong>
-      Mais tokens não corrigem documento revogado, fontes conflitantes, falta de proveniência ou dado privado recuperado sem autorização. A execução deveria receber uma projeção <em>pequena, atual, autorizada, relevante e citável</em>.
+      Mais tokens não corrigem documento revogado, fontes em conflito, origem desconhecida ou dado privado entregue sem autorização. A execução deve receber um dossiê <em>pequeno, atual, autorizado, relevante e citável</em>.
     </div>
 
     <h3>A analogia da bibliotecária: cinco gestos, nenhum dump</h3>
     <div class="story">
       <p>Imagine o balcão às nove da manhã. Chega o estagiário da proposta comercial. A bibliotecária não pergunta “o que você quer saber?”. Pergunta quem ele é e para qual missão veio. Abre só as estantes de material público de oferta. Recusa a pasta do jurídico. Escolhe a edição de preço que vale hoje, não o PDF de 2023 que ainda “parece” com a query. Monta um dossiê de oito páginas, cada afirmação com a página de origem. No fim do dia, o estagiário devolve um caderno: “o cliente pediu exceção”. Isso não vira política. Vira ficha na caixa de revisão.</p>
-      <p>Às onze chega o analista de compliance. Mesmo prédio, outra identidade, outra missão. As estantes mudam. A edição histórica do contrato de 2024 precisa estar na mesa porque o caso é de então, não de agora. Se a bibliotecária tivesse feito dump às nove (“aí está o Drive”) o estagiário teria visto o que o compliance vê, e o modelo teria que fingir que sabe a diferença. O gesto caro não é o retrieve. É a recusa educada.</p>
+      <p>Às onze chega o analista de compliance. Mesmo prédio, outra identidade, outra missão. As estantes mudam. A edição histórica do contrato de 2024 precisa estar na mesa porque o caso é de então, não de agora. Se a bibliotecária tivesse feito um despejo às nove, entregando o Drive inteiro, o estagiário teria visto o que só o compliance pode ver, e o modelo teria de fingir que sabe a diferença. O gesto caro dessa cena nunca é a busca. É a recusa educada.</p>
     </div>
     <ol class="teach-steps">
-      <li><strong>Quem pediu, para qual missão?</strong><span>Identidade e workload. O estagiário da proposta não é o compliance. A triagem não é a cotação.</span></li>
-      <li><strong>Quais estantes esta pessoa pode abrir?</strong><span>ACL <em>antes</em> de tirar o livro da prateleira. Filtrar o output é confessar o vazamento: o chunk já estava na mesa.</span></li>
+      <li><strong>Quem pediu, para qual missão?</strong><span>Identidade e missão. O estagiário da proposta não é o compliance. A triagem não é a cotação.</span></li>
+      <li><strong>Quais estantes esta pessoa pode abrir?</strong><span>Controle de acesso <em>antes</em> de tirar o livro da prateleira. Filtrar só a resposta é tarde: o trecho privado já chegou ao modelo.</span></li>
       <li><strong>Qual edição vale, e qual edição prova o passado?</strong><span>Vigente para o ticket de hoje. Histórica para auditar o que foi verdade. Slack da Ana não supersede sozinho.</span></li>
-      <li><strong>O dossiê cabe na mesa e cita a página.</strong><span>Pequeno, atual, autorizado, relevante, citável. Sem locator, não é claim, é parágrafo.</span></li>
+      <li><strong>O dossiê cabe na mesa e cita a página.</strong><span>Pequeno, atual, autorizado, relevante e citável. Sem endereço da fonte, a afirmação não pode ser conferida.</span></li>
       <li><strong>Anotações voltam para a caixa de revisão.</strong><span>O turno gera candidato a memória. Governança decide o que entra no acervo. Transcript mal fechado não cola no SOP.</span></li>
     </ol>
 
     <h3>A biblioteca inteira ou um dossiê preparado?</h3>
-    <div class="narrative">
-      <p>A comparação com uma biblioteca ajuda a separar armazenamento de contexto. A biblioteca pode conter tudo que a organização sabe. O leitor, porém, não recebe todos os livros para responder a uma pergunta; recebe um conjunto pequeno de páginas escolhidas segundo assunto, edição, identidade e finalidade.</p>
-      <p>Despejar o corpus inteiro transfere para o modelo decisões que deveriam ter acontecido antes da inferência. Ele passa a escolher silenciosamente entre versões, perceber sozinho o que foi revogado, ignorar dados sem autorização e descobrir qual fonte possui mais autoridade. Mesmo um modelo muito capaz pode produzir uma resposta plausível a partir da edição errada.</p>
-    </div>
     <div class="library-compare" aria-label="Comparação entre despejar o corpus e preparar contexto">
       <article class="library-side bad"><strong>Corpus inteiro sobre a mesa</strong><p>Mais versões, ruído e dados privados disputam atenção. O prompt vira responsável por acesso, validade e conflito.</p></article>
       <article class="library-side good"><strong>Bibliotecária prepara o dossiê</strong><p>Identidade e missão definem acesso; a edição vigente é escolhida; cada claim aponta para a página original.</p></article>
     </div>
 
-    <div class="narrative">
-      <p>O dossiê preparado reduz três riscos ao mesmo tempo. Primeiro, diminui competição por atenção porque só leva material relacionado à missão. Segundo, aplica autorização antes que o conteúdo sensível chegue ao prompt. Terceiro, preserva proveniência para que cada afirmação possa ser conferida ou contestada.</p>
-      <p>Long context melhora a capacidade de carregar material, mas não resolve essas decisões. Uma mesa maior comporta mais livros; ela não identifica a edição vigente, não remove o documento privado e não explica por que uma fonte deve prevalecer sobre outra. Contexto é o pacote entregue ao modelo. Brain é o sistema que decide como esse pacote pode ser formado.</p>
+    <div class="story">
+      <p>O dossiê reduz três riscos de uma vez: menos disputa por atenção, autorização antes do trecho privado chegar ao prompt, e origem para cada afirmação poder ser conferida. Despejar o corpus transfere ao modelo decisões que deveriam ter acontecido antes da inferência. Mesmo um modelo capaz produz resposta plausível a partir da edição errada, porque escolher entre duas versões de uma política não é um problema de leitura, é um problema de autoridade que já deveria estar resolvido quando o prompt se forma.</p>
     </div>
 
-    <p>O <a href="https://arxiv.org/abs/2307.03172">Lost in the Middle</a> encontrou uso melhor da evidência no início ou no fim e degradação quando ela aparecia no meio, inclusive em modelos de contexto longo. O estudo é de 2023 e a fronteira avançou; a conclusão continua útil: janela nominal não prova seleção, atenção, autorização ou freshness.</p>
+    <p>O <a href="https://arxiv.org/abs/2307.03172">Lost in the Middle</a> encontrou melhor uso da evidência no início ou no fim e piora quando ela aparecia no meio, inclusive em modelos de contexto longo. O estudo é de 2023 e os modelos avançaram, mas a conclusão continua útil: uma janela grande não garante seleção correta, atenção, autorização nem informação atualizada.</p>
 
     <div class="analogy-note">
-      <strong>O que long context realmente muda</strong>
-      <p>Ele aumenta o tamanho possível da mesa. Não substitui a bibliotecária.</p>
+      <strong>O que long context realmente compra</strong>
+      <p>Folga. Menos corte arbitrário no meio de um documento, menos encadeamento perdido, menos engenharia só para caber. Isso é real e vale dinheiro. O que a janela maior não compra é a decisão sobre o que merece entrar na mesa, e é essa decisão que separa um dossiê de um despejo.</p>
     </div>
 
     <h3>Exemplo temporal: qual política era verdadeira?</h3>
     <div class="policy-time" aria-label="Duas versões de uma política de reembolso">
       <article class="policy-version"><strong>Política v3</strong><span>Até 30/jun · aprovação humana acima de R$ 500</span></article>
-      <div class="policy-arrow" aria-hidden="true">supersede →</div>
+      <div class="policy-arrow" aria-hidden="true">v4 substitui v3 →</div>
       <article class="policy-version current"><strong>Política v4</strong><span>Desde 01/jul · aprovação humana acima de R$ 300</span></article>
     </div>
-    <div class="time-question"><strong>Consulta em 3/jul sobre uma cobrança de 28/jun.</strong> A regra atual é v4; a regra historicamente aplicável pode ser v3. O brain precisa representar tempo do fato, tempo da consulta, validade e supersessão.</div>
+    <div class="time-question"><strong>Consulta em 3/jul sobre uma cobrança de 28/jun.</strong> A regra atual é v4; a regra que valia no dia da cobrança pode ser v3. O brain precisa guardar a data do fato, a data da consulta e qual versão substituiu qual.</div>
 
     <div class="story">
-      <p>Há duas perguntas honestas e uma pergunta preguiçosa. “Qual é a política <em>hoje</em>?” aponta para v4. “Qual regra governava a cobrança de 28 de junho?” pode exigir v3. A pergunta preguiçosa é “me manda o documento mais parecido”. O retrieve sem tempo devolve o parágrafo que rimou com a query: às vezes o vigente, às vezes o velho, às vezes os dois brigando no meio do prompt. Lost in the Middle descreve o que acontece depois: o modelo usa melhor o que está nas pontas e piora no miolo. Uma janela maior só aumenta a mesa onde a briga acontece.</p>
-      <p>O modelo pode interpretar a regra recuperada. Ele não deve inventar qual versão é autorizada nem resolver silenciosamente um conflito institucional. Quando duas fontes autorizadas discordam, o produto honesto é o conflito visível: não a média, não o ranking, não “escolhe a melhor”.</p>
-    </div>
-
-    <div class="narrative">
-      <p>O exemplo mostra que “verdade” pode depender da pergunta temporal. Se alguém pergunta qual regra vale hoje, a resposta é v4. Se pergunta qual regra governava uma cobrança ocorrida em junho, v3 pode ser a evidência correta. Recuperar apenas o documento mais recente produz uma resposta atual, porém historicamente errada; recuperar apenas o trecho semanticamente mais parecido pode esconder que houve mudança.</p>
-      <p>Por isso um brain sério representa pelo menos o tempo do fato e o tempo em que o sistema tomou conhecimento dele. Também registra validade e supersessão. O modelo pode explicar a diferença em linguagem natural, mas não deve decidir sozinho que uma versão revogou outra. Essa relação precisa vir de uma fonte autorizada ou permanecer marcada como conflito.</p>
+      <p>Há duas perguntas honestas e uma preguiçosa. “Qual é a política <em>hoje</em>?” aponta para v4. “Qual regra governava a cobrança de 28 de junho?” pode exigir v3. A preguiçosa é “me manda o documento mais parecido”. A busca sem tempo devolve o parágrafo que rimou com a pergunta: às vezes o vigente, às vezes o velho, às vezes os dois no meio do prompt. Lost in the Middle descreve o que acontece depois: o modelo usa melhor as pontas e piora no miolo. Uma janela maior só aumenta a mesa da briga.</p>
+      <p>Recuperar só o mais recente produz uma resposta atual e historicamente errada. Recuperar só o trecho mais parecido esconde que houve mudança. Um brain sério guarda duas datas: quando o fato passou a ser verdade no mundo e quando o sistema tomou conhecimento dele. Em cima delas ficam validade e supersessão. O modelo explica essa diferença em linguagem natural. Ele não deve decidir sozinho que uma versão revogou a outra. Quando duas fontes autorizadas discordam, o produto honesto é o conflito visível: não a média, não o ranking, não “escolhe a melhor”.</p>
     </div>
 
     <h3>O caminho de leitura e o caminho de escrita</h3>
@@ -1245,31 +1354,61 @@
         <ol>
           <li>identidade + missão;</li>
           <li>autorização;</li>
-          <li>recuperação e reranking;</li>
+          <li>busca e ordenação dos trechos;</li>
           <li>validade e conflitos;</li>
-          <li>context pack com citações.</li>
+          <li>dossiê curto com citações.</li>
         </ol>
       </div>
       <div class="flow-card write">
         <strong>Escrita depois do run</strong>
         <ol>
-          <li>observação + trace + outcome;</li>
-          <li>quarentena;</li>
+          <li>observação + registro + resultado;</li>
+          <li>separação para revisão;</li>
           <li>classificação do tipo de memória;</li>
           <li>validação e aprovação;</li>
-          <li>versão + reconstrução dos índices.</li>
+          <li>nova versão + atualização dos índices.</li>
         </ol>
       </div>
     </div>
 
-    <div class="narrative">
-      <p>No caminho de leitura, o risco principal é exposição ou interpretação indevida. A autorização vem antes da recuperação: o sistema não busca tudo para depois esconder. Em seguida, resolve validade e conflito, monta o pacote e preserva as citações. O modelo recebe uma visão de trabalho, não acesso irrestrito ao depósito.</p>
-      <p>No caminho de escrita, o risco se inverte. Uma execução pode conter observações úteis, mas também erro, opinião, instrução maliciosa ou um resultado ainda não verificado. Por isso o output entra como candidato a memória. Ele passa por quarentena, classificação e aprovação antes de alterar fontes, fatos ou procedimentos. Aprender com a operação não significa acreditar automaticamente no agente.</p>
+    <figure>
+      <div class="mermaid-wrap" data-mermaid>
+        <pre class="mermaid">
+flowchart LR
+  subgraph READ["Leitura para o run"]
+    direction TB
+    R1["Identidade"] --> R2["ACL"] --> R3["Busca"] --> R4["Validade e conflito"] --> R5["Dossiê"]
+  end
+
+  subgraph WRITE["Escrita depois do run"]
+    direction TB
+    W1["Observação"] --> W2["Quarentena"] --> W3["Tipo de memória"] --> W4["Aprovação"] --> W5["Nova versão"]
+  end
+
+  R5 -->|"o modelo vê só isto"| THINK2["Modelo"]
+  THINK2 -.->|"não grava sozinho"| W1
+
+  classDef brain fill:#FFE7DC,stroke:#BD3600,color:#050505
+  classDef harness fill:#E1F2FF,stroke:#006CAE,color:#050505
+  classDef model fill:#D1FF00,stroke:#050505,color:#050505
+  class R1,R2,R3,R4,R5,W1,W2,W3,W4,W5 brain
+  class THINK2 model
+        </pre>
+        <ol class="mermaid-fallback">
+          <li>Leitura: identidade, ACL, busca, validade, dossiê. O modelo só vê o dossiê.</li>
+          <li>Escrita: observação, quarentena, tipo, aprovação, nova versão. O modelo não grava sozinho.</li>
+        </ol>
+      </div>
+      <figcaption>Dois sentidos, um freio no meio: o modelo lê o dossiê e não escreve a fonte.</figcaption>
+    </figure>
+
+    <div class="story">
+      <p>Na leitura, o risco é expor ou interpretar o que não deveria chegar ao modelo. A autorização vem antes da busca: o sistema não recupera tudo para depois esconder. Na escrita, o risco se inverte. A execução pode conter observação útil, erro, opinião ou instrução maliciosa. Por isso a saída entra como candidato. Aprender com a operação não significa acreditar automaticamente no agente.</p>
     </div>
 
     <div class="fact">
       <strong>Regra de write-back</strong>
-      Runs geram candidatos a memória. Governança decide o que vira memória. Quando fontes autorizadas discordam, preserve identidade, validade e conflito explícito; não fabrique consenso pela similaridade do retriever.
+      Execuções geram candidatos a memória. A governança decide o que realmente entra. Quando fontes autorizadas discordam, preserve quem disse, quando valia e onde está o conflito. Não invente consenso só porque a busca encontrou textos parecidos.
     </div>
     <div class="analogy-note">
       <strong>A caixa de revisão no balcão</strong>
@@ -1278,117 +1417,153 @@
 
     <h3>Leia uma execução de trás para frente</h3>
     <div class="story">
-      <p>Antes de Ana entrar em cena, treine o olho no sentido invertido. A pergunta honesta não começa em “o que o modelo disse”. Começa em “o ticket fechou no sistema real?”. Se a resposta for não, o texto “concluído” é decoração. Só então você anda para trás: o gate mediu outcome, trajetória, segurança, custo e latência? O ambiente devolveu efeito ou só uma string? O modelo escolheu a próxima ação dentro do espaço permitido, ou inventou uma tool que o harness nunca ofereceu? O adapter traduziu o contrato ou reescreveu a política no caminho? O harness montou contexto, tools, limite e trace? O brain entregou um dossiê pequeno, atual, autorizado e citável, ou despejou a biblioteca?</p>
-      <p>Essa ordem evita o vício de consertar a frase quando o mundo não mudou. Também deixa visível o ponto em que o sistema “aprende”: só o feedback aprovado volta ao brain. Falha bruta, opinião do turno e prompt injection não viram verdade institucional só porque o loop fechou. A volta é o lugar onde muitas empresas se envenenam com educação demais e governança de menos.</p>
-    </div>
-    <div class="narrative">
-      <p>Sete estações, uma responsabilidade cada. Brain seleciona. Harness governa. Adapter traduz. Modelo raciocina. Ambiente responde. Gate verifica. Sistema aprende com o que passou pela caixa de revisão. Se duas estações morarem no mesmo parágrafo do prompt, você já sabe o que vai acontecer na próxima deprecação: a frase inteira vai embora junto com o snapshot.</p>
+      <p>Antes de Ana entrar em cena, leia a execução de trás para frente. Não comece por “o que o modelo disse”. Comece por “o ticket fechou no sistema real?”. Se a resposta for não, o texto “concluído” é decoração. Depois caminhe: o teste mediu resultado, segurança, custo e tempo? O ambiente devolveu um efeito ou só uma frase? O modelo usou só as ferramentas permitidas? O adapter apenas traduziu? O harness montou contexto, limites e registro? O brain entregou um dossiê pequeno, atual e autorizado, ou despejou a biblioteca?</p>
+      <p>Essa ordem evita consertar a frase quando o mundo não mudou. Também mostra onde o sistema aprende: só o feedback aprovado volta ao brain. E revela o custo de misturar. Se duas dessas responsabilidades morarem no mesmo parágrafo do prompt, na próxima deprecação o parágrafo inteiro vai embora junto com o snapshot, levando as duas.</p>
     </div>
 
     <h2 id="casos"><span class="n">06</span>Exemplo completo: o reembolso de Ana</h2>
     <p>Ana relata uma cobrança duplicada de R$ 680 e pede estorno. A política vigente permite estorno, mas exige aprovação humana acima de R$ 500. Observe como cada camada participa sem absorver a responsabilidade das outras.</p>
     <div class="story">
-      <p>Antes dos seis passos, fixe a cena. Ana não é um ticket genérico. É uma pessoa que já pagou duas vezes, escreve com pressa e vai acreditar na primeira frase confiante que o agent devolver. O outcome observável não é “o modelo escreveu um e-mail empático”. É: duplicidade confirmada, política vigente aplicada, humano aprovou, transação e ticket no estado correto, e nada disso virou política nova só porque o turno fechou.</p>
-      <p>Se você ler os passos como um fluxograma de produto, vai achar que “já fazemos isso”. Leia como um teste de ownership. Em cada linha, pergunte: se esta peça falhar, <em>quem</em> é o dono do conserto? Se a resposta for “o prompt”, a cena ainda não ensinou.</p>
-    </div>
-
-    <div class="narrative">
-      <p class="lead">Este caso parece simples porque cabe numa frase, mas combina interpretação, conhecimento temporal, autoridade financeira e efeito irreversível. É justamente essa mistura que torna visíveis as fronteiras.</p>
-      <p>O modelo precisa entender o relato de Ana e comparar transações. O brain precisa entregar a política vigente e provar sua origem. O harness precisa impedir um estorno acima do limite sem aprovação, executar com idempotência e consultar o ambiente depois. Se qualquer uma dessas responsabilidades for substituída por uma instrução genérica como “seja cuidadoso”, o sistema depende de obediência probabilística onde deveria existir controle.</p>
+      <p>Antes dos seis passos, fixe a cena. Ana não é um ticket genérico. É uma pessoa que já pagou duas vezes, escreve com pressa e vai acreditar na primeira frase confiante que o agente devolver. O resultado real dessa execução não é um e-mail empático bem escrito. É a duplicidade confirmada, a política vigente aplicada, um humano tendo aprovado, a transação e o ticket em estado correto, e nada disso virando política nova só porque o turno terminou.</p>
+      <p>Se você ler os passos como um fluxograma de produto, vai achar que “já fazemos isso”. Leia como um teste de dono. Em cada linha, pergunte: se esta peça falhar, <em>quem</em> é o dono do conserto? Se a resposta for “o prompt”, a cena ainda não ensinou.</p>
     </div>
 
     <div class="worked">
       <div class="worked-head">
-        <small>Outcome esperado</small>
+        <small>Resultado esperado</small>
         <p>Confirmar a duplicidade, aplicar a política vigente, obter aprovação e provar que ticket e transação terminaram no estado correto.</p>
       </div>
       <div class="worked-step"><span class="idx">01</span><strong>Brain recupera</strong><p>Seleciona o trecho vigente da política, sua data de validade e a fonte original. Não envia o manual inteiro.</p></div>
       <div class="worked-step"><span class="idx">02</span><strong>Harness prepara</strong><p>Expõe tools de consultar cobrança, preparar estorno e solicitar aprovação. Limita autoridade, tempo e orçamento.</p></div>
       <div class="worked-step"><span class="idx">03</span><strong>Modelo decide</strong><p>Compara relato, transações e regra. Produz justificativa estruturada e solicita aprovação, sem possuir a política ou a autoridade.</p></div>
-      <div class="worked-step"><span class="idx">04</span><strong>Harness executa</strong><p>Depois da aprovação, envia uma chave de idempotência e solicita o estorno. Um retry não pode cobrar duas vezes.</p></div>
+      <div class="worked-step"><span class="idx">04</span><strong>Harness executa</strong><p>Depois da aprovação, usa uma chave que identifica aquela ação e solicita o estorno. Se houver nova tentativa, o sistema não pode pagar duas vezes.</p></div>
       <div class="worked-step"><span class="idx">05</span><strong>Harness verifica</strong><p>Consulta transação e ticket no ambiente. Só declara sucesso quando o efeito real está confirmado.</p></div>
-      <div class="worked-step"><span class="idx">06</span><strong>Brain recebe candidato</strong><p>Registra episódio, aprovação e outcome para revisão; a política não é reescrita pelo output do modelo.</p></div>
+      <div class="worked-step"><span class="idx">06</span><strong>Brain recebe candidato</strong><p>Registra o ocorrido, a aprovação e o resultado para revisão; a resposta do modelo não reescreve a política.</p></div>
     </div>
 
-    <div class="narrative">
-      <p>Note que o modelo participa de uma etapa decisiva, mas não se torna dono do processo. Ele produz uma interpretação e uma próxima ação estruturada. A autoridade continua fora dele. Mesmo que um modelo novo formule uma justificativa melhor, o limite financeiro e a necessidade de aprovação permanecem idênticos.</p>
-      <p>Também existe uma diferença entre declarar e provar. A frase “estorno concluído” é apenas texto até que o sistema consulte a transação e o ticket. Essa verificação fecha o ciclo entre mundo linguístico e mundo operacional. Sem ela, a empresa mede confiança da resposta em vez de medir o outcome.</p>
-    </div>
+    <figure>
+      <div class="mermaid-wrap" data-mermaid>
+        <pre class="mermaid">
+sequenceDiagram
+  actor Ana
+  participant Brain as Company brain
+  participant Harness as Thin harness
+  participant Adapter
+  participant Modelo
+  participant Mundo as Ambiente
+
+  Ana->>Harness: cobrança duplicada
+  Harness->>Brain: identidade e missão
+  Brain->>Brain: ACL e validade
+  Brain-->>Harness: dossiê vigente
+  Harness->>Adapter: contrato da rota
+  Adapter->>Modelo: traduz, não equivale
+  Modelo-->>Harness: pedido de estorno
+  Harness->>Harness: teto de 500 reais
+  Harness->>Mundo: aprovação humana
+  Mundo-->>Harness: ok
+  Harness->>Mundo: estorno com chave
+  Mundo-->>Harness: ticket e transação
+  Harness->>Brain: candidato a memória
+  Brain->>Brain: caixa de revisão
+        </pre>
+        <ol class="mermaid-fallback">
+          <li>Ana pede ao harness. O harness pede dossiê ao brain, depois de ACL e validade.</li>
+          <li>O adapter traduz o contrato. O modelo pede o estorno. O harness aplica o teto.</li>
+          <li>O ambiente aprova, executa e prova. O brain só recebe candidato, não política nova.</li>
+        </ol>
+      </div>
+      <figcaption>A mesma cena da Ana, em ordem. Cada seta tem um dono.</figcaption>
+    </figure>
+
     <div class="story">
-      <p>Acompanhe Ana como se você fosse o supervisor do turno, não o autor do prompt. O brain não “lembra a política”: ele escolhe o trecho vigente, a data e a página. O harness não “pede para o modelo ter cuidado”: ele oferece consultar, preparar, solicitar aprovação, e recusa executar sozinho acima de R$ 500. O modelo faz o trabalho que o temporário faz melhor: ler o relato apressado, comparar as duas cobranças, escrever a justificativa no schema. Um humano assina. O harness manda o estorno com chave de idempotência, porque timeout não pode virar um segundo pagamento. Depois ele pergunta ao mundo, não ao modelo: a transação virou? o ticket fechou? Só então o episódio vai para a caixa. A política de amanhã não nasce do e-mail empático de hoje.</p>
-      <p>Se o temporário desta semana escrever melhor que o da semana passada, Ana ganha uma carta mais clara. Ela não ganha um caixa novo. Essa é a frase que a arquitetura precisa sobreviver quando o próximo snapshot chegar mais barato, mais eloquente e igualmente sem chave do cofre.</p>
+      <p>O modelo participa de uma etapa decisiva e não se torna dono do processo. Ele interpreta e propõe a próxima ação. A autoridade continua fora. Mesmo que o temporário da semana que vem escreva melhor, o limite e a aprovação permanecem iguais. “Estorno concluído” é texto até o sistema consultar a transação e o ticket. Sem essa verificação, a empresa mede a confiança da frase em vez do resultado no mundo. Ana pode ganhar uma carta mais clara. Ela não ganha um caixa novo.</p>
     </div>
 
     <h3>Agora altere uma coisa por vez</h3>
     <div class="change-map" aria-label="Cinco mudanças e a camada que absorve cada uma">
-      <article class="change-card"><span class="owner">modelo</span><strong>Provider aposenta o modelo.</strong><p>Política, histórico e aprovação permanecem.</p></article>
+      <article class="change-card"><span class="owner">modelo</span><strong>O fornecedor aposenta o modelo.</strong><p>Política, histórico e aprovação permanecem.</p></article>
       <article class="change-card"><span class="owner">brain</span><strong>Limite humano cai para R$ 300.</strong><p>Loop, tools e modelo permanecem.</p></article>
-      <article class="change-card"><span class="owner">harness</span><strong>Passam a ser exigidas duas aprovações.</strong><p>Fontes e capability permanecem.</p></article>
+      <article class="change-card"><span class="owner">harness</span><strong>Passam a ser exigidas duas aprovações.</strong><p>Fontes e capacidade do modelo permanecem.</p></article>
       <article class="change-card"><span class="owner">harness</span><strong>Estorno falha depois de timeout.</strong><p>Política e memória canônica permanecem.</p></article>
       <article class="change-card"><span class="owner">brain</span><strong>Ana contesta a própria política.</strong><p>A regra vigente permanece até decisão autorizada.</p></article>
     </div>
 
-    <p>Cada mudança tem um dono e um gate. Modelo não corrige política velha; knowledge graph não corrige stop rule; prompt não concede autoridade financeira.</p>
+    <p>Cada mudança tem um dono e um teste. Modelo maior não corrige política velha; índice de conhecimento não corrige regra de parada; prompt não concede autoridade financeira.</p>
     <div class="story">
-      <p>O teste de independência é o momento em que a analogia da fábrica deixa de ser decoração. Trocar o motor (provider aposenta o snapshot) não pode obrigar a reescrever o desenho da peça. Mudar a tolerância (limite de R$ 500 para R$ 300) não pode obrigar a trocar o painel. Exigir dois operadores na alavanca (duas aprovações) não pode obrigar a reindexar a biblioteca. Se uma dessas mudanças reconstrói as três camadas, você não tem modularidade: tem um monólito com três nomes no slide.</p>
-    </div>
-
-    <div class="narrative">
-      <p>O exercício de mudar uma coisa por vez funciona como um teste de independência. Se a aposentadoria do modelo obriga migrar políticas, ou se uma mudança no limite de aprovação exige reescrever todo o loop, a arquitetura está revelando que suas fronteiras são apenas nomes. Uma separação real aparece quando o impacto permanece concentrado e os contratos vizinhos continuam válidos.</p>
+      <p>O teste de independência é o momento em que a analogia da fábrica deixa de ser decoração. Trocar o motor, quando o fornecedor aposenta o snapshot, não pode obrigar ninguém a reescrever o desenho da peça. Mudar a tolerância, quando o limite de R$ 500 vira R$ 300, não pode obrigar a trocar o painel. Exigir dois operadores na alavanca não pode obrigar a reindexar a biblioteca inteira.</p>
+      <p>Separação real é isso e nada além disso: o impacto fica concentrado onde a mudança nasceu, e os contratos vizinhos continuam válidos sem que ninguém precise tocá-los. Se qualquer uma dessas mudanças obriga a reconstruir as três camadas, o que existe ali não é modularidade. É um monólito com três nomes no slide.</p>
     </div>
 
     <h3>A mesma arquitetura em quatro domínios</h3>
     <div class="domain-grid" aria-label="Quatro exemplos da arquitetura em diferentes domínios">
-      <article class="domain-case"><span class="domain">Engenharia</span><strong>Revisão de código</strong><dl><dt>Modelo</dt><dd>Interpreta diff e propõe correção.</dd><dt>Harness</dt><dd>Limita tools, executa testes e aplica patch em branch.</dd><dt>Brain</dt><dd>ADRs, padrões do repo, ownership e incidentes.</dd><dt>Outcome</dt><dd>Testes passam e o diff fica dentro do escopo.</dd></dl></article>
-      <article class="domain-case"><span class="domain">Receita</span><strong>Qualificação de leads</strong><dl><dt>Modelo</dt><dd>Extrai sinais e classifica intenção.</dd><dt>Harness</dt><dd>Deduplica, limita escrita no CRM e controla ação externa.</dd><dt>Brain</dt><dd>ICP, pricing, consentimento e histórico da conta.</dd><dt>Outcome</dt><dd>CRM correto, sem mensagem proibida ou duplicada.</dd></dl></article>
-      <article class="domain-case"><span class="domain">Estratégia</span><strong>Pesquisa fundamentada</strong><dl><dt>Modelo</dt><dd>Decompõe, compara evidência e sintetiza.</dd><dt>Harness</dt><dd>Controla busca, orçamento e verificação de links.</dd><dt>Brain</dt><dd>Fontes, claims anteriores, decisões e gaps.</dd><dt>Outcome</dt><dd>Cada claim material abre a prova que o sustenta.</dd></dl></article>
-      <article class="domain-case"><span class="domain">Jurídico</span><strong>Revisão contratual</strong><dl><dt>Modelo</dt><dd>Lê cláusulas e sugere redação.</dd><dt>Harness</dt><dd>Impede envio autônomo, exige revisão e versiona.</dd><dt>Brain</dt><dd>Playbook, templates, legislação e precedentes.</dd><dt>Outcome</dt><dd>Responsável aprova uma versão rastreável.</dd></dl></article>
+      <article class="domain-case"><span class="domain">Engenharia</span><strong>Revisão de código</strong><dl><dt>Modelo</dt><dd>Interpreta o diff e propõe correção.</dd><dt>Harness</dt><dd>Limita ferramentas, executa testes e aplica o patch numa branch.</dd><dt>Brain</dt><dd>ADRs, padrões do repositório, responsáveis e incidentes.</dd><dt>Resultado</dt><dd>Testes passam e o diff fica dentro do escopo.</dd></dl></article>
+      <article class="domain-case"><span class="domain">Receita</span><strong>Qualificação de leads</strong><dl><dt>Modelo</dt><dd>Extrai sinais e classifica intenção.</dd><dt>Harness</dt><dd>Evita duplicação, limita escrita no CRM e controla ações externas.</dd><dt>Brain</dt><dd>ICP, preços, consentimento e histórico da conta.</dd><dt>Resultado</dt><dd>CRM correto, sem mensagem proibida ou duplicada.</dd></dl></article>
+      <article class="domain-case"><span class="domain">Estratégia</span><strong>Pesquisa fundamentada</strong><dl><dt>Modelo</dt><dd>Divide a pergunta, compara evidências e sintetiza.</dd><dt>Harness</dt><dd>Controla busca, orçamento e verificação de links.</dd><dt>Brain</dt><dd>Fontes, afirmações anteriores, decisões e lacunas.</dd><dt>Resultado</dt><dd>Cada afirmação importante abre a prova que a sustenta.</dd></dl></article>
+      <article class="domain-case"><span class="domain">Jurídico</span><strong>Revisão contratual</strong><dl><dt>Modelo</dt><dd>Lê cláusulas e sugere redação.</dd><dt>Harness</dt><dd>Impede envio autônomo, exige revisão e guarda versões.</dd><dt>Brain</dt><dd>Playbook, modelos, legislação e precedentes.</dd><dt>Resultado</dt><dd>Responsável aprova uma versão rastreável.</dd></dl></article>
     </div>
 
-    <div class="narrative">
-      <p>Os substantivos mudam entre engenharia, vendas, pesquisa e jurídico, mas o padrão não muda. O modelo interpreta material ambíguo; o brain fornece a verdade institucional relevante; o harness delimita ação e observa o efeito. Essa repetição é um sinal de que estamos diante de uma fronteira arquitetural, não de uma convenção específica do caso de reembolso.</p>
-    </div>
     <div class="story">
-      <p>Pense nas quatro linhas como quatro estações da mesma fábrica. Na revisão de código, a “peça” é o diff; o teste de aceitação são os testes automatizados; o SOP são os ADRs. Na qualificação de leads, a peça é o registro no CRM; o intertravamento é o consentimento; o desenho é o ICP. Na pesquisa, a peça é o claim; a prova é o link que abre. No jurídico, a peça é a cláusula; a parada de emergência é “não envia sozinho”. O domínio muda. A pergunta de ownership não muda: quem interpreta, quem autoriza, quem prova, quem lembra.</p>
+      <p>Os substantivos mudam. O padrão não. Na revisão de código, a peça é o diff, o teste são os testes automatizados e o desenho são os ADRs. Na qualificação de leads, a peça é o registro no CRM, a trava é o consentimento e o desenho é o ICP. Na pesquisa, a peça é uma afirmação e a prova é o link que abre. No jurídico, a peça é a cláusula e a parada é “não envia sozinho”. O domínio muda. As perguntas não: quem interpreta, quem autoriza, quem prova e quem guarda?</p>
     </div>
 
     <div class="analogy-note">
       <strong>Uma regra, três usos</strong>
-      <p>“Acima de R$ 500 exige aprovação” é fonte procedural no brain. A checagem <code>valor &gt; limite</code> é enforcement no harness. A explicação ao cliente é linguagem do modelo. Copiar a política inteira para os três cria três fontes de verdade.</p>
+      <p>“Acima de R$ 500 exige aprovação” é uma regra no brain. A checagem <code>valor &gt; limite</code> é a trava no harness. A explicação ao cliente é linguagem do modelo. Copiar a política inteira para os três lugares cria três fontes de verdade.</p>
     </div>
 
     <h2 id="promocao"><span class="n">07</span>Como trocar um modelo sem apostar a operação</h2>
-    <p>Alterar o alias diretamente em produção testa modelo, tráfego, tools e usuários ao mesmo tempo. Um protocolo seguro reduz variáveis e aumenta autoridade em etapas.</p>
+    <p>Trocar diretamente o modelo usado em produção mistura quatro mudanças: modelo, tráfego, ferramentas e comportamento dos usuários. Um protocolo seguro testa uma coisa por vez e libera poder aos poucos.</p>
     <div class="story">
-      <p>A analogia aqui é a carteira de motorista, não o currículo. O leaderboard é o histórico escolar: diz que o candidato passou em provas genéricas. O eval local é o exame no <em>seu</em> percurso: curva fechada, carga, chuva. Shadow é sentar no banco de trás com o freio de estacionamento puxado: o candidato “dirige” o input real, mas a peça não sai da linha. Canary é o primeiro turno numa única estação, volume baixo, supervisor ao lado, chave do motor antigo no bolso. Promoção é efetivar o alias e <em>não</em> jogar a chave fora na mesma tarde.</p>
-      <p>Trocar o alias direto em produção é entregar o caminhão na primeira aula e descobrir na estrada se o candidato lê placa. Pode dar certo. Não é um protocolo. É uma aposta com o outcome dos outros.</p>
+      <p>A analogia aqui é a carteira de motorista, não o currículo. O ranking público funciona como histórico escolar e diz apenas que o candidato passou em provas genéricas. O eval local é o exame no <em>seu</em> percurso, com a curva fechada, a carga e a chuva que existem na sua estrada. O shadow, ou teste em sombra, deixa o candidato receber situações reais sem poder agir sobre elas. O canary, ou piloto, libera uma parte pequena da operação, com supervisor ao lado e volta rápida disponível. Promoção é efetivar a troca sem jogar a chave antiga fora na mesma tarde.</p>
+      <p>Trocar o modelo direto em produção é entregar o caminhão na primeira aula e descobrir na estrada se o candidato lê placa. Pode dar certo. Não é um protocolo. É uma aposta com o resultado dos outros.</p>
     </div>
 
-    <p>A unidade de promoção é uma rota delimitada. O candidato pode ganhar em bulk, empatar em research e perder em review de segurança.</p>
-
-    <div class="narrative">
-      <p class="lead">Substituição segura é uma escada de evidência. O candidato começa sem autoridade, demonstra comportamento em dados conhecidos, observa tráfego real sem produzir efeitos e só então recebe uma parcela pequena da operação.</p>
-      <p>Cada estágio responde a uma pergunta diferente. O eval offline verifica se o candidato consegue realizar a tarefa em condições controladas. Shadow revela como ele reage à distribuição real de inputs e às condições do ambiente. Canary testa efeitos reais com blast radius reduzido. Pular etapas mistura causas: quando algo falha, a equipe não sabe se o problema estava no modelo, na integração, no tráfego ou no rollout.</p>
-    </div>
+    <p>A promoção acontece por tipo de tarefa. O candidato pode ganhar no trabalho repetitivo, empatar em pesquisa e perder na revisão de segurança. Pular um degrau mistura causas: quando algo falha, ninguém sabe se o problema estava no modelo, na integração, no tráfego ou na liberação.</p>
 
     <div class="promotion-pipeline" aria-label="Protocolo de promoção em seis gates">
-      <article class="promotion-stage"><span class="stage-id">01</span><strong>Baseline</strong><p>Congele prompt, adapter, tools, retrieval, dataset e modelo atual.</p><span class="proof">prova: execução reproduzível</span></article>
-      <article class="promotion-stage"><span class="stage-id">02</span><strong>Elegibilidade</strong><p>Confira tools, schema, região, retenção, idioma e throughput.</p><span class="proof">prova: capability matrix</span></article>
-      <article class="promotion-stage"><span class="stage-id">03</span><strong>Offline</strong><p>Compare casos frequentes, extremos, retidos e adversariais.</p><span class="proof">prova: slices + trials</span></article>
-      <article class="promotion-stage"><span class="stage-id">04</span><strong>Shadow</strong><p>Use input real autorizado, com efeitos bloqueados ou simulados.</p><span class="proof">prova: traces pareados</span></article>
-      <article class="promotion-stage"><span class="stage-id">05</span><strong>Canary</strong><p>Libere pouco tráfego, baixo risco e limites estreitos.</p><span class="proof">prova: outcomes sem violação</span></article>
-      <article class="promotion-stage"><span class="stage-id">06</span><strong>Promoção</strong><p>Promova o alias e preserve rollback durante a observação.</p><span class="proof">prova: decisão versionada</span></article>
+      <article class="promotion-stage"><span class="stage-id">01</span><strong>Ponto de comparação</strong><p>Congele prompt, integração, ferramentas, busca, casos e modelo atual.</p><span class="proof">prova: execução repetível</span></article>
+      <article class="promotion-stage"><span class="stage-id">02</span><strong>Requisitos</strong><p>Confira ferramentas, formato, região, retenção, idioma e volume.</p><span class="proof">prova: lista de requisitos</span></article>
+      <article class="promotion-stage"><span class="stage-id">03</span><strong>Teste controlado</strong><p>Compare casos frequentes, extremos, antigos e adversariais.</p><span class="proof">prova: grupos + repetições</span></article>
+      <article class="promotion-stage"><span class="stage-id">04</span><strong>Sombra</strong><p>Use situações reais autorizadas, mas bloqueie os efeitos.</p><span class="proof">prova: execuções comparadas</span></article>
+      <article class="promotion-stage"><span class="stage-id">05</span><strong>Piloto</strong><p>Libere pouco volume, baixo risco e limites estreitos.</p><span class="proof">prova: resultados sem violação</span></article>
+      <article class="promotion-stage"><span class="stage-id">06</span><strong>Promoção</strong><p>Troque a rota e preserve a volta durante a observação.</p><span class="proof">prova: decisão registrada</span></article>
     </div>
 
-    <div class="narrative">
-      <p>O baseline é o que transforma comparação em evidência. Prompt, toolset, retrieval e dataset precisam estar versionados; caso contrário, uma aparente melhora do candidato pode ter vindo de outra mudança. A elegibilidade evita desperdiçar eval com um modelo que não atende uma capability obrigatória. E o rollback preservado reconhece que produção contém situações que nenhum dataset antecipou.</p>
-      <p>A autoridade deve crescer junto com a confiança. Em shadow, o modelo pode propor uma ação, mas a execução permanece bloqueada. No canary, ele atua em pouco tráfego, baixo risco e limites estreitos. Promoção não é apagar o caminho antigo: é mover o alias enquanto a saída continua disponível durante a janela de observação.</p>
+    <figure>
+      <div class="mermaid-wrap" data-mermaid>
+        <pre class="mermaid">
+flowchart LR
+  B["Company brain"] -->|"dossiê"| H["Thin harness"]
+  H -->|"contrato"| M1["Modelo atual"]
+  M2["Candidato"] --> E["Eval, sombra, piloto"]
+  E -->|"mesmo contrato"| H
+  M2 -.->|"não lê o depósito"| B
+
+  classDef brain fill:#FFE7DC,stroke:#BD3600,color:#050505
+  classDef harness fill:#E1F2FF,stroke:#006CAE,color:#050505
+  classDef model fill:#D1FF00,stroke:#050505,color:#050505
+  class B brain
+  class H,E harness
+  class M1,M2 model
+        </pre>
+        <ol class="mermaid-fallback">
+          <li>O brain continua entregando o mesmo dossiê ao harness.</li>
+          <li>O candidato entra pelo eval, sombra e piloto, no mesmo contrato.</li>
+          <li>O candidato não lê o depósito. Se precisar, a costura está soldada.</li>
+        </ol>
+      </div>
+      <figcaption>Trocar o motor não reabre a biblioteca. O pontilhado é o caminho que não pode existir.</figcaption>
+    </figure>
+
+    <div class="story">
+      <p>O ponto de comparação é o que transforma a comparação em evidência. Prompt, ferramentas, busca e conjunto de casos precisam estar versionados; senão, uma aparente melhora pode ter vindo de outra mudança. A lista de requisitos evita gastar eval com quem não atende uma capacidade obrigatória. A volta preservada reconhece que a produção contém situações que nenhum conjunto de casos antecipou. Em shadow, o modelo pode propor e não pode agir. No canary, atua em pouco tráfego. Promoção não é apagar o caminho antigo: é mover o alias enquanto a saída continua disponível.</p>
     </div>
 
-    <p>As <a href="https://developers.openai.com/api/docs/guides/evaluation-best-practices">boas práticas de avaliação da OpenAI</a> recomendam dados representativos da produção, comparação contínua e casos típicos, extremos e adversariais. A <a href="https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents">Anthropic</a> acrescenta a leitura conjunta de trajetória e outcome.</p>
+    <p>As <a href="https://developers.openai.com/api/docs/guides/evaluation-best-practices">boas práticas de avaliação da OpenAI</a> recomendam dados representativos da produção, comparação contínua e casos típicos, extremos e adversariais. A <a href="https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents">Anthropic</a> acrescenta a leitura conjunta de trajetória e resultado.</p>
 
     <h3>Um primeiro dataset que expõe mais de um tipo de falha</h3>
-    <p>Exemplo didático com 100 casos. A proporção real deve seguir volume, risco e histórico do seu workload.</p>
+    <p>Exemplo didático com 100 casos. Na prática, a proporção deve seguir volume, risco e histórico daquele tipo de tarefa.</p>
 
     <div class="slice-grid" aria-label="Composição didática de um dataset de avaliação com cem casos">
       <article class="slice"><span class="count">60</span><strong>Frequentes</strong><p>Cobrem o volume e o caminho normal.</p></article>
@@ -1397,28 +1572,26 @@
       <article class="slice"><span class="count">10</span><strong>Adversariais</strong><p>Testam acesso, tool errada, ambiguidade e injection.</p></article>
     </div>
 
-    <div class="narrative">
-      <p>Os slices impedem que o volume do caminho feliz esconda o risco. Casos frequentes medem utilidade cotidiana; extremos pressionam limites; regressões reais verificam se a organização reaprendeu com incidentes; adversariais procuram violações que talvez sejam raras, mas materialmente graves. O score global só ganha sentido depois que cada grupo foi lido separadamente.</p>
+    <div class="story">
+      <p>Os quatro grupos impedem que o volume do caminho feliz esconda o risco. Casos frequentes medem utilidade cotidiana; extremos pressionam limites; regressões reais verificam se a organização reaprendeu com incidentes; adversariais procuram violações que talvez sejam raras, mas materialmente graves. O score global só ganha sentido depois que cada grupo foi lido separadamente.</p>
     </div>
 
-    <p>Com cinco trials por caso, cada candidato produz 500 trajetórias. Isso torna variância e pior caso visíveis; não transforma “500” em número universal.</p>
+    <p>Repetindo cinco vezes cada caso, cada candidato produz 500 execuções. Isso deixa visíveis a variação e o pior caso; não transforma “500” em número universal.</p>
 
     <h3>Leia o scorecard na ordem certa</h3>
     <ol class="gate-order" aria-label="Ordem de leitura do scorecard de substituição">
-      <li>Capability ausente encerra o teste.</li>
+      <li>Requisito obrigatório ausente encerra o teste.</li>
       <li>Violação crítica veta promoção.</li>
-      <li>Outcome é lido por slice.</li>
-      <li>Trajetória revela tool proibida.</li>
+      <li>Resultado é lido por grupo de casos.</li>
+      <li>O caminho revela ferramenta proibida.</li>
       <li>Custo e latência desempatam.</li>
       <li>Variância e pior caso fecham a leitura.</li>
     </ol>
 
-    <div class="narrative">
-      <p>A ordem evita compensações indevidas. Capability ausente e violação crítica encerram a candidatura; não são déficits que um custo menor possa equilibrar. Só depois desses vetos comparamos outcome, trajetória, custo e latência. Por fim, variância e pior caso respondem se o bom resultado é estável ou apenas uma média produzida por algumas execuções excelentes.</p>
-    </div>
     <div class="story">
-      <p>Leia o scorecard como a banca de um exame, não como uma média de boletim. Primeiro a secretaria confere se o candidato trouxe a habilitação exigida: sem tool calling, sem schema, sem região, a prova nem começa. Depois o médico do trabalho veta se houve acidente: acesso indevido, ação sem autoridade, efeito irreversível. Só então os professores olham as provas por turma (os slices) porque gabaritar a turma fácil não perdoa zerar a turma perigosa. Em seguida alguém assiste ao filme da prova: a trajetória. O candidato pode ter chegado na resposta certa passando por uma tool proibida; isso não é aprovação, é sorte. Custo e latência entram por último, como desempate entre quem já passou. E a banca ainda pergunta: isso se repetiu em cinco tentativas, ou brilhou numa?</p>
-      <p>Se você inverter a ordem (“é 40% mais barato, vamos ver o resto depois”) o barato contrata o veto. A fábrica já conhece esse personagem: o fornecedor que ganha no preço e perde na junta que não pode falhar.</p>
+      <p>Leia o scorecard como a banca de um exame, não como uma média de boletim. Primeiro, confira os requisitos mínimos: ferramentas, formato, região. Se faltou um deles, a prova nem começa. Depois vêm os vetos: acesso indevido, ação sem autoridade ou efeito irreversível encerram o teste.</p>
+      <p>Só então compare os grupos de casos. Acertar os fáceis não perdoa falhar nos perigosos. Veja também o caminho: chegar à resposta certa usando uma ferramenta proibida é sorte, não aprovação. Custo e velocidade entram por último, como desempate entre candidatos que já passaram. E ainda resta uma pergunta: o resultado se repetiu ou brilhou uma única vez?</p>
+      <p>A ordem existe para impedir compensação indevida. Capacidade ausente e violação crítica encerram a candidatura, e nenhum desconto equilibra esse tipo de déficit. Se você inverter a sequência e começar por “é 40% mais barato, o resto a gente vê depois”, o preço passa a contratar o veto. A fábrica já conhece esse personagem: o fornecedor que ganha na cotação e perde na junta que não pode falhar.</p>
     </div>
 
     <div class="analogy-note">
@@ -1432,48 +1605,45 @@
     </div>
 
     <h2><span class="n">08</span>Onde esta tese tem limites</h2>
-    <p>Separação não obriga toda aplicação a ter multi-provider, RAG, grafo e routing dinâmico. Arquitetura madura também sabe quando não construir.</p>
+    <p>Essa separação não obriga toda aplicação a usar vários fornecedores, RAG, grafo e escolha dinâmica de modelos. Arquitetura madura também sabe quando uma solução simples já basta.</p>
 
-    <div class="narrative">
-      <p class="lead">A tese defende opção de mudança, não abstração antecipada em todas as direções. Há sistemas pequenos em que um único modelo, alguns arquivos versionados e um workflow explícito são a solução correta.</p>
-      <p>O custo da modularidade precisa ser comparado ao custo provável da mudança. Num protótipo descartável, uma integração direta pode ser racional. Num processo financeiro com anos de histórico, múltiplas fontes e alto custo de erro, separar autoridade, conhecimento e capacidade deixa de ser refinamento e vira condição de operação.</p>
+    <div class="story">
+      <p>A tese defende opção de mudança, não abstração antecipada em todas as direções. Há sistemas pequenos em que um único modelo, alguns arquivos versionados e um fluxo explícito são a solução correta. O custo da modularidade precisa ser comparado ao custo provável da mudança. Num protótipo descartável, integrar direto pode ser racional. Num processo financeiro com anos de histórico e alto custo de erro, separar autoridade, conhecimento e capacidade deixa de ser refinamento e vira condição de operação.</p>
     </div>
 
     <div class="boundary-grid" aria-label="Seis situações em que a arquitetura pode ser simplificada ou reforçada">
       <article class="boundary"><strong>Protótipo reversível</strong><p>Comece direto. Preserve apenas uma fronteira clara para extrair depois.</p></article>
-      <article class="boundary"><strong>Processo determinístico</strong><p>Use workflow explícito. Um harness mais espesso pode ser correto.</p></article>
-      <article class="boundary"><strong>Capability exclusiva</strong><p>Aceite lock-in consciente, isole a extensão e registre a dívida de saída.</p></article>
+      <article class="boundary"><strong>Processo determinístico</strong><p>Use um fluxo explícito. Um harness mais espesso pode ser correto.</p></article>
+      <article class="boundary"><strong>Capacidade exclusiva</strong><p>Aceite a dependência consciente, isole a extensão e registre o custo de sair.</p></article>
       <article class="boundary"><strong>Mudança regulada</strong><p>Aumente aprovações, verificações e separação de funções.</p></article>
-      <article class="boundary"><strong>Sem outcome confiável</strong><p>Construa evidência antes de alegar substituibilidade.</p></article>
+      <article class="boundary"><strong>Sem resultado confiável</strong><p>Construa evidência antes de dizer que a troca é segura.</p></article>
       <article class="boundary"><strong>Brain pequeno e estável</strong><p>Arquivos versionados e busca simples podem vencer uma plataforma de memória.</p></article>
     </div>
     <div class="story">
-      <p>A analogia da fábrica também ensina a não construir hospital para farpa. Um protótipo reversível é a bancada de madeira no fundo do galpão: soldar o motor ali por uma semana não é crime, desde que você saiba que aquilo <em>não</em> é a linha. Um processo determinístico (“se X, então Y, sem interpretação”) pode pedir um painel mais espesso, e isso é correto. Uma capability exclusiva é a ferramenta que só encaixa numa marca: isole, nomeie a dívida, continue. O que a tese recusa é fingir que a bancada já é a fábrica, ou que a ferramenta exclusiva é o desenho da peça.</p>
+      <p>A analogia da fábrica também ensina a não construir hospital para farpa. Um protótipo reversível é a bancada de madeira no fundo do galpão: soldar o motor ali por uma semana não é crime, desde que você saiba que aquilo <em>não</em> é a linha. Um processo determinístico (“se X, então Y, sem interpretação”) pode pedir um painel mais espesso, e isso é correto. Uma capacidade exclusiva é a ferramenta que só encaixa numa marca: isole, nomeie a dívida, continue. O que a tese recusa é fingir que a bancada já é a fábrica, ou que a ferramenta exclusiva é o desenho da peça.</p>
     </div>
 
-    <div class="narrative">
-      <p>A decisão proporcional começa pelo menor mecanismo que mantém o risco aceitável. Um brain modular pode ser um conjunto bem governado de arquivos; thin harness pode ser um processo único com bons limites; routing pode começar com dois aliases estáticos. Modularidade descreve fronteiras de responsabilidade, não uma obrigação de distribuir tudo em serviços.</p>
-      <p>Também existem casos em que mais determinismo é desejável. Se a sequência é regulada, repetitiva e bem conhecida, um workflow explícito pode superar a liberdade do agente. O harness fica deliberadamente mais prescritivo, mas por causa do domínio, não para compensar uma limitação acidental do modelo. A diferença é que essa rigidez possui dono, justificativa e evidência.</p>
+    <div class="story">
+      <p>A decisão proporcional começa pelo menor mecanismo que mantém o risco aceitável. Um brain modular pode ser um conjunto bem governado de arquivos. Thin harness pode ser um processo único com bons limites. O roteamento pode começar com dois aliases estáticos. Modularidade descreve fronteira de responsabilidade, não a obrigação de virar um conjunto de serviços. Se a sequência é regulada, repetitiva e bem conhecida, um fluxo explícito pode superar a liberdade do agente. O harness fica mais prescritivo por causa do domínio, não para compensar uma limitação acidental do modelo. Essa rigidez tem dono, justificativa e evidência.</p>
     </div>
 
     <div class="note">
       <strong>Limite da evidência</strong>
-      “Thin harness” é uma definição operacional desta aula. Ainda faltam comparações independentes e longitudinais entre harnesses finos e espessos. A tese é sustentada por desacoplamento, deprecação e obsolescência observada de scaffolding, não por uma causalidade universal já provada.
+      “Thin harness” é uma definição prática desta aula. Ainda faltam comparações independentes, ao longo do tempo, entre harnesses finos e pesados. A tese se apoia em separação de responsabilidades, aposentadoria de modelos e apoios que ficaram obsoletos. Ela não é uma lei universal já provada.
     </div>
 
     <p>Construa a <em>opção</em> de substituir; não pague antecipadamente por todas as substituições imagináveis. O mesmo princípio aparece em <a href="../cursos/AIOX-Agent-Engineering/aulas/12f-menor-cerebro-suficiente.md">O menor cérebro suficiente</a>.</p>
 
     <h3>Objeções que a tese precisa sobreviver</h3>
     <div class="objections">
-      <details><summary>“Uma janela enorme elimina o company brain.”</summary><p>Ela transporta mais material. Não resolve ACL anterior à recuperação, supersessão, conflito, deleção, proveniência ou escolha da edição correta. Long context é capacidade de mesa; brain é sistema de conhecimento.</p></details>
-      <details><summary>“MCP torna tudo portável.”</summary><p>MCP padroniza descoberta e invocação de tools. Não decide quem pode executar, como o loop para, qual dado pode ser recuperado nem como o outcome é provado. Padrão de tomada não substitui quadro elétrico. A ficha catalogada diz que o aparelho existe e qual pino usar. O quadro decide se aquela tomada tem autorização, disjuntor e medidor. Sem quadro, a padronização só acelera o curto-circuito.</p></details>
-      <details><summary>“O líder dos benchmarks serve para todas as rotas.”</summary><p>O AI Index 2026 combina convergência no topo com inteligência irregular e erros nos próprios benchmarks. Um ranking agregado não expõe sua distribuição, seus casos críticos nem o custo marginal.</p></details>
-      <details><summary>“Thin harness significa pouco código.”</summary><p>Não. Auth, approvals, idempotência, reconciliação e rollback podem exigir muito código. “Thin” significa poucos motivos de mudança misturados e pouca inteligência duplicada.</p></details>
-      <details><summary>“Lock-in sempre é erro.”</summary><p>Uma capability exclusiva pode gerar vantagem real. A decisão madura é tornar o lock-in explícito, isolar a extensão, manter eval de regressão e conhecer a dívida de saída.</p></details>
+      <details><summary>“Uma janela enorme elimina o company brain.”</summary><p>Ela transporta mais material. Não decide quem pode ver, qual versão vale, como resolver conflito, o que foi apagado nem de onde veio cada afirmação. Uma mesa maior comporta mais livros; não substitui a bibliotecária.</p></details>
+      <details><summary>“MCP torna tudo portável.”</summary><p>MCP padroniza como ferramentas são encontradas e chamadas. Não decide quem pode agir, quando o loop para, qual dado pode ser buscado nem como o resultado é provado. Padrão de tomada não substitui quadro elétrico.</p></details>
+      <details><summary>“O líder dos benchmarks serve para todas as rotas.”</summary><p>Um ranking geral não conhece seus casos críticos, seus dados, seu custo nem o peso de cada falha. Ele ajuda a escolher candidatos; não toma a decisão local.</p></details>
+      <details><summary>“Thin harness significa pouco código.”</summary><p>Não. Identidade, aprovação, proteção contra ação duplicada, conferência do estado real e volta segura podem exigir muito código. “Thin” significa poucas responsabilidades misturadas e pouca inteligência duplicada.</p></details>
+      <details><summary>“Dependência de fornecedor sempre é erro.”</summary><p>Uma capacidade exclusiva pode gerar vantagem real. A decisão madura é tornar a dependência visível, isolar a extensão, manter testes de regressão e conhecer o custo de sair.</p></details>
     </div>
     <div class="story">
-      <p>Essas objeções merecem uma volta pela fábrica, não um slogan. Uma mesa maior não contrata bibliotecária: você só empilha mais edições e aumenta a chance de o leitor abrir o livro errado. Uma tomada padronizada não dispensa o quadro: o curto-circuito só fica mais rápido e mais bem documentado. O motor que ganhou o catálogo da feira pode tremer na sua estação de solda. O Arena não conhece a sua junta crítica. Um painel com muitos relés ainda pode ser fino se cada relé tiver um motivo só. E a ferramenta que só encaixa numa marca pode ser a decisão certa, desde que a dívida de saída esteja no quadro-negro, não na memória de quem saiu de férias.</p>
-      <p>A tese sobrevive a essas frases porque ela não promete “menos software”. Ela promete que cada mudança arraste só o relógio que lhe pertence. Se a sua objeção for outra (“não temos outcome confiável”) a tese concorda e pede evidência antes de qualquer discurso de substituibilidade. Sem peça medida, não há troca. Há narrativa.</p>
+      <p>Essas objeções merecem uma volta pela fábrica, não um slogan. Uma tomada padronizada não dispensa o quadro: o curto-circuito só fica mais rápido e mais bem documentado. O motor que ganhou o catálogo da feira pode tremer na sua estação de solda. O Arena não conhece a sua junta crítica. E a dependência de um fornecedor pode ser a decisão certa, desde que a dívida de saída esteja no quadro, não na memória de quem saiu de férias. A tese não promete “menos software”. Ela promete que cada mudança arraste apenas o relógio que lhe pertence. Se a objeção for “não temos um resultado confiável para medir”, a tese concorda: primeiro construa evidência. Sem peça medida, não há troca segura.</p>
     </div>
 
     <h2><span class="n">09</span>Diagnóstico: quão substituível é seu sistema?</h2>
@@ -1481,84 +1651,85 @@
 
     <div class="readiness">
       <div class="readiness-list">
-        <label><input class="readiness-check" type="checkbox" value="1"> <span>O ID físico do modelo está isolado em configuração ou adapter.</span></label>
-        <label><input class="readiness-check" type="checkbox" value="1"> <span>As capabilities obrigatórias da rota estão declaradas.</span></label>
-        <label><input class="readiness-check" type="checkbox" value="1"> <span>Tools e schemas pertencem ao contrato do sistema, não ao prompt de um provider.</span></label>
+        <label><input class="readiness-check" type="checkbox" value="1"> <span>O nome exato do modelo está isolado na configuração ou no adapter.</span></label>
+        <label><input class="readiness-check" type="checkbox" value="1"> <span>As capacidades obrigatórias de cada rota estão declaradas.</span></label>
+        <label><input class="readiness-check" type="checkbox" value="1"> <span>Ferramentas e formatos pertencem ao contrato do sistema, não ao prompt de um fornecedor.</span></label>
         <label><input class="readiness-check" type="checkbox" value="1"> <span>Fontes canônicas e memória vivem fora dos pesos e das conversas do modelo.</span></label>
-        <label><input class="readiness-check" type="checkbox" value="1"> <span>ACL é aplicada antes de recuperar contexto ou executar ação.</span></label>
-        <label><input class="readiness-check" type="checkbox" value="1"> <span>Existe dataset local com outcomes e casos retidos.</span></label>
-        <label><input class="readiness-check" type="checkbox" value="1"> <span>Promoção possui shadow ou canary, fallback e rollback testável.</span></label>
-        <label><input class="readiness-check" type="checkbox" value="1"> <span>Escrita no brain passa por validação, versão e proveniência.</span></label>
-        <label><input class="readiness-check" type="checkbox" value="1"> <span>Cada scaffolding cognitivo possui hipótese, evidência e condição de remoção.</span></label>
+        <label><input class="readiness-check" type="checkbox" value="1"> <span>O acesso é verificado antes de buscar contexto ou executar uma ação.</span></label>
+        <label><input class="readiness-check" type="checkbox" value="1"> <span>Existem casos locais com resultados esperados, incluindo falhas antigas.</span></label>
+        <label><input class="readiness-check" type="checkbox" value="1"> <span>A troca passa por sombra ou piloto, tem plano B e permite voltar.</span></label>
+        <label><input class="readiness-check" type="checkbox" value="1"> <span>A escrita no brain passa por validação, versão e registro da origem.</span></label>
+        <label><input class="readiness-check" type="checkbox" value="1"> <span>Cada apoio de raciocínio possui hipótese, evidência e condição de remoção.</span></label>
       </div>
       <div id="readiness-score" aria-live="polite"><strong>0/9 · sistema soldado.</strong> Comece isolando o ID físico e as fontes canônicas.</div>
     </div>
 
     <div class="story">
-      <p>Trate as nove caixas como um clipboard de auditoria, não como um quiz de autoestima. Entre no galpão e pergunte em voz alta. O número de série do motor está numa etiqueta destacável, ou gravado na mesa? A vaga da estação tem descrição (tools, schema, idioma, teto) ou só o nome da marca do mês? As ferramentas pertencem ao contrato da linha, ou ao manual de um fornecedor? Os desenhos e o histórico moram na biblioteca, ou na cabeça do temporário? A bibliotecária confere a identidade <em>antes</em> de abrir a estante? Existe um ensaio com peças reais, inclusive as que já quebraram? Dá para observar sem carga, liberar uma estação e devolver a chave? O que o turno anota passa pela caixa de revisão? Cada lista amarelada no painel tem hipótese, métrica e data para sair?</p>
-      <p>Cada “não” é um endereço, não uma nota baixa. Zero a três: a fábrica ainda está soldada: trocar o motor é reforma. Quatro a seis: o soquete existe, mas faltam ensaio ou governança. Sete a nove: há opção real, ainda condicionada ao workload e ao gate. O número não certifica ninguém. Ele aponta a próxima solda a cortar.</p>
+      <p>Trate as nove caixas como uma auditoria, não como um quiz de autoestima. O nome do modelo está numa etiqueta fácil de trocar ou gravado na mesa? A rota descreve ferramentas, formato, idioma e limites, ou só a marca do mês? As ferramentas pertencem ao sistema ou ao manual de um fornecedor? Fontes e histórico moram na biblioteca ou na cabeça do temporário?</p>
+      <p>Continue: a bibliotecária confere a identidade <em>antes</em> de abrir a estante? Há testes com casos reais, inclusive os que já falharam? Dá para observar sem permitir ação, liberar uma pequena parte e voltar? O que o turno anota passa por revisão? Cada lista antiga no painel tem hipótese, medida e condição para sair?</p>
+      <p>Cada “não” é um endereço, não uma nota baixa. De zero a três, trocar o motor ainda exige reforma. De quatro a seis, o encaixe existe, mas faltam teste ou regras de uso. De sete a nove, há uma opção real de troca, ainda condicionada à tarefa e ao teste. O número não certifica ninguém. Ele aponta a próxima solda a cortar.</p>
     </div>
 
     <h2><span class="n">10</span>Pratique: em qual camada isto pertence?</h2>
     <p>Responda sem voltar à tabela. Cada cenário dá feedback imediato. A habilidade desta aula é mover a falha para a camada certa.</p>
     <div class="story">
-      <p>Leia cada item como uma cena, não como uma adivinhação. Alguém entra na sala com um sintoma. Sua tarefa não é “escolher a palavra mais sofisticada”. É recusar o conserto no lugar errado. Trocar o motor para curar política velha é tratar o termômetro. Construir um grafo para curar stop rule é tratar o prontuário. Engrossar o prompt para impedir um pagamento é pedir ao temporário que seja o cofre. O gabarito que importa é o endereço do conserto: o que precisa permanecer intacto enquanto você mexe na peça certa.</p>
+      <p>Leia cada item como uma cena, não como uma adivinhação. Alguém entra na sala com um sintoma. Sua tarefa não é “escolher a palavra mais sofisticada”. É recusar o conserto no lugar errado. Trocar o motor para curar política velha é tratar o termômetro. Construir um grafo para curar uma regra de parada é tratar o prontuário. Engrossar o prompt para impedir um pagamento é pedir ao temporário que seja o cofre. O gabarito que importa é o endereço do conserto: o que precisa permanecer intacto enquanto você mexe na peça certa.</p>
     </div>
 
     <div class="quiz-q" data-answer="a">
-      <p class="scenario">1. O provider anuncia que o modelo atual será aposentado em 90 dias.</p>
-      <label><input type="radio" name="q1" value="a"> Modelo + adapter: avaliar um candidato e promover o alias</label>
+      <p class="scenario">1. O fornecedor anuncia que o modelo atual será aposentado em 90 dias.</p>
+      <label><input type="radio" name="q1" value="a"> Modelo + adapter: testar um candidato e trocar a rota</label>
       <label><input type="radio" name="q1" value="b"> Harness: reescrever o loop inteiro</label>
       <label><input type="radio" name="q1" value="c"> Brain: migrar todas as fontes</label>
-      <div class="feedback" data-good="Certo. A troca pertence ao modelo e ao adapter. Brain e contratos operacionais permanecem; os evals decidem se o candidato pode ocupar a rota." data-poor="A mudança é física: um modelo deixou de existir. Avalie um candidato atrás do mesmo contrato. Não migre conhecimento nem reescreva a operação sem evidência de necessidade."></div>
+      <div class="feedback" data-good="Certo. A troca pertence ao modelo e ao adapter. Brain e contratos operacionais permanecem; os testes decidem se o candidato pode ocupar a rota." data-poor="Um modelo deixou de existir. Teste um candidato usando o mesmo contrato. Não migre conhecimento nem reescreva a operação sem necessidade."></div>
     </div>
 
     <div class="quiz-q" data-answer="c">
       <p class="scenario">2. O agente responde usando uma política de reembolso revogada há três semanas.</p>
       <label><input type="radio" name="q2" value="a"> Trocar para um modelo maior</label>
       <label><input type="radio" name="q2" value="b"> Adicionar mais retries</label>
-      <label><input type="radio" name="q2" value="c"> Brain: corrigir validade, supersessão, recuperação e citação</label>
-      <div class="feedback" data-good="Certo. O problema é de conhecimento institucional: fonte vigente, data, supersessão e recuperação. Modelo maior pode repetir a mesma fonte velha com mais confiança." data-poor="Política revogada é um problema de freshness e proveniência. A correção primária vive no brain, não no tamanho do modelo nem no número de tentativas."></div>
+      <label><input type="radio" name="q2" value="c"> Brain: corrigir qual versão vale, a busca e a citação</label>
+      <div class="feedback" data-good="Certo. O problema é de conhecimento institucional: fonte vigente, data, substituição da versão anterior e busca. Um modelo maior pode repetir a fonte velha com mais confiança." data-poor="Política revogada é um problema de versão e origem. A correção vive primeiro no brain, não no tamanho do modelo nem no número de tentativas."></div>
     </div>
 
     <div class="quiz-q" data-answer="b">
       <p class="scenario">3. Uma tool aprova pagamentos sem confirmação humana nem limite de valor.</p>
       <label><input type="radio" name="q3" value="a"> Brain: memorizar que pagamentos são perigosos</label>
-      <label><input type="radio" name="q3" value="b"> Harness: approval gate, cap, autorização e idempotência</label>
+      <label><input type="radio" name="q3" value="b"> Harness: aprovação, limite, autorização e proteção contra repetição</label>
       <label><input type="radio" name="q3" value="c"> Modelo: usar um system prompt mais severo</label>
-      <div class="feedback" data-good="Certo. Autoridade não deve depender de texto probabilístico. Aprovação, cap e idempotência são invariantes do harness." data-poor="Um prompt pode aconselhar prudência; ele não é fronteira de autorização. Efeitos financeiros precisam de controles determinísticos no harness."></div>
+      <div class="feedback" data-good="Certo. Autoridade não deve depender de uma instrução que o modelo pode ou não seguir. Aprovação, limite e proteção contra repetição são travas do harness." data-poor="Um prompt pode pedir cuidado; ele não concede autoridade. Efeitos financeiros precisam de controles firmes no harness."></div>
     </div>
 
     <div class="quiz-q" data-answer="a">
       <p class="scenario">4. Um modelo barato mantém qualidade em bulk, mas falha no review de segurança.</p>
-      <label><input type="radio" name="q4" value="a"> Routing: usar o barato em bulk e preservar a rota forte no review</label>
+      <label><input type="radio" name="q4" value="a"> Roteamento: usar o barato no trabalho repetitivo e manter o forte na segurança</label>
       <label><input type="radio" name="q4" value="b"> Engrossar todo o harness</label>
       <label><input type="radio" name="q4" value="c"> Enviar mais documentos em todas as tarefas</label>
-      <div class="feedback" data-good="Certo. Substituibilidade é por workload. O candidato foi aprovado numa classe e rejeitado em outra, exatamente o comportamento esperado." data-poor="Não existe obrigação de um modelo servir a todas as tarefas. A política de routing preserva o candidato onde há fitness e mantém outro onde o gate falhou."></div>
+      <div class="feedback" data-good="Certo. A troca é por tipo de tarefa. O candidato foi aprovado numa classe e rejeitado em outra, exatamente o comportamento esperado." data-poor="Um modelo não precisa servir a todas as tarefas. A rota usa o candidato onde ele passou e mantém outro onde o teste falhou."></div>
     </div>
 
     <div class="quiz-q" data-answer="c">
       <p class="scenario">5. Toda pergunta envia 40 mil documentos; a resposta piora e dados privados aparecem.</p>
       <label><input type="radio" name="q5" value="a"> Modelo: aumentar ainda mais a janela</label>
       <label><input type="radio" name="q5" value="b"> Harness: repetir a chamada até acertar</label>
-      <label><input type="radio" name="q5" value="c"> Brain + harness: ACL antes da recuperação e contexto seletivo</label>
-      <div class="feedback" data-good="Certo. O brain deve recuperar uma projeção pequena e autorizada; o harness aplica a fronteira antes de qualquer dado chegar ao prompt." data-poor="Mais janela e mais retries não corrigem acesso indevido nem relevância. O problema nasce antes do modelo, na recuperação e na autorização."></div>
+      <label><input type="radio" name="q5" value="c"> Brain + harness: acesso antes da busca e contexto seletivo</label>
+      <div class="feedback" data-good="Certo. O brain deve preparar um dossiê pequeno e autorizado; o harness verifica o acesso antes de qualquer dado chegar ao prompt." data-poor="Mais janela e mais tentativas não corrigem acesso indevido nem relevância. O problema nasce antes do modelo, na busca e na autorização."></div>
     </div>
 
     <div class="quiz-q" data-answer="b">
       <p class="scenario">6. O agente diz “concluído”, mas o ticket continua aberto no sistema real.</p>
       <label><input type="radio" name="q6" value="a"> Brain: memorizar a resposta final</label>
-      <label><input type="radio" name="q6" value="b"> Harness: verificar o outcome diretamente no ambiente</label>
+      <label><input type="radio" name="q6" value="b"> Harness: verificar o resultado diretamente no sistema real</label>
       <label><input type="radio" name="q6" value="c"> Modelo: pedir uma explicação mais longa</label>
       <div class="feedback" data-good="Certo. A declaração do agente não prova o efeito. O harness consulta o estado real e só então fecha a execução." data-poor="Texto plausível não é estado do mundo. A verificação precisa observar ticket e transação no ambiente, responsabilidade do harness."></div>
     </div>
 
     <div class="quiz-q" data-answer="c">
-      <p class="scenario">7. Depois de um salto de modelo, o <code>CLAUDE.md</code> ainda contém centenas de workarounds para limitações antigas.</p>
+      <p class="scenario">7. Depois de um salto de modelo, o <code>CLAUDE.md</code> ainda contém centenas de compensações para limitações antigas.</p>
       <label><input type="radio" name="q7" value="a"> Apagar definitivamente tudo, inclusive permissões e regras de segurança</label>
       <label><input type="radio" name="q7" value="b"> Preservar tudo porque funcionava com o modelo anterior</label>
-      <label><input type="radio" name="q7" value="c"> Versionar, ablar por família e recolocar apenas o que corrige falha repetida</label>
-      <div class="feedback" data-good="Certo. Ablação é um eval reversível. Instrução cognitiva precisa provar efeito; enforcement crítico permanece em código, permissão, hook ou teste." data-poor="Nem destruição cega nem preservação cega. Congele o baseline, retire uma família por vez, meça e devolva apenas o que reconquista seu lugar."></div>
+      <label><input type="radio" name="q7" value="c"> Guardar a versão atual, retirar por grupo e recolocar só o que faz falta</label>
+      <div class="feedback" data-good="Certo. Ablação é um teste reversível: retirar, medir e devolver apenas o que prova efeito. Controles críticos permanecem em código, permissão, hook ou teste." data-poor="Nem apagar tudo nem preservar tudo. Guarde o ponto de comparação, retire uma família por vez, meça e devolva apenas o que provar seu valor."></div>
     </div>
 
     <div id="score" aria-live="polite"></div>
@@ -1570,12 +1741,12 @@
       <article class="diagnostic-card">
         <span>Mudou capacidade, custo ou latência?</span>
         <strong>Olhe o modelo e a rota.</strong>
-        <p>Teste outro candidato no mesmo workload. Adapter resolve forma; eval decide fitness.</p>
+        <p>Teste outro candidato no mesmo tipo de tarefa. O adapter resolve o formato; o eval decide se o trabalho continua bom.</p>
       </article>
       <article class="diagnostic-card">
         <span>Mudou autoridade, fluxo ou prova?</span>
         <strong>Olhe o harness.</strong>
-        <p>Ajuste controles, tools, estado ou outcome sem mover o conhecimento institucional.</p>
+        <p>Ajuste controles, ferramentas, estado ou prova do resultado sem mover o conhecimento institucional.</p>
       </article>
       <article class="diagnostic-card">
         <span>Mudou fonte, validade ou acesso?</span>
@@ -1584,11 +1755,11 @@
       </article>
     </div>
 
-    <p><strong>Antes de promover qualquer troca:</strong> baseline reproduzível → eval offline → shadow → canary → rollback preservado.</p>
+    <p><strong>Antes de concluir qualquer troca:</strong> ponto de comparação repetível → teste controlado → sombra sem poder agir → piloto pequeno → volta preservada.</p>
 
     <h3>Três frases que soam iguais e não são</h3>
     <div class="story">
-      <p>No corredor, depois do incidente, três conversas se misturam. A primeira: “somos substituíveis, portanto qualquer modelo serve”. Não. Substituível é a opção de apresentar outro candidato ao mesmo contrato, medir e voltar. Igualdade de schema não é igualdade de peça. A segunda: “thin harness, então menos código”. Não. Thin é menos inteligência duplicada e menos motivos misturados. Auth, cap, idempotência e rollback podem ocupar um repositório inteiro e ainda assim ser finos. A terceira: “temos company brain: mandamos o Drive”. Não. Guardar tudo e enviar tudo é depósito, não cérebro. Cérebro escolhe edição, recusa estante, cita página e devolve anotação para a caixa, não para o original.</p>
+      <p>No corredor, depois do incidente, três conversas se misturam. A primeira: “somos substituíveis, portanto qualquer modelo serve”. Não. Substituível é poder apresentar outro candidato ao mesmo contrato, medir e voltar. Mesmo formato não significa mesmo desempenho. A segunda: “thin harness, então pouco código”. Também não. Thin é menos inteligência duplicada e menos responsabilidades misturadas. Identidade, limites, proteção contra repetição e volta segura podem ocupar um repositório inteiro. A terceira: “temos company brain: mandamos o Drive”. Não. Guardar tudo e enviar tudo é depósito. Um brain escolhe a versão, recusa a estante proibida, cita a página e manda a anotação do turno para a caixa de revisão, nunca direto para o original.</p>
       <p>Se você sair desta aula com um vocabulário novo e as três frases ainda coladas, o vocabulário não serviu. O teste é conseguir separar as frases no corredor, com o incidente ainda quente, sem abrir o diagrama.</p>
     </div>
     <div class="analogy-note">
@@ -1596,7 +1767,49 @@
       <p>Sintoma de capacidade, custo ou latência: olhe o motor e a rota. Sintoma de autoridade, fluxo ou prova: olhe o painel. Sintoma de fonte, validade ou acesso: olhe a biblioteca. Tratar o termômetro quando a infecção está no prontuário, ou operar o prontuário quando a falha é o motor, é o jeito mais caro de parecer ocupado.</p>
     </div>
 
-    <h2><span class="n">12</span>Continue no acervo: aprofunde a fronteira que ainda está confusa</h2>
+    <h2 id="aplicar"><span class="n">12</span>Aplique no seu repositório</h2>
+    <p>A aula termina quando você localiza a camada. O sistema da sua empresa só muda quando o disco responde. A skill <a href="../skills/3camadas/SKILL.md"><code>/3camadas</code></a> existe para esse segundo movimento: ler o disco, guardar o laudo em JSON e devolver uma página que o dono do sistema consiga ler — motor, painel, memória. Não implementa a troca. Não nasce módulo novo.</p>
+
+    <div class="apply-box" aria-label="Skill e prompt para auditar um repositório">
+      <header>
+        <h3>Skill nova deste acervo</h3>
+        <a class="skill-chip" href="../skills/3camadas/SKILL.md">/3camadas</a>
+      </header>
+      <div class="apply-body">
+        <p>Cole o prompt no projeto que você quer auditar, com a skill aberta. O método veio do review de arquitetura que usamos como referência visual (teste de remoção, antes/depois, costura, vazamento). A tese que o disco tem de sobreviver é esta aula, não o laboratório de origem.</p>
+        <div class="prompt-toolbar">
+          <span>Prompt</span>
+          <button type="button" data-copy-prompt>Copiar</button>
+        </div>
+        <pre class="prompt-block" id="tese-prompt">/3camadas
+
+Leia o disco deste sistema. Descubra se dá para trocar a IA sem
+reescrever regra, memória ou quem manda; se o painel é fino; se a
+memória da empresa tem gavetas.
+
+Duas superfícies:
+1. JSON técnico em docs/reports/ (perguntas, evidência, quem analisou)
+2. HTML para o dono no mesmo docs/reports/: como ler, uma frase,
+   três promessas, o que acontece quando pede, o que já segura,
+   um próximo passo. Proibido na página: tese 21b, Q1–Q9, GAP, grep.
+   Não grave em /tmp.
+
+Não leia architecture-review ou scorecard anterior até este HTML existir.
+Não copie o número de outra rodada nesta conversa.
+Não anuncie rodada, isolamento nem “vou ler a rubrica”. Faça. No chat, o HTML.
+Se este runtime for classe leve (Luna, Terra, Haiku, flash, mini), pare e peça trocar.
+Classe média (Sonnet sem high): avise; só siga com override.
+SKU oculto + high/xhigh/Sol/Codex: siga. Não peça override por falta de versão.
+
+No JSON (não na página), responda com evidência:
+- Trocar o motor obriga a reescrever regra, memória ou autoridade?
+- O encaixe prova forma ou o teste prova comportamento?
+- O acesso é checado antes da busca?
+- O que a IA extraiu entra como candidato ou como fato?</pre>
+      </div>
+    </div>
+
+    <h2><span class="n">13</span>Continue no acervo: aprofunde a fronteira que ainda está confusa</h2>
     <p>Esta aula junta três camadas. As próximas leituras separam cada uma novamente para você aprofundar sem carregar tudo ao mesmo tempo.</p>
 
     <nav class="reading-bridge" aria-label="Aulas conectadas em outros cursos do acervo">
@@ -1605,14 +1818,14 @@
       <a href="../cursos/Introducao-a-Arquitetura-de-Sistemas/aulas/17-runtime-harness-ambiente-container.md"><span>Arquitetura de Sistemas</span><strong>Runtime, harness e ambiente</strong><p>Base técnica para não confundir loop, sessão e container.</p></a>
       <a href="../cursos/AIOX%20Advanced/aulas/17-engenharia-de-contexto.md"><span>AIOX Advanced</span><strong>Engenharia de contexto</strong><p>Faxina de comandos, skills e MCPs quando o contexto engrossa.</p></a>
       <a href="../cursos/AIOX%20Advanced/aulas/20-determinismo-progressivo.md"><span>AIOX Advanced</span><strong>Determinismo progressivo</strong><p>Quando colocar gates sem engessar todo o caminho.</p></a>
-      <a href="../cursos/Company-Brain/aulas/13-politica-de-contexto.md"><span>Company Brain</span><strong>Política de contexto</strong><p>Como o brain monta um dossiê por workload, identidade e acesso.</p></a>
+      <a href="../cursos/Company-Brain/aulas/13-politica-de-contexto.md"><span>Company Brain</span><strong>Política de contexto</strong><p>Como o brain monta um dossiê por tipo de trabalho, identidade e acesso.</p></a>
       <a href="../cursos/Company-Brain/aulas/14-contrato-brain-harness.md"><span>Company Brain</span><strong>Contrato brain↔harness</strong><p>A interface entre conhecimento citável e ação governada.</p></a>
       <a href="../cursos/Company-Brain/aulas/17-antipadroes-do-company-brain.md"><span>Company Brain</span><strong>Anti-padrões do brain</strong><p>Dump, vector-oracle, janela-como-prova e autoridade global.</p></a>
     </nav>
 
     <footer>
       <img src="../squads/design-ops/scripts/extract-from-url/assets/aiox/AIOX-Black.svg" alt="AIOX">
-      <p><a href="../cursos/AIOX-Agent-Engineering/aulas/21b-modelos-substituiveis-harness-fino-cerebro-modular.md">Aula canônica em Markdown</a> · <a href="../reference/0001-arquitetura-tres-camadas.html">folha de referência</a> · <a href="../cursos/AIOX-Agent-Engineering/sources/83-modelos-substituiveis-harness-fino-cerebro-modular.md">fonte 83</a></p>
+      <p><a href="../cursos/AIOX-Agent-Engineering/aulas/21b-modelos-substituiveis-harness-fino-cerebro-modular.md">Aula canônica em Markdown</a> · <a href="../reference/0001-arquitetura-tres-camadas.html">folha de referência</a> · <a href="../skills/3camadas/SKILL.md">skill /3camadas</a> · <a href="../cursos/AIOX-Agent-Engineering/sources/83-modelos-substituiveis-harness-fino-cerebro-modular.md">fonte 83</a></p>
       <p>Fontes essenciais: <a href="https://hai.stanford.edu/assets/files/ai_index_report_2026_chapter_2_technical.pdf">AI Index 2026</a>, <a href="https://www.anthropic.com/engineering/harness-design-long-running-apps">Anthropic: Harness design</a>, <a href="https://www.anthropic.com/engineering/managed-agents">Decoupling the brain from the hands</a>, <a href="https://arxiv.org/abs/2309.02427">CoALA</a>, <a href="https://arxiv.org/abs/2005.11401">RAG</a> e <a href="https://arxiv.org/abs/2307.03172">Lost in the Middle</a>.</p>
     </footer>
   </main>
@@ -1648,10 +1861,10 @@
             if (answered === questions.length) {
               var score = document.getElementById('score');
               var message = correct >= 6
-                ? 'Diagnóstico forte: você separa motor, controle e conhecimento.'
+                ? 'Você separa bem motor, controle e conhecimento.'
                 : correct >= 4
-                  ? 'Base formada. Releia as seções 02 e 06 antes de auditar seu sistema.'
-                  : 'Ainda há mistura entre camadas. Volte ao diagrama dos três relógios.';
+                  ? 'A base está formada. Releia as seções 02 e 06 antes de avaliar seu sistema.'
+                  : 'Algumas responsabilidades ainda estão misturadas. Volte ao diagrama dos três relógios.';
               score.innerHTML = '<strong>Resultado: ' + correct + '/' + questions.length + '.</strong> ' + message;
               score.style.display = 'block';
               score.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -1666,17 +1879,65 @@
       function updateReadiness() {
         var total = readinessChecks.filter(function (input) { return input.checked; }).length;
         var diagnosis = total >= 7
-          ? 'substituição operacional. Existe uma opção real, ainda condicionada ao workload e ao gate.'
+          ? 'troca operacional. Existe uma opção real, ainda condicionada ao tipo de tarefa e ao teste.'
           : total >= 4
-            ? 'desacoplamento parcial. A forma está separada, mas faltam provas ou governança.'
-            : 'sistema soldado. Trocar modelo provavelmente vira refactor e aposta operacional.';
+            ? 'separação parcial. A forma está separada, mas faltam provas ou regras de uso.'
+            : 'sistema soldado. Trocar o modelo provavelmente vira reforma e aposta operacional.';
         readinessScore.innerHTML = '<strong>' + total + '/' + readinessChecks.length + ' · ' + diagnosis.split('. ')[0] + '.</strong> ' + diagnosis.split('. ').slice(1).join('. ');
       }
 
       readinessChecks.forEach(function (input) {
         input.addEventListener('change', updateReadiness);
       });
+
+      var copyBtn = document.querySelector('[data-copy-prompt]');
+      var promptEl = document.getElementById('tese-prompt');
+      if (copyBtn && promptEl) {
+        copyBtn.addEventListener('click', function () {
+          var text = promptEl.textContent;
+          var done = function () { copyBtn.textContent = 'Copiado'; };
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(done).catch(function () {
+              copyBtn.textContent = 'Selecione o bloco';
+            });
+          } else {
+            copyBtn.textContent = 'Selecione o bloco';
+          }
+        });
+      }
     })();
+  </script>
+  <script type="module">
+    const wraps = Array.from(document.querySelectorAll("[data-mermaid]"));
+    try {
+      const { default: mermaid } = await import("https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs");
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: "base",
+        securityLevel: "strict",
+        fontFamily: "Geist, Inter, ui-sans-serif, system-ui, sans-serif",
+        themeVariables: {
+          background: "#FBFBF3",
+          primaryColor: "#F4F4E8",
+          primaryTextColor: "#050505",
+          primaryBorderColor: "#050505",
+          lineColor: "#050505",
+          secondaryColor: "#E1F2FF",
+          tertiaryColor: "#FFE7DC",
+          clusterBkg: "#FBFBF3",
+          clusterBorder: "#D3D3C6",
+          edgeLabelBackground: "#F4F4E8",
+          fontSize: "16px"
+        },
+        themeCSS: ".node rect,.node polygon,.cluster rect{rx:0!important;ry:0!important}",
+        flowchart: { curve: "linear", htmlLabels: false, padding: 10, nodeSpacing: 28, rankSpacing: 42 },
+        sequence: { actorMargin: 28, messageMargin: 28, boxMargin: 8, useMaxWidth: true }
+      });
+      await mermaid.run({ querySelector: ".mermaid" });
+      wraps.forEach(function (wrap) { wrap.classList.add("is-ready"); });
+    } catch (error) {
+      wraps.forEach(function (wrap) { wrap.classList.add("is-offline"); });
+    }
   </script>
 </body>
 </html>

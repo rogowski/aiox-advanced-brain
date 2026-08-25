@@ -76,6 +76,7 @@ As notas em [[cursos/entradas/README|cursos/entradas/]] ligam cada skill de dom√
 - [[skills/storytelling/SKILL|storytelling]]
 
 ## Outras
+- [[skills/3camadas/SKILL|3camadas]]
 - [[skills/deep-strategic-planning/SKILL|deep-strategic-planning]]
 - [[skills/design-md/SKILL|design-md]]
 - [[skills/doc-rot/SKILL|doc-rot]]

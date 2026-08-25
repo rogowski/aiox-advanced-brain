@@ -37,6 +37,9 @@ Overrides locais (se existirem): `AGENTS.local.md` / `CLAUDE.local.md` — não 
 | `cursos/AIOX-Design/AGENT-GUIDE.md` | Índice curto para agentes ensinarem design AIOX | Roteamento por intenção de UI/DS |
 | `cursos/AIOX-Productizacao/` | Curso de **oferta, distribuição, formato e monetização** | Transformar capacidade comprovada em teste de mercado |
 | `cursos/AIOX-Productizacao/AGENT-GUIDE.md` | Roteador pedagógico de Productização | Wedge, dor/ROI, distribuição, consultoria vs app vs SaaS e estágio |
+| `cursos/Company-Brain/` | Curso de **cérebro digital modular da empresa** | Projetar conhecimento institucional que alimenta agents |
+| `cursos/Company-Brain/AGENT-GUIDE.md` | Roteador pedagógico de Company Brain | Distinguir vault, memória de capacidade e company brain |
+| `skills/3camadas/SKILL.md` | Score 21b no disco (`/3camadas`) | Analisa e pontua modelo / harness / brain; não implementa a troca |
 | `cursos/AIOX-Enterprise/` | Vitrine diagnóstica do próximo contexto operacional | Prontidão para infraestrutura mantida depois de operação real |
 | `cursos/AIOX-Enterprise/AGENT-GUIDE.md` | Roteador pedagógico da vitrine Enterprise | Diferença Advanced × Enterprise, limites e prontidão |
 | `00-HOME.md` | Dashboard do vault Obsidian (Graph colorido) | Onboarding visual do segundo cérebro |
@@ -47,7 +50,7 @@ Overrides locais (se existirem): `AGENTS.local.md` / `CLAUDE.local.md` — não 
 | `cursos/AIOX-Advanced-Squads/AGENT-GUIDE.md` | Contrato de roteamento de squads | Pedidos em linguagem natural sobre squads |
 | `cursos/AIOX-Advanced-Squads/agent-router.json` | 24 rotas com signals / anti_signals | Escolher squad sem memorizar catálogo |
 | `skills/<nome>/SKILL.md` | Procedimento especializado | Missão estreita e bem delimitada |
-| `cursos/MAPA-SKILLS.md` | Inventário 67 skills + anti-duplicação | “Qual skill? Skill vs squad?” |
+| `cursos/MAPA-SKILLS.md` | Inventário 68 skills + anti-duplicação | “Qual skill? Skill vs squad?” |
 | `cursos/AIOX-Fundamentals/references/core-skills-runtime.md` | Orbitais + SDC em detalhe | Skills do core AIOX |
 | `squads/<nome>/` | Pacote multi-agente (`config.yaml`, agents, tasks) | Missão multi-perspectiva ou multi-etapa |
 | `skills/aiox-squads/` | Skill-roteador universal dos 24 squads | Instalada no runtime do usuário, se copiada |
@@ -69,7 +72,7 @@ Escolha o papel dominante e declare-o se ajudar a pessoa:
 | Papel | Quando | Comportamento |
 |-------|--------|----------------|
 | **Professor** | Dúvida conceitual, “não entendi”, revisão de trilha | Explica com material do curso; cita aula/módulo; propõe próximo passo de estudo |
-| **Orientador de trilha** | “Por onde começo?”, “estou perdido” | Usa `cursos/README.md`; preserva o núcleo comum e escolhe entre as quatro rotas de aplicação pelo gate da missão |
+| **Orientador de trilha** | “Por onde começo?”, “estou perdido” | Usa `cursos/README.md`; preserva o núcleo comum e escolhe a rota de aplicação pelo gate da missão |
 | **Curador do vault de estudo** | Obsidian, MOC, notas, “segundo cérebro” | Skills `aiox-brain` → `obsidian-course-vault` / `course-moc` / `study-capture`; não poluir canônico |
 | **Roteador de missão** | Dor/objetivo operacional | Menor mecanismo suficiente: skill → squad → sequência; usa `agent-router.json` quando for squad |
 | **Especialista de domínio** | Skill/squad já escolhido | Abre `SKILL.md` ou aula + `config.yaml`; conduz briefing → execução → evidência |
@@ -89,6 +92,8 @@ Se o pedido misturar estudo e execução, **ensine o mínimo necessário**, mont
    - Construção de agents, squads, workflows, runners, harness ou produção → `cursos/AIOX-Agent-Engineering/AGENT-GUIDE.md`.
    - UI, `DESIGN.md`, design system ou deriva visual → `cursos/AIOX-Design/AGENT-GUIDE.md`.
    - Oferta, ROI, distribuição ou monetização de capacidade comprovada → `cursos/AIOX-Productizacao/AGENT-GUIDE.md`.
+   - Company brain, conhecimento institucional ou contexto que alimenta vários agents → `cursos/Company-Brain/AGENT-GUIDE.md`.
+   - Auditar ou pontuar um repositório contra modelo substituível, thin harness ou company brain modular → `skills/3camadas/SKILL.md`.
    - Prontidão para operação mantida depois do Advanced + missão real → `cursos/AIOX-Enterprise/AGENT-GUIDE.md`.
    - Vault / Obsidian / MOC / notas de aula / “segundo cérebro” → `skills/aiox-brain/` e skills irmãs (abaixo).
    - Escolha ou uso de squad → `AGENT-GUIDE.md` + `agent-router.json`.
@@ -164,12 +169,13 @@ Isto **não** é o vault pessoal mentelendaria: sem paths de máquina, sem curad
 1. `cursos/Obsidian-IA/README.md` — gate de estudo; quem já domina o vault pode usar a evidência de entrada como diagnóstico.
 2. `cursos/Introducao-a-Arquitetura-de-Sistemas/README.md` — base técnica; completo para iniciantes ou seletivo pelo mapa de termos.
 3. `cursos/AIOX-Fundamentals/README.md` — Core, instalação, agents e primeiro ciclo com evidência.
-4. `cursos/AIOX Advanced/README.md` — 29 aulas do método.
+4. `cursos/AIOX Advanced/README.md` — 30 aulas do método.
 5. Depois do Advanced, escolher uma rota de aplicação pelo artefato necessário:
    - `cursos/AIOX-Advanced-Squads/` — operar especialistas publicados;
    - `cursos/AIOX-Agent-Engineering/` — construir capacidade agentic própria;
    - `cursos/AIOX-Design/` — materializar sistema visual;
-   - `cursos/AIOX-Productizacao/` — levar capacidade comprovada ao mercado.
+   - `cursos/AIOX-Productizacao/` — levar capacidade comprovada ao mercado;
+   - `cursos/Company-Brain/` — especificar o conhecimento institucional que alimenta agents.
 6. Combinar rotas somente quando a evidência de uma satisfizer o gate da próxima.
 7. Depois do Advanced e de uma missão real, usar `cursos/AIOX-Enterprise/README.md` apenas como vitrine de prontidão; nunca prometer que o runtime proprietário está neste acervo.
 
@@ -242,7 +248,7 @@ Tabela ampliada: `cursos/AIOX-Advanced-Squads/Guia-de-execucao.md`.
 ## Regras de biblioteca (não negociáveis)
 
 - Preserve `skills/` e `squads/` como fontes canônicas deste acervo.
-- Preserve `cursos/Introducao-a-Arquitetura-de-Sistemas/`, `cursos/AIOX-Fundamentals/`, `cursos/AIOX Advanced/`, `cursos/AIOX-Agent-Engineering/`, `cursos/AIOX-Design/`, `cursos/AIOX-Productizacao/`, `cursos/AIOX-Advanced-Squads/` e `cursos/AIOX-Enterprise/` como unidades autocontidas (links de cada curso resolvem **dentro da própria pasta do curso**).
+- Preserve `cursos/Introducao-a-Arquitetura-de-Sistemas/`, `cursos/AIOX-Fundamentals/`, `cursos/AIOX Advanced/`, `cursos/AIOX-Agent-Engineering/`, `cursos/AIOX-Design/`, `cursos/AIOX-Productizacao/`, `cursos/Company-Brain/`, `cursos/AIOX-Advanced-Squads/` e `cursos/AIOX-Enterprise/` como unidades autocontidas (links de cada curso resolvem **dentro da própria pasta do curso**).
 - Links e dependências documentais resolvem **dentro deste repositório**.
 - Preserve `.obsidian/` integralmente como configuração versionada do vault;
   nenhum arquivo ou subdiretório dessa pasta entra no `.gitignore`.
@@ -322,6 +328,8 @@ skill operacional local **`course-library-ops`** em `dev/ops/course-library-ops/
 - Engenharia de agentes: `cursos/AIOX-Agent-Engineering/AGENT-GUIDE.md`
 - Design: `cursos/AIOX-Design/AGENT-GUIDE.md`
 - Productização: `cursos/AIOX-Productizacao/AGENT-GUIDE.md`
+- Company Brain: `cursos/Company-Brain/AGENT-GUIDE.md`
+- Tese 21b no disco: `skills/3camadas/SKILL.md`
 - Enterprise (vitrine): `cursos/AIOX-Enterprise/AGENT-GUIDE.md`
 - Fronteira AE × Productização: `cursos/MOC-Agent-Engineering-vs-Productizacao.md`
 - Squads (alunos): `cursos/AIOX-Advanced-Squads/README.md`

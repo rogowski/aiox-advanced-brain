@@ -3,7 +3,7 @@ tags: [hub, layer/skill, mapa]
 aliases: [Mapa Skills, inventário skills, skills sem squad]
 ---
 
-# MAPA-SKILLS — inventário de uso (67 skills + 24 squads)
+# MAPA-SKILLS — inventário de uso (68 skills + 24 squads)
 
 > Não é runtime. É o mapa para **não se perder** e **não duplicar**.
 
@@ -66,7 +66,7 @@ Aula âncora: Fundamentals `3.3-ciclo-da-story-na-pratica` + referência core-sk
 
 ---
 
-## 3. Skills portable / vault / util (17)
+## 3. Skills portable / vault / util (18)
 
 | Skill | Quando usar |
 |-------|-------------|
@@ -86,6 +86,7 @@ Aula âncora: Fundamentals `3.3-ciclo-da-story-na-pratica` + referência core-sk
 | `extract-session-heuristics` | Heurísticas de sessão |
 | `deep-strategic-planning` | Planejamento estratégico longo |
 | `survey-intel` | Inteligência de survey |
+| `3camadas` | `/3camadas` — score 21b no disco (modelo / harness / brain) + DAGs da execução |
 
 Cursos de apoio: Obsidian-IA (vault), Design (`design-md`), Productização (não substitui copy/sales squads).
 
@@ -109,6 +110,8 @@ Cursos de apoio: Obsidian-IA (vault), Design (`design-md`), Productização (nã
 | **`tech-search` vs `tech-research`** | `tech-search` = pesquisa tech self-contained. `tech-research` = portable mais profunda / multi-fonte (alinhar à missão; se for squad research, use aula 02). |
 | **`skill-creator` vs `skill-creator-ops`** | Creator = lifecycle da skill. Ops = squad/aula 22 de operação de criação. |
 | **Skill de squad vs aula** | Aula ensina **julgamento**; SKILL.md é **porta de entrada** no runtime. |
+| **`3camadas` vs `code-anatomist`** | `3camadas` pontua modelo/harness/brain num disco já na máquina. `code-anatomist` extrai anatomia de um sistema que você ainda não entende. Sem costura visível depois do probe, não invente o 0–9 — saia para o anatomist. |
+| **`3camadas` vs `aiox-sop`** | `3camadas` pontua costura agentic. `aiox-sop` cria/audita SOP. Um 0–9 não é um process map de 7 fases. |
 
 ### Entradas Graph com “skill-skill-” no nome
 
@@ -125,7 +128,7 @@ Todas têm `SKILL.md`. Explicação didática:
 - **Chiefs / util** → este mapa + SKILL.md
 - **Nunca** exigir aula de Squads para skill que não tem squad
 
-Lista completa no disco: pasta `skills/` (67 pastas com `SKILL.md`).
+Lista completa no disco: pasta `skills/` (68 pastas com `SKILL.md`).
 
 ---
 

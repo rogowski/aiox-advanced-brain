@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" role="img">
+<rect width="760" height="340" fill="#F4F4E8"/>
+<text x="380" y="26" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="700" fill="#050505">Seis jobs &#8212; n&#227;o seis pastas no Drive</text>
+<rect x="20" y="48" width="136" height="150" rx="8" fill="#E9E9DC" stroke="#050505" stroke-width="2"/>
+<text x="88" y="78" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" fill="#050505">1 Fontes</text>
+<text x="88" y="104" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">prova o claim</text>
+<text x="88" y="160" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" font-weight="500" fill="#64645D">POL-REEMB-2023</text>
+<rect x="166" y="48" width="136" height="150" rx="8" fill="#E9E9DC" stroke="#050505" stroke-width="2"/>
+<text x="234" y="78" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" fill="#050505">2 Fatos</text>
+<text x="234" y="104" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">claim + data</text>
+<text x="234" y="160" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" font-weight="500" fill="#64645D">14 ainda em gap</text>
+<rect x="312" y="48" width="136" height="150" rx="8" fill="#E9E9DC" stroke="#050505" stroke-width="2"/>
+<text x="380" y="78" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" fill="#050505">3 Procedural</text>
+<text x="380" y="104" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">como se faz</text>
+<text x="380" y="160" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" font-weight="500" fill="#64645D">SOP-EXC-SLA</text>
+<rect x="458" y="48" width="136" height="150" rx="8" fill="#E9E9DC" stroke="#050505" stroke-width="2"/>
+<text x="526" y="78" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" fill="#050505">4 Epis&#243;dico</text>
+<text x="526" y="104" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">o que aconteceu</text>
+<text x="526" y="160" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" font-weight="500" fill="#64645D">T-8841</text>
+<rect x="604" y="48" width="136" height="150" rx="8" fill="#E1F2FF" stroke="#006CAE" stroke-width="2"/>
+<text x="672" y="78" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" fill="#006CAE">5 Proje&#231;&#245;es</text>
+<text x="672" y="104" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">como buscar</text>
+<text x="672" y="160" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" font-weight="500" fill="#64645D">n&#227;o &#233; IDX-ALL</text>
+<rect x="20" y="214" width="720" height="96" rx="8" fill="#FFE7DC" stroke="#BD3600" stroke-width="2"/>
+<text x="380" y="248" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="700" fill="#BD3600">6 Governan&#231;a &#8212; o piso, n&#227;o o sexto arquivo</text>
+<text x="380" y="274" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">ACL &#183; validade &#183; supersess&#227;o &#183; conflito &#183; reten&#231;&#227;o &#183; exclus&#227;o &#183; auditoria</text>
+<text x="380" y="294" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="500" fill="#64645D">Sem este piso, os cinco de cima s&#227;o dep&#243;sito com r&#243;tulo.</text>
+</svg>

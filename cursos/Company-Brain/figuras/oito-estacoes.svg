@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 248" role="img">
+<rect width="760" height="248" fill="#F4F4E8"/>
+<text x="380" y="24" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="700" fill="#050505">O revisor l&#234; a planta &#8212; n&#227;o a demo do &#237;ndice</text>
+<rect x="16" y="48" width="84" height="52" rx="6" fill="#E9E9DC" stroke="#050505" stroke-width="2"/>
+<text x="58" y="78" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" font-weight="700" fill="#050505">1 case</text>
+<rect x="108" y="48" width="84" height="52" rx="6" fill="#E9E9DC" stroke="#050505" stroke-width="2"/>
+<text x="150" y="78" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" font-weight="700" fill="#050505">2 m&#243;dulos</text>
+<rect x="200" y="48" width="84" height="52" rx="6" fill="#E9E9DC" stroke="#050505" stroke-width="2"/>
+<text x="242" y="78" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" font-weight="700" fill="#050505">3 ledger</text>
+<rect x="292" y="48" width="84" height="52" rx="6" fill="#FFE7DC" stroke="#BD3600" stroke-width="2"/>
+<text x="334" y="78" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" font-weight="700" fill="#BD3600">4 govern.</text>
+<rect x="384" y="48" width="84" height="52" rx="6" fill="#E1F2FF" stroke="#006CAE" stroke-width="2"/>
+<text x="426" y="78" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" font-weight="700" fill="#006CAE">5 pol&#237;tica</text>
+<rect x="476" y="48" width="84" height="52" rx="6" fill="#E1F2FF" stroke="#006CAE" stroke-width="2"/>
+<text x="518" y="78" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" font-weight="700" fill="#006CAE">6 contrato</text>
+<rect x="568" y="48" width="84" height="52" rx="6" fill="#FFF4CC" stroke="#8A6A00" stroke-width="2"/>
+<text x="610" y="78" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" font-weight="700" fill="#8A6A00">7 gate</text>
+<rect x="660" y="48" width="84" height="52" rx="6" fill="#F6DFD8" stroke="#9D2D16" stroke-width="2"/>
+<text x="702" y="78" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" font-weight="700" fill="#9D2D16">8 recusas</text>
+<rect x="16" y="120" width="728" height="80" rx="8" fill="#F6DFD8" stroke="#9D2D16" stroke-width="2"/>
+<text x="380" y="148" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" fill="#9D2D16">Uma falha cr&#237;tica bloqueia</text>
+<text x="380" y="170" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="500" fill="#050505">sem ACL &#183; sem fonte &#183; dump &#183; sem supersess&#227;o &#183; falha bruta vira verdade &#183; vendor</text>
+<text x="380" y="190" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="500" fill="#64645D">Bloqueio de ambiente &#233; estado honesto. Cluster no ar n&#227;o &#233; aprova&#231;&#227;o.</text>
+<rect x="16" y="208" width="728" height="28" rx="6" fill="#FFE7DC" stroke="#BD3600" stroke-width="2"/>
+<text x="380" y="227" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" fill="#BD3600">Replay transversal &#8212; quatro jogadas no papel</text>
+</svg>

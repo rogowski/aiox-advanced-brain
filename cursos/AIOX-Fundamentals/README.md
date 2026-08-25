@@ -82,7 +82,7 @@ As skills **runtime** do core (orbitais `aiox-*` + ciclo SDC: `validate-story-dr
 - [references/core-skills-runtime.md](references/core-skills-runtime.md) — mapa agent × skill, ordem SDC, ativação
 - Aulas [2.2](aulas/02-sinais-e-contexto/2.2-escolher-o-agente-certo.md) · [2.3](aulas/02-sinais-e-contexto/2.3-task-skill-workflow-ou-squad.md) · [3.3](aulas/03-validacao-basica/3.3-ciclo-da-story-na-pratica.md)
 
-Inventário de **todas** as skills do acervo (67) e anti-duplicação (`slide-creator` vs `slides-creator`, etc.): arquivo `cursos/MAPA-SKILLS.md` no hub de cursos.
+Inventário de **todas** as skills do acervo (68) e anti-duplicação (`slide-creator` vs `slides-creator`, etc.): arquivo `cursos/MAPA-SKILLS.md` no hub de cursos.
 
 Os **24 squads** têm “como usar” em `cursos/AIOX-Advanced-Squads/` (1 aula por squad) — não neste curso.
 

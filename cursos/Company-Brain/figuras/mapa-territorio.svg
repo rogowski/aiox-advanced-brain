@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 200" role="img">
+<rect width="760" height="200" fill="#F4F4E8"/>
+<text x="380" y="24" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="700" fill="#050505">O mapa mente. A pergunta &#233;: de que jeito?</text>
+<rect x="24" y="44" width="340" height="120" rx="8" fill="#E4F1DF" stroke="#316A38" stroke-width="2"/>
+<text x="194" y="76" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="#316A38">Territ&#243;rio = fontes</text>
+<text x="194" y="100" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">wiki &#183; ledger &#183; SOP aprovada &#183; epis&#243;dio</text>
+<text x="194" y="124" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">Se o &#237;ndice queimar, isto resta.</text>
+<rect x="396" y="44" width="340" height="120" rx="8" fill="#E1F2FF" stroke="#006CAE" stroke-width="2"/>
+<text x="566" y="76" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="#006CAE">Mapa = proje&#231;&#227;o</text>
+<text x="566" y="100" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">lexical &#183; vetorial &#183; grafo</text>
+<text x="566" y="124" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">IDX-ALL mente tipo, vig&#234;ncia, ACL.</text>
+<text x="380" y="186" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#64645D">Queime o wiki e reste s&#243; o &#237;ndice: o dump era a fonte.</text>
+</svg>

@@ -6,7 +6,7 @@ tags: [hub, layer/skill, layer/squad]
 
 Notas **leves** (não são runtime). Ligam skill ↔ squad ↔ aula sem poluir agents/tasks.
 
-- Skills: **67** pontes — arquivo `skill-<id>.md` (se o id já começa com `skill-`, o nome fica `skill-skill-…`; isso é prefixo + id, não duplicata de produto)
+- Skills: **68** pontes — arquivo `skill-<id>.md` (se o id já começa com `skill-`, o nome fica `skill-skill-…`; isso é prefixo + id, não duplicata de produto)
 - Squads: **24** pontes — `squad-<id>.md` (idem para `squad-creator` → `squad-squad-creator.md`)
 
 Mapa de uso e anti-duplicação: [[cursos/MAPA-SKILLS|MAPA-SKILLS]] · [[cursos/MOC-Skills]] · [[cursos/MOC-Squads]]
@@ -15,6 +15,7 @@ Core AIOX (orbitais + SDC): detalhado em [[cursos/AIOX-Fundamentals/README|AIOX 
 
 ## Skills
 
+- [[cursos/entradas/skill-3camadas|3camadas]]
 - [[cursos/entradas/skill-advisory-board|advisory-board]]
 - [[cursos/entradas/skill-agent-autonomy|agent-autonomy]]
 - [[cursos/entradas/skill-aiox-analyst|aiox-analyst]]

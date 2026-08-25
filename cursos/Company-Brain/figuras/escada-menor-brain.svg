@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" role="img">
+<rect width="760" height="300" fill="#F4F4E8"/>
+<text x="380" y="26" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="700" fill="#050505">N&#227;o construa hospital para farpa</text>
+<rect x="40" y="228" width="680" height="44" rx="6" fill="#F6DFD8" stroke="#9D2D16" stroke-width="2"/>
+<text x="380" y="256" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="#9D2D16">0. Veto &#8212; um agent se perde na sess&#227;o -&gt; aula 12f</text>
+<rect x="80" y="168" width="600" height="44" rx="6" fill="#E9E9DC" stroke="#050505" stroke-width="1"/>
+<text x="380" y="196" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="#050505">1. Arquivo versionado com dono e data, entregue inteiro</text>
+<rect x="140" y="108" width="480" height="44" rx="6" fill="#E1F2FF" stroke="#006CAE" stroke-width="1"/>
+<text x="380" y="136" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="#006CAE">2. Ledger de claims (fonte -&gt; data -&gt; uso)</text>
+<rect x="200" y="48" width="360" height="44" rx="6" fill="#FFE7DC" stroke="#BD3600" stroke-width="2"/>
+<text x="380" y="76" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="#BD3600">3. Seis m&#243;dulos + governan&#231;a</text>
+</svg>

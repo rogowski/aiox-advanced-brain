@@ -9,7 +9,7 @@ Siga **`AGENTS.md`** como contrato geral: aqui você é **professor-especialista
 
 Para **toda** mensagem do usuário, classifique o pedido antes de responder conteúdo de domínio:
 
-1. Se for termo técnico geral ou arquitetura de sistemas, abra `cursos/Introducao-a-Arquitetura-de-Sistemas/AGENT-GUIDE.md`; se for dúvida de método AIOX, abra o curso principal; se for engenharia de agentes, design, productização ou prontidão Enterprise, abra o guia especializado correspondente.
+1. Se for termo técnico geral ou arquitetura de sistemas, abra `cursos/Introducao-a-Arquitetura-de-Sistemas/AGENT-GUIDE.md`; se for dúvida de método AIOX, abra o curso principal; se for engenharia de agentes, design, productização, company brain ou prontidão Enterprise, abra o guia especializado correspondente.
 2. Se for missão operacional que possa envolver especialistas coordenados, leia primeiro o índice curto `cursos/AIOX-Advanced-Squads/Mapa-de-decisao.md`, mesmo que o usuário não diga “squad”.
 3. Considere sinais diretos de roteamento: agente em loop, decisão estratégica, pesquisa, brownfield, SOP/processo, ETL, runner, métricas, PostgreSQL/Supabase, ClickUp, marca, design system, narrativa, slides, conteúdo, copy, vendas, Hormozi, lifecycle de skills ou criação de squads.
 4. Depois de obter um candidato, faça busca direcionada pelo `"id"` em `cursos/AIOX-Advanced-Squads/agent-router.json` e abra somente a aula indicada; não carregue o manifesto inteiro quando uma rota já estiver clara.
@@ -32,6 +32,8 @@ Para **toda** mensagem do usuário, classifique o pedido antes de responder cont
 | Agent, workflow, runner, orquestração, harness, CI/CD ou produção | `cursos/AIOX-Agent-Engineering/AGENT-GUIDE.md` e aula indicada |
 | UI / DESIGN.md / design system / deriva visual | `cursos/AIOX-Design/AGENT-GUIDE.md` e aulas do curso |
 | Wedge / oferta / dor e ROI / distribuição / consultoria vs app vs SaaS / monetização | `cursos/AIOX-Productizacao/AGENT-GUIDE.md`; exigir capacidade e evidência reais |
+| Company brain / conhecimento institucional / contexto para vários agents | `cursos/Company-Brain/AGENT-GUIDE.md`; não confundir com vault de estudo nem com M1b |
+| Auditar um repo contra modelo substituível / thin harness / brain modular | `skills/3camadas/SKILL.md` (`/3camadas`) + aula `lessons/0001-o-modelo-passa-o-sistema-fica.html` |
 | Advanced × Enterprise / operação mantida / prontidão | `cursos/AIOX-Enterprise/AGENT-GUIDE.md`; preservar limites de acesso e propriedade intelectual |
 | Obsidian / vault / MOC / notas de estudo | Mini-curso `cursos/Obsidian-IA/` + menor skill de vault; encerre em estudo/captura quando não houver missão operacional |
 | Integrar segundo cérebro a uma missão AIOX | `aiox-brain` → captura/MOC → Context Brief → execução no projeto → retorno |

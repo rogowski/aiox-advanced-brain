@@ -1,5 +1,21 @@
 # Changelog — AIOX Advanced library
 
+## Unreleased
+
+### Added
+
+- Skill **`/3camadas`** (`skills/3camadas/`): analisa e pontua um repositório real contra a tese da aula 21b (diagnóstico 0–9 + score por pilar + HTML no temp). Não implementa a troca.
+- Curso **Company Brain** (`cursos/Company-Brain/`): rota de aplicação completa — 18 aulas, 6 módulos, 5 quizzes, 20 questões e capstone de especificação do cérebro digital modular da empresa. Didática visual: analogias por aula, mermaid com papéis (brain/harness/modelo) e figuras SVG em `cursos/Company-Brain/figuras/`. Capstone com replay de mesa; caso de transferência `cursos/Company-Brain/casos/norte-log.md`; cada aula marca núcleo obrigatório e aprofundamento.
+- Aula 21b no Agent Engineering: **modelos substituíveis + thin harness + cérebro modular da empresa**, com contrato de substituição, gate de eval e fonte autocontida 83.
+- Aula 77 no AIOX Advanced M3: **Gauntlet Loop — barra, crítico e freio**, com teste ÂNCORA, arquitetura em gates, laboratório A/B, templates portáveis, glossário e fonte autocontida.
+
+### Changed
+
+- Company Brain: SVGs como XML UTF-8 com entidades numéricas; quizzes com distratores de conceito vizinho e transferência na Norte Log; harness do curso valida SVG, órfãos e rubrica didática 18×6.
+- Agent Engineering: **35 aulas**, preservando 8 módulos, 7 quizzes e 28 questões.
+- AIOX Advanced: **29 → 30 aulas** e **48 → 50 questões**; M3 passa a cobrir crítica separada, ratchet, regressão e stop controller.
+- Microaula HTML e folha de referência alinhadas à IDV AIOX Brandbook Cockpit.
+
 ## 0.6.3 — 2026-08-12
 
 ### Added

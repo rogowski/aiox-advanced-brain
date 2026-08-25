@@ -58,6 +58,7 @@ Assim só entra a camada de conhecimento: cursos, READMEs, entradas, skills, not
 - [[cursos/AIOX-Agent-Engineering/README|AIOX Agent Engineering]]
 - [[cursos/AIOX-Design/README|AIOX Design (contrato visual / DS)]]
 - [[cursos/AIOX-Productizacao/README|AIOX Productização (oferta / mercado)]]
+- [[cursos/Company-Brain/README|Company Brain (cérebro digital da empresa)]]
 - [[cursos/MOC-Agent-Engineering-vs-Productizacao|MOC · AE × Productização]]
 
 ### Continuidade
@@ -79,7 +80,7 @@ Assim só entra a camada de conhecimento: cursos, READMEs, entradas, skills, not
 
 Arquitetura e AIOX Fundamentals são etapas diferentes: linguagem técnica universal primeiro; framework AIOX depois.
 
-Depois do Advanced, escolha a rota pelo resultado: [[cursos/AIOX-Advanced-Squads/README|Squads]] para especialistas publicados, [[cursos/AIOX-Agent-Engineering/README|Agent Engineering]] para capacidade própria, [[cursos/AIOX-Design/README|Design]] para sistema visual ou [[cursos/AIOX-Productizacao/README|Productização]] para mercado. As rotas podem ser combinadas; não formam uma fila obrigatória.
+Depois do Advanced, escolha a rota pelo resultado: [[cursos/AIOX-Advanced-Squads/README|Squads]] para especialistas publicados, [[cursos/AIOX-Agent-Engineering/README|Agent Engineering]] para capacidade própria, [[cursos/AIOX-Design/README|Design]] para sistema visual, [[cursos/AIOX-Productizacao/README|Productização]] para mercado ou [[cursos/Company-Brain/README|Company Brain]] para o conhecimento institucional que alimenta agents. As rotas podem ser combinadas; não formam uma fila obrigatória.
 
 Depois do Advanced e de uma operação real, observe se sustentar a base virou o novo gargalo. Use [[cursos/AIOX-Enterprise/README|AIOX Enterprise — Visão Operacional e Prontidão]] para fazer esse diagnóstico.
 

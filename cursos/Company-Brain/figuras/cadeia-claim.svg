@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180" role="img">
+<rect width="760" height="180" fill="#F4F4E8"/>
+<text x="380" y="24" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="700" fill="#050505">Quatro elos &#8212; um par&#225;grafo n&#227;o e um fato</text>
+<rect x="20" y="48" width="160" height="72" rx="8" fill="#E9E9DC" stroke="#050505" stroke-width="2"/>
+<text x="100" y="78" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" fill="#050505">claim</text>
+<text x="100" y="98" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#64645D">uma linha</text>
+<rect x="208" y="48" width="160" height="72" rx="8" fill="#E9E9DC" stroke="#050505" stroke-width="2"/>
+<text x="288" y="78" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" fill="#050505">fonte</text>
+<text x="288" y="98" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#64645D">locator da aula 04</text>
+<rect x="396" y="48" width="160" height="72" rx="8" fill="#E9E9DC" stroke="#050505" stroke-width="2"/>
+<text x="476" y="78" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" fill="#050505">data</text>
+<text x="476" y="98" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#64645D">do fato, n&#227;o do crawl</text>
+<rect x="584" y="48" width="160" height="72" rx="8" fill="#FFE7DC" stroke="#BD3600" stroke-width="2"/>
+<text x="664" y="78" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" fill="#BD3600">uso</text>
+<text x="664" y="98" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#64645D">quem, para que</text>
+<text x="380" y="154" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">pronto &#183; gap &#183; recusado &#8212; sil&#234;ncio n&#227;o e status</text>
+</svg>

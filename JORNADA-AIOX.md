@@ -10,12 +10,12 @@ tags: [hub, jornada-aiox, produto]
 
 Existem duas leituras complementares, mas elas não devem ser misturadas:
 
-- **jornada de aprendizagem deste acervo:** quatro etapas no núcleo comum + quatro rotas de aplicação;
+- **jornada de aprendizagem deste acervo:** quatro etapas no núcleo comum + rotas de aplicação;
 - **jornada de oferta:** Fundamentals, Advanced e Enterprise, do primeiro ciclo à operação mantida.
 
 Para escolher uma rota concreta conforme seu nível e seu objetivo, use [Como estudar o acervo — trilhas por caso](cursos/COMO-ESTUDAR.md).
 
-## Jornada de aprendizagem — todos os nove cursos
+## Jornada de aprendizagem — todos os cursos
 
 ```mermaid
 flowchart LR
@@ -26,7 +26,9 @@ flowchart LR
     X --> E["Agent Engineering<br/>capacidade agentic"]
     X --> D["AIOX Design<br/>contrato + Storybook"]
     X --> P["Productização<br/>oferta + mercado"]
+    X --> C["Company Brain<br/>conhecimento institucional"]
     E --> P
+    E --> C
     E --> S
     D --> S
     P --> S
@@ -43,6 +45,7 @@ flowchart LR
 | [AIOX Agent Engineering](cursos/AIOX-Agent-Engineering/README.md) | Construir, orquestrar e operar capacidade agentic própria | Capacidade executável com contrato, gates e limites |
 | [AIOX Design](cursos/AIOX-Design/README.md) | Materializar contrato visual e governança de interface | DESIGN.md + catálogo + Storybook + ciclo visual |
 | [AIOX Productização](cursos/AIOX-Productizacao/README.md) | Transformar capacidade comprovada em oferta e experimento | Decision pack + hipótese, canal, métrica e critério de parada |
+| [Company Brain](cursos/Company-Brain/README.md) | Projetar o conhecimento institucional modular que alimenta agents | Especificação auditável: mapa, ledger, governança, interface e menor mecanismo |
 | [AIOX Enterprise — Visão Operacional e Prontidão](cursos/AIOX-Enterprise/README.md) | Diagnosticar prontidão para uma operação mantida sem prometer os componentes proprietários | Decisão sustentada por evidência + próximo passo |
 
 **Arquitetura não é AIOX Fundamentals.** A primeira ensina a compreender qualquer sistema; o segundo ensina a operar o framework AIOX. Diagnósticos permitem encurtar uma etapa já dominada, mas não alteram essa ordem conceitual.
@@ -53,14 +56,15 @@ flowchart LR
 - [AIOX Agent Engineering](cursos/AIOX-Agent-Engineering/README.md) — construir e operar capacidades agentic próprias.
 - [AIOX Design](cursos/AIOX-Design/README.md) — estabelecer contrato visual e qualidade de interface.
 - [AIOX Productização](cursos/AIOX-Productizacao/README.md) — transformar capacidade comprovada em oferta e experimento de mercado.
+- [Company Brain](cursos/Company-Brain/README.md) — especificar o cérebro digital modular da empresa.
 
-As quatro rotas são cursos canônicos, mas não formam uma sequência obrigatória. Escolha pelo gate de entrada e pelo artefato necessário. Agent Engineering pode levar a Productização; as rotas podem convergir em Squads quando a execução pedir especialistas publicados. A vitrine Enterprise exige Advanced e matéria-prima de uma operação real.
+As rotas são cursos canônicos, mas não formam uma sequência obrigatória. Escolha pelo gate de entrada e pelo artefato necessário. Agent Engineering pode levar a Productização ou a Company Brain; as rotas podem convergir em Squads quando a execução pedir especialistas publicados. A vitrine Enterprise exige Advanced e matéria-prima de uma operação real.
 
 ## Jornada de oferta — três momentos
 
 > **Primeiro ciclo → construção avançada → operação mantida.**
 
-Você não escolhe pelo nome “mais avançado”. Escolhe pela capacidade que precisa desenvolver — ou pela operação que precisa colocar de pé agora. O acervo reúne oito cursos formativos e um preview Enterprise; o preview explica um nível comercial existente, não cria outro.
+Você não escolhe pelo nome “mais avançado”. Escolhe pela capacidade que precisa desenvolver — ou pela operação que precisa colocar de pé agora. O acervo reúne os cursos formativos e um preview Enterprise; o preview explica um nível comercial existente, não cria outro.
 
 ## A diferença em 30 segundos
 
@@ -142,7 +146,8 @@ Neste acervo, o método está no [AIOX Advanced](cursos/AIOX%20Advanced/README.m
 - [AIOX Advanced Squads](cursos/AIOX-Advanced-Squads/README.md) para escolher e operar especialistas publicados;
 - [AIOX Agent Engineering](cursos/AIOX-Agent-Engineering/README.md) para construir, orquestrar e operar capacidades agentic;
 - [AIOX Design](cursos/AIOX-Design/README.md) para contrato e qualidade visual;
-- [AIOX Productização](cursos/AIOX-Productizacao/README.md) para oferta, distribuição e monetização de uma capacidade comprovada.
+- [AIOX Productização](cursos/AIOX-Productizacao/README.md) para oferta, distribuição e monetização de uma capacidade comprovada;
+- [Company Brain](cursos/Company-Brain/README.md) para especificar o conhecimento institucional que alimenta agents.
 
 ### Evidência de conclusão
 
@@ -150,7 +155,7 @@ Você transforma uma intenção em sistema entregue. A evidência é um artefato
 
 ### Próximo passo
 
-Conclua as 29 aulas e o Capstone. Depois, escolha **Squads**, **Agent Engineering**, **Design** ou **Productização** pelo gate da missão.
+Conclua as 30 aulas e o Capstone. Depois, escolha **Squads**, **Agent Engineering**, **Design**, **Productização** ou **Company Brain** pelo gate da missão.
 
 Se a operação se repete e o gargalo vira infraestrutura mantida, faça o preview [AIOX Enterprise — Visão Operacional e Prontidão](cursos/AIOX-Enterprise/README.md).
 
@@ -258,7 +263,7 @@ Não. O acervo público permite estudar o método e adaptar assets ao seu projet
 
 ### Qual é o próximo passo depois do Advanced?
 
-Conclua o Capstone e escolha a rota de aplicação pelo resultado. Use **Advanced Squads**, **Agent Engineering**, **Design** ou **Productização** conforme a missão.
+Conclua o Capstone e escolha a rota de aplicação pelo resultado. Use **Advanced Squads**, **Agent Engineering**, **Design**, **Productização** ou **Company Brain** conforme a missão.
 
 Se o gargalo virou infraestrutura recorrente, faça o [preview Enterprise](cursos/AIOX-Enterprise/README.md).
 
@@ -275,6 +280,7 @@ Quando você consegue entregar com o Advanced, mas contexto, integrações, gate
 - **Quero construir uma capacidade agentic própria:** [AIOX Agent Engineering](cursos/AIOX-Agent-Engineering/README.md).
 - **Quero materializar um sistema visual governável:** [AIOX Design](cursos/AIOX-Design/README.md).
 - **Quero levar uma capacidade comprovada ao mercado:** [AIOX Productização](cursos/AIOX-Productizacao/README.md).
+- **Quero especificar o cérebro digital da empresa:** [Company Brain](cursos/Company-Brain/README.md).
 - **Quero diagnosticar prontidão para uma operação mantida:** [AIOX Enterprise — Visão Operacional e Prontidão](cursos/AIOX-Enterprise/README.md).
 
 Se o diagnóstico indicar fit, confirme escopo e condições na [página oficial](https://lp.aioxsquad.ai/enterprise).

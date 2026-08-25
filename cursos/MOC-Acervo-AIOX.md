@@ -32,9 +32,10 @@ estudar → entender → operar o Core → aplicar o método
 - [[cursos/AIOX-Agent-Engineering/README|AIOX Agent Engineering]] — capacidade agentic até produção
 - [[cursos/AIOX-Design/README|AIOX Design]] — contrato visual / design system quando a missão for visual
 - [[cursos/AIOX-Productizacao/README|AIOX Productização]] — oferta, distribuição e monetização
+- [[cursos/Company-Brain/README|Company Brain]] — cérebro digital modular da empresa
 - [[cursos/MOC-Agent-Engineering-vs-Productizacao|MOC · AE × Productização]] — fronteira em uma página
 
-As quatro rotas pertencem à jornada atual. Escolha pelo gate da missão; combine-as apenas quando o artefato de saída de uma for entrada real da próxima.
+As cinco rotas pertencem à jornada atual. Escolha pelo gate da missão; combine-as apenas quando o artefato de saída de uma for entrada real da próxima.
 
 ## Continuidade
 

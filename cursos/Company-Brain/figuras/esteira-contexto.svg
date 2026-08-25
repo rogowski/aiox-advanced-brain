@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 220" role="img">
+<rect width="840" height="220" fill="#F4F4E8"/>
+<text x="420" y="26" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="700" fill="#050505">A esteira &#8212; o bibliotec&#225;rio recusa o dep&#243;sito</text>
+<rect x="16" y="52" width="104" height="56" rx="8" fill="#E9E9DC" stroke="#050505" stroke-width="1"/>
+<text x="68" y="76" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" fill="#050505">1 query</text>
+<text x="68" y="94" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="500" fill="#050505">o ticket pede</text>
+<rect x="132" y="52" width="104" height="56" rx="8" fill="#E9E9DC" stroke="#050505" stroke-width="1"/>
+<text x="184" y="76" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" fill="#050505">2 filtro</text>
+<text x="184" y="94" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="500" fill="#050505">tipo + vig&#234;ncia</text>
+<rect x="248" y="52" width="104" height="56" rx="8" fill="#FFE7DC" stroke="#BD3600" stroke-width="2"/>
+<text x="300" y="76" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" fill="#BD3600">3 ACL</text>
+<text x="300" y="94" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="500" fill="#050505">antes do retrieve</text>
+<rect x="364" y="52" width="104" height="56" rx="8" fill="#E1F2FF" stroke="#006CAE" stroke-width="1"/>
+<text x="416" y="76" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" fill="#006CAE">4 proje&#231;&#227;o</text>
+<text x="416" y="94" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="500" fill="#050505">lexical / vetor</text>
+<rect x="480" y="52" width="104" height="56" rx="8" fill="#E9E9DC" stroke="#050505" stroke-width="1"/>
+<text x="532" y="76" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" fill="#050505">5 teto</text>
+<text x="532" y="94" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="500" fill="#050505">N, n&#227;o 40k</text>
+<rect x="596" y="52" width="104" height="56" rx="8" fill="#E4F1DF" stroke="#316A38" stroke-width="2"/>
+<text x="648" y="76" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" fill="#316A38">6 sa&#237;da</text>
+<text x="648" y="94" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="500" fill="#050505">claim + fonte</text>
+<rect x="712" y="52" width="104" height="56" rx="8" fill="#FFF4CC" stroke="#8A6A00" stroke-width="1"/>
+<text x="764" y="76" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" fill="#8A6A00">7 buraco</text>
+<text x="764" y="94" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="500" fill="#050505">se n&#227;o souber</text>
+<rect x="16" y="132" width="396" height="64" rx="8" fill="#F6DFD8" stroke="#9D2D16" stroke-width="2"/>
+<text x="214" y="158" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" fill="#9D2D16">Recusar</text>
+<text x="214" y="178" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">Pacote Dump &#183; Pacote Janela &#183; claim sem fonte</text>
+<rect x="428" y="132" width="396" height="64" rx="8" fill="#E4F1DF" stroke="#316A38" stroke-width="2"/>
+<text x="626" y="158" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" fill="#316A38">Aceitar</text>
+<text x="626" y="178" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">Pacote Proje&#231;&#227;o &#183; conflito expl&#237;cito &#183; buraco vis&#237;vel</text>
+</svg>

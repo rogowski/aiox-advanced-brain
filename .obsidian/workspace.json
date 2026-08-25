@@ -11,17 +11,26 @@
             "id": "e48cfd1ffa392519",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Visualização em gráfico"
+            }
+          },
+          {
+            "id": "32bd2035b031b749",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
               "state": {
-                "file": "cursos/AIOX Advanced/aulas/44-metodo-s2s.md",
-                "mode": "source",
-                "source": false
+                "currentVersion": "1.13.7"
               },
-              "icon": "lucide-file",
-              "title": "44-metodo-s2s"
+              "icon": "lucide-book-up",
+              "title": "Notas de Lançamento 1.13.7"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -185,43 +194,53 @@
       "bases:Criar nova base": false
     }
   },
-  "active": "e48cfd1ffa392519",
+  "active": "32bd2035b031b749",
   "lastOpenFiles": [
-    "dev/ops/course-library-ops/dist/course-library-ops-1.2.5.zip.backup.20260810194149",
-    "dev/ops/course-library-ops/dist/course-library-ops-1.2.5.zip",
-    "dev/ops/course-library-ops/dist/course-library-ops-1.2.4.zip",
-    "dev/ops/course-library-ops/dist/zi6MGbk5",
-    "docs/producao-cursos/obsidian-ia/course-dna.md",
-    "docs/producao-cursos/introducao-arquitetura-sistemas/course-dna.md",
-    "docs/producao-cursos/aiox-productizacao/course-dna.md",
-    "docs/producao-cursos/aiox-fundamentals/course-dna.md",
-    "docs/producao-cursos/aiox-enterprise/course-dna.md",
-    "docs/producao-cursos/aiox-design/course-dna.md",
-    "docs/producao-cursos/aiox-agent-engineering/course-dna.md",
-    "docs/producao-cursos/aiox-advanced-squads/course-dna.md",
-    "docs/producao-cursos/aiox-advanced/course-dna.md",
-    "docs/producao-cursos/aiox-productizacao/vault-links.md",
-    "docs/producao-cursos/aiox-agent-engineering/vault-links.md",
-    "docs/producao-cursos/aiox-advanced-squads/vault-links.md",
-    "docs/producao-cursos/aiox-advanced/vault-links.md",
-    "docs/producao-cursos/introducao-arquitetura-sistemas/vault-links.md",
-    "docs/producao-cursos/aiox-fundamentals/vault-links.md",
-    "docs/producao-cursos/aiox-design/vault-links.md",
-    "docs/producao-cursos/aiox-enterprise/vault-links.md",
-    "docs/producao-cursos/obsidian-ia/vault-links.md",
-    "dev/ops/course-library-ops/scripts/__pycache__/audit_vault_links.cpython-314.pyc",
-    "docs/producao-cursos/vault-links.md",
-    "dev/ops/course-library-ops/scripts/audit_vault_links.py",
-    "dev/ops/course-library-ops/dist/course-library-ops-1.2.2.zip.backup.20260810183802",
-    "docs/producao-cursos/COVERAGE-MOTOR.md",
-    "dev/ops/course-library-ops/dist/course-library-ops-1.2.2.zip.backup.20260810183728",
-    "docs/producao-cursos/aiox-agent-engineering/retrospective.md",
-    "docs/producao-cursos/aiox-agent-engineering/didactic-audit.md",
-    "docs/producao-cursos/aiox-advanced/retrospective.md",
-    "docs/producao-cursos/aiox-advanced/didactic-audit.md",
-    "docs/producao-cursos/aiox-advanced-squads/didactic-audit.md",
-    "docs/producao-cursos/aiox-advanced-squads",
-    "docs/producao-cursos/introducao-arquitetura-sistemas",
-    "dev/ops/course-library-ops/dist/course-library-ops-1.2.2.zip"
+    "skills/3camadas/scripts/__pycache__/probe.cpython-314.pyc",
+    "skills/3camadas/scripts/__pycache__/score.cpython-314.pyc",
+    "skills/3camadas/scripts/__pycache__",
+    "skills/3camadas/references/dags.md",
+    "skills/3camadas/scripts/probe.py",
+    "skills/3camadas/references/gates.md",
+    "cursos/entradas/skill-3camadas.md",
+    "skills/3camadas/references/html-report.md",
+    "skills/3camadas/references/sondas.md",
+    "skills/3camadas/references/rubrica.md",
+    "skills/3camadas/references",
+    "skills/3camadas/scripts/score.py",
+    "skills/3camadas/scripts",
+    "skills/3camadas/agents/openai.yaml",
+    "skills/3camadas/agents",
+    "skills/3camadas/SKILL.md",
+    "skills/3camadas",
+    "skills/score-agentic-architecture/references/html-report.md",
+    "skills/score-agentic-architecture/references/sondas.md",
+    "skills/score-agentic-architecture/references/rubrica.md",
+    "skills/score-agentic-architecture/SKILL.md",
+    "skills/score-agentic-architecture/scripts",
+    "skills/tese-tres-camadas/SKILL.md",
+    "docs/producao-cursos/company-brain/retrospective.md",
+    "docs/producao-cursos/company-brain/vault-links.md",
+    "docs/producao-cursos/company-brain/didactic-audit.md",
+    "cursos/Company-Brain/casos/norte-log.md",
+    "cursos/Company-Brain/figuras/gate-aprendizado.svg",
+    "cursos/Company-Brain/figuras/mapa-territorio.svg",
+    "cursos/Company-Brain/figuras/cadeia-claim.svg",
+    "cursos/Company-Brain/figuras/oito-estacoes.svg",
+    "cursos/Company-Brain/figuras/oito-antipadroes.svg",
+    "cursos/Company-Brain/figuras/escada-menor-brain.svg",
+    "cursos/Company-Brain/figuras/supersessao-carimbo.svg",
+    "cursos/Company-Brain/figuras/acl-antes.svg",
+    "cursos/Company-Brain/figuras/seis-modulos.svg",
+    "cursos/Company-Brain/figuras/esteira-contexto.svg",
+    "cursos/Company-Brain/templates/README.md",
+    "cursos/Company-Brain/templates/especificacao-capstone.md",
+    "cursos/Company-Brain/templates/rubrica-antipadroes.md",
+    "cursos/Company-Brain/templates/contrato-brain-harness.md",
+    "cursos/Company-Brain/templates/gate-de-aprendizado.md",
+    "cursos/Company-Brain/templates/veto-menor-brain.md",
+    "cursos/Company-Brain/templates/politica-de-contexto.md",
+    "cursos/Company-Brain/templates/contrato-de-governanca.md",
+    "cursos/Company-Brain/templates/resolver-policy.md"
   ]
 }

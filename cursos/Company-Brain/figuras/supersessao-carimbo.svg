@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 240" role="img">
+<rect width="760" height="240" fill="#F4F4E8"/>
+<text x="380" y="26" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="700" fill="#050505">Revogar &#233; carimbar. Apagar &#233; destruir prova.</text>
+<rect x="24" y="48" width="220" height="120" rx="8" fill="#F6DFD8" stroke="#9D2D16" stroke-width="2"/>
+<text x="134" y="78" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" fill="#9D2D16">POL-REEMB-2023</text>
+<text x="134" y="100" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">30 dias &#183; 2023</text>
+<rect x="54" y="116" width="160" height="28" fill="#9D2D16"/>
+<text x="134" y="136" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" fill="#F4F4E8">NAO VIGENTE</text>
+<text x="280" y="108" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="500" fill="#050505">-&gt;</text>
+<rect x="320" y="48" width="180" height="120" rx="8" fill="#FFF4CC" stroke="#8A6A00" stroke-width="2"/>
+<text x="410" y="86" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" fill="#8A6A00">Gap</text>
+<text x="410" y="110" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="500" fill="#050505">SLK-ANA n&#227;o publica</text>
+<text x="410" y="132" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="500" fill="#050505">Slack != sucessor</text>
+<text x="534" y="108" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="500" fill="#050505">-&gt;</text>
+<rect x="560" y="48" width="176" height="120" rx="8" fill="#E9E9DC" stroke="#64645D" stroke-width="1"/>
+<text x="648" y="86" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" fill="#64645D">Documento 14</text>
+<text x="648" y="110" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="500" fill="#050505">ainda inexistente</text>
+<text x="648" y="132" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="500" fill="#050505">n&#227;o invente o ID</text>
+<text x="380" y="202" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500" fill="#050505">Duas linhas no ledger. Uma p&#225;gina carimbada. Zero shredder.</text>
+<text x="380" y="224" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="500" fill="#64645D">Analogia: o carimbo da biblioteca, n&#227;o a tesoura.</text>
+</svg>
