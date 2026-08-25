@@ -20,7 +20,7 @@ reading_minutes: 14
 has_mermaid_map: true
 map_source: auto-decision_graph
 module: M3
-sequence: 23
+sequence: 24
 track: core
 status: canonical
 canonical_scope: cursos/AIOX Advanced
@@ -534,4 +534,4 @@ A IA é a seta. O X é seu — inclusive puxar o freio no precipício e soltar n
 
 ## Navegação
 
-← [[aulas/21-deterministico-primeiro-llm-onde-gera-ouro|Determinístico primeiro, LLM só onde gera ouro]] · ↑ [[modulos/Módulo 3 - Determinismo e Comando|M3 — Determinismo e comando]] · ⌂ [[cursos/AIOX Advanced/README|Curso]] · → [[aulas/23-o-que-e-um-squad|O que é um Squad (e por que ele vem antes do App)]]
+← [[aulas/77-gauntlet-loop|Gauntlet Loop: barra, crítico e freio]] · ↑ [[modulos/Módulo 3 - Determinismo e Comando|M3 — Determinismo e comando]] · ⌂ [[cursos/AIOX Advanced/README|Curso]] · → [[aulas/23-o-que-e-um-squad|O que é um Squad (e por que ele vem antes do App)]]

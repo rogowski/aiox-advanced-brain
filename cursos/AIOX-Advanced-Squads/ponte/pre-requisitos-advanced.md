@@ -22,7 +22,7 @@ Pasta do método no repositório (abra no explorer; cada curso é isolado para l
 |------------|--------------------------------|---------|
 | Essencial | `08-principio-processo-certo`, `23-o-que-e-um-squad` | Método ≠ conversa solta; squad ≠ resposta para tudo |
 | Essencial | `46-etapas-de-desenvolvimento`, `48-quality-gate-completo` | Briefing e evidência antes da ativação |
-| Gate canônico | 29 aulas ativas + Capstone do Advanced | Método transferível antes da operação especializada |
+| Gate canônico | 30 aulas ativas + Capstone do Advanced | Método transferível antes da operação especializada |
 
 ## Pré-requisito por squad
 

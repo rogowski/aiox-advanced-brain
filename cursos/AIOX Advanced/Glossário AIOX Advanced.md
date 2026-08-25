@@ -97,6 +97,7 @@ Os exemplos são operacionais: não servem apenas para ilustrar vocabulário. Ao
 - [[DESIGN md|DESIGN.md]] — Contrato que a IA lê antes de gerar interface: tokens, componentes e decisões de design system. · **`276`×** (A276/S0)
 - [[Determinismo Progressivo]] — Travar a IA etapa por etapa, com qualidade subindo a cada gate. Reduz abstração solta e deriva. · **`74`×** (A74/S0)
 - [[Engenharia de Contexto]] — Disciplina de curar o que entra na janela: CLAUDE.md magro, skills certas, MCPs necessários. · **`45`×** (A45/S0)
+- [[Gauntlet Loop]] — Loop com barra externa, artefato real, crítico separado, evidência, ratchet e regra de parada. · **`22`×** (A22/S0)
 - [[Goal vs Loop]] — Goal é o resultado desejado; Loop é o ciclo de execução autônoma com gates. Confundir os dois vira deriva. · **`25`×** (A25/S0)
 - [[Janela de Contexto]] — Limite real de tokens que o modelo usa com qualidade. Acima de certos limiares a qualidade degrada. · **`34`×** (A34/S0)
 - [[Local Staging Production]] — Três ambientes: local (exploração), staging (validação com gates), production (o que importa de verdade). · **`12`×** (A12/S0)

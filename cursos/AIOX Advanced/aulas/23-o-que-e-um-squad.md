@@ -23,7 +23,7 @@ reading_minutes: 11
 has_mermaid_map: true
 map_source: handcrafted
 module: M4
-sequence: 24
+sequence: 25
 track: core
 status: canonical
 canonical_scope: cursos/AIOX Advanced

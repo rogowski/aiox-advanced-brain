@@ -52,6 +52,7 @@ flowchart TB
 - [[Ciclo do Story]]
 - [[Runner]]
 - [[Quality Gate]]
+- [[Gauntlet Loop]]
 - [[CodeRabbit]]
 - [[Método S2S]]
 

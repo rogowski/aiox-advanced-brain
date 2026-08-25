@@ -9,7 +9,7 @@ status: canonical
 canonical_scope: cursos/AIOX-Agent-Engineering
 source_lesson_id: 83
 source_path: "cursos/AIOX-Agent-Engineering/sources/83-modelos-substituiveis-harness-fino-cerebro-modular.md"
-source_version: 1.3.0
+source_version: 1.4.1
 ---
 
 # O modelo passa, o sistema fica
@@ -18,6 +18,14 @@ A aula [19](19-routing-de-modelos.md) separou tarefa de marca. A [21](21-harness
 
 > **Tese central**  
 > **models + thin harness + modular company brain**
+
+Leia a fórmula pela analogia que atravessa a aula:
+
+- **modelo = motor:** raciocina e pode ser trocado;
+- **harness = painel:** libera ferramentas, impõe limites e confirma o resultado;
+- **company brain = biblioteca:** preserva fontes, políticas e histórico.
+
+Os termos técnicos permanecem porque você precisará reconhecê-los na prática. Na primeira aparição, porém, leia `outcome` como **resultado real**, `shadow` como **teste sem poder agir**, `canary` como **piloto pequeno** e `rollback` como **volta segura**.
 
 Evidência: [fonte 83](../sources/83-modelos-substituiveis-harness-fino-cerebro-modular.md).
 
@@ -48,7 +56,7 @@ flowchart LR
   B["Company brain<br/>seleciona contexto autorizado"]
   H["Thin harness<br/>governa execução"]
   M["Model adapter<br/>chama o modelo roteado"]
-  E{"Evals<br/>outcome · segurança · custo"}
+  E{"Testes<br/>resultado · segurança · custo"}
   B --> H --> M --> E
   E -->|"promove ou rejeita"| M
   E -->|"aprendizado aprovado"| B
@@ -70,9 +78,9 @@ classDef gate fill:#D1FF00,stroke:#D1FF00,stroke-width:2px,color:#050505
 
 - Explicar por que o avanço dos LLMs aumenta — e não diminui — o valor da arquitetura modular. _(understand)_
 - Classificar uma responsabilidade entre modelo, harness e company brain. _(analyze)_
-- Auditar o acoplamento de um workload real e localizar a camada que deve absorver cada mudança. _(analyze)_
-- Planejar promoção reversível por eval offline, shadow e canary. _(apply)_
-- Aplicar ablação segura a instruções e scaffolding que podem ter envelhecido com o modelo. _(apply)_
+- Auditar o acoplamento de um tipo de tarefa real e localizar a camada que deve absorver cada mudança. _(analyze)_
+- Planejar promoção reversível por teste controlado, shadow (sombra) e canary (piloto). _(apply)_
+- Aplicar ablação segura a instruções e apoios que podem ter envelhecido com o modelo. _(apply)_
 - Recusar três atalhos: agnosticismo mágico, harness obeso e brain-dump. _(evaluate)_
 
 ---
@@ -82,10 +90,10 @@ classDef gate fill:#D1FF00,stroke:#D1FF00,stroke-width:2px,color:#050505
 Você consegue olhar para uma falha e responder três perguntas sem misturar as camadas:
 
 1. mudou capacidade, custo ou latência? Olhe o modelo e a rota;
-2. mudou autoridade, fluxo ou prova de outcome? Olhe o harness;
+2. mudou autoridade, fluxo ou prova do resultado? Olhe o harness;
 3. mudou fonte, validade ou acesso? Olhe o company brain.
 
-Você também consegue ordenar uma troca reversível: baseline reproduzível → eval offline → shadow → canary → promoção com rollback. Uma API compatível entre providers resolve payload; não prova substituibilidade operacional.
+Você também consegue ordenar uma troca reversível: ponto de comparação reproduzível → teste controlado → sombra sem poder agir → piloto pequeno → promoção com volta preservada. Uma API compatível entre fornecedores resolve o formato da chamada; não prova que os modelos fazem o mesmo trabalho.
 
 ---
 
@@ -113,26 +121,26 @@ O [AI Index 2026](https://hai.stanford.edu/ai-index/2026-ai-index-report/technic
 - **fragilidade operacional:** agentes ainda falham em aproximadamente **uma de cada três tentativas** em benchmarks estruturados;
 - **medição imperfeita:** uma revisão encontrou de 2% a **42% de questões inválidas** em benchmarks amplamente usados.
 
-Convergência não significa equivalência. Significa que o vencedor agregado é menos útil do que o perfil de capacidades e falhas no seu workload.
+Convergência não significa equivalência. Significa que o vencedor geral é menos útil do que o perfil de capacidades e falhas na sua tarefa.
 
 Portanto, “qual é o melhor modelo?” é uma pergunta fraca. A pergunta de engenharia é:
 
-> Qual modelo atinge o gate deste workload, com qual custo, latência, variância e modo de falha?
+> Qual modelo passa no teste desta tarefa, com qual custo, tempo, variação e modo de falha?
 
 ### 3. Identificadores de modelos têm meia-vida curta
 
 As páginas oficiais de deprecação da [OpenAI](https://developers.openai.com/api/docs/deprecations) e da [Anthropic](https://platform.claude.com/docs/en/about-claude/model-deprecations) mostram snapshots e APIs aposentados com frequência. Em 2025, o `gpt-4.5-preview` teve três meses entre aviso e desligamento; `o1-preview`, três meses; `o1-mini`, seis. Um nome físico é configuração. Não pode ser o lugar onde vivem fatos canônicos, regras de negócio ou definição de sucesso.
 
-### 4. Modelos melhores envelhecem o scaffolding
+### 4. Modelos melhores envelhecem os apoios antigos
 
-A [Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps) documenta que harnesses codificam hipóteses sobre aquilo que o modelo ainda não consegue fazer. Conforme a capacidade muda, decomposições, evaluators auxiliares ou regras compensatórias podem deixar de agregar valor.
+A [Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps) documenta que harnesses acumulam hipóteses sobre aquilo que o modelo ainda não consegue fazer. Conforme a capacidade muda, sequências rígidas, avaliações auxiliares ou regras compensatórias podem deixar de agregar valor.
 
-No caso descrito, a equipe removeu a estrutura de “sprints” quando o modelo passou a sustentar o trabalho sem essa decomposição. O evaluator continuou útil apenas nas partes ainda próximas da fronteira de capacidade. Esse é o ponto: cada scaffolding precisa de uma hipótese observável e de uma condição de remoção.
+No caso descrito, a equipe removeu a estrutura de “sprints” quando o modelo passou a sustentar o trabalho sem essa divisão. A avaliação auxiliar continuou útil apenas nas partes ainda difíceis. Esse é o ponto: cada apoio precisa de uma hipótese observável e de uma condição de remoção.
 
 O paradoxo do momento é este:
 
-- modelos mais capazes permitem **menos scaffolding cognitivo**;
-- agentes mais autônomos exigem **mais clareza operacional** sobre autoridade, estado, custo, segurança e outcome.
+- modelos mais capazes permitem **menos apoio temporário de raciocínio**;
+- agentes mais autônomos exigem **mais clareza operacional** sobre autoridade, estado, custo, segurança e resultado.
 
 Thin harness nasce desse paradoxo.
 
@@ -150,7 +158,7 @@ A arquitetura não começa pelas tecnologias. Começa pela cadência de mudança
 
 Os três relógios são uma regra de desenho. Quando duas responsabilidades mudam em ritmos muito diferentes, prendê-las no mesmo componente faz a mais rápida arrastar a mais lenta. Se o conhecimento institucional estiver embutido no prompt de um modelo, cada troca ameaça política, memória e operação ao mesmo tempo. Se approvals e stop rules estiverem escondidos em documentos recuperados, uma atualização de conteúdo também vira mudança de controle.
 
-Separar não significa isolar. As camadas cooperam por contratos: o brain entrega um pacote de contexto autorizado; o harness concede tools e limites; o adapter traduz a chamada; o modelo propõe ações; o gate observa o outcome. Cada camada, porém, continua dona de uma espécie de verdade. O modelo responde por capacidade; o harness, por autoridade e prova; o brain, por fonte, validade e proveniência.
+Separar não significa isolar. As camadas cooperam por contratos: o brain entrega um dossiê autorizado; o harness libera ferramentas e impõe limites; o adapter traduz a chamada; o modelo propõe ações; o teste observa o resultado. Cada camada, porém, continua dona de uma verdade diferente. O modelo responde por capacidade; o harness, por autoridade e prova; o brain, por fonte, validade e origem.
 
 Um teste simples ajuda a encontrar o dono: pergunte o que precisa continuar correto quando outra camada muda. Troque o modelo — a regra de reembolso deve permanecer verdadeira. Atualize a regra — a autorização financeira precisa continuar funcionando. Mude o fluxo de aprovação — o histórico das decisões não pode desaparecer. Aquilo que precisa sobreviver à mudança provavelmente pertence a outra fronteira.
 
@@ -162,52 +170,52 @@ Imagine uma linha industrial que inspeciona peças.
 
 | Na fábrica | Na arquitetura agentic | Por que existe |
 |---|---|---|
-| motor da estação | modelo | fornece capacidade para um workload delimitado |
+| motor da estação | modelo | fornece capacidade para um tipo de tarefa delimitado |
 | eixo e acoplamento | adapter | faz a interface física encaixar |
 | painel, sensores e intertravamentos | harness | controla partida, parada, autoridade, limites e prova de resultado |
 | desenhos, tolerâncias, SOPs e histórico | company brain | preserva o conhecimento que define o trabalho correto |
 | teste de aceitação | eval | prova que o motor executa aquela estação dentro das tolerâncias |
-| giro desacoplado | shadow | observa o candidato sem permitir efeito real |
-| uma estação em baixo volume | canary | limita o dano enquanto mede a operação real |
-| chave seletora para o motor anterior | rollback | preserva a opção de voltar |
+| giro sem carga | shadow (sombra) | observa o candidato sem permitir efeito real |
+| uma estação em baixo volume | canary (piloto) | limita o dano enquanto mede a operação real |
+| chave para o motor anterior | rollback (volta) | preserva a opção de voltar |
 
-Um acoplamento que encaixa prova apenas que o novo motor pode ser conectado. Não prova torque, aquecimento, vibração ou qualidade da peça. Da mesma forma, um adapter prova que a chamada cabe na interface; o eval prova que o comportamento serve ao workload.
+Um acoplamento que encaixa prova apenas que o novo motor pode ser conectado. Não prova torque, aquecimento, vibração ou qualidade da peça. Da mesma forma, um adapter prova que a chamada cabe na interface; o eval prova que o comportamento serve à tarefa.
 
-O operador mais experiente também não elimina parada de emergência, limite de carga ou sensor de presença. Um modelo melhor pode remover scaffolding cognitivo; não recebe, por isso, autoridade maior. E os desenhos da peça não devem morar no firmware do motor: política, fonte e histórico precisam sobreviver à troca.
+O operador mais experiente também não elimina parada de emergência, limite de carga ou sensor de presença. Um modelo melhor pode remover apoios antigos; não recebe, por isso, autoridade maior. E os desenhos da peça não devem morar no motor: política, fonte e histórico precisam sobreviver à troca.
 
-A analogia tem um limite importante. Motores físicos são mais determinísticos que LLMs. Por isso a “inspeção de aceitação” precisa de múltiplos trials, slices e observação de trajetória, não de uma única execução bonita.
+A analogia tem um limite importante. Motores físicos variam menos que LLMs. Por isso a “inspeção de aceitação” precisa de várias tentativas, diferentes grupos de casos e observação do caminho usado — não de uma única execução bonita.
 
 ---
 
 ## Camada 1 — Modelo substituível
 
-“Substituível” não significa que dois modelos são iguais. Significa que um candidato pode ocupar **um papel delimitado** depois de passar por um gate.
+“Substituível” não significa que dois modelos são iguais. Significa que um candidato pode ocupar **um papel delimitado** depois de passar por um teste representativo.
 
-A palavra descreve uma opção operacional, não uma crença de equivalência. A opção só existe quando outro candidato pode receber o mesmo contrato, ser medido no trabalho real e devolver a rota ao anterior se o resultado piorar. Um modelo pode resumir tickets com baixo custo e falhar em revisão de permissões; outro pode raciocinar melhor e não sustentar o schema de uma tool. A empresa não precisa escolher um vencedor total quando consegue avaliar por workload.
+A palavra descreve uma opção operacional, não uma crença de equivalência. A opção só existe quando outro candidato pode receber o mesmo contrato, ser medido no trabalho real e devolver a rota ao anterior se o resultado piorar. Um modelo pode resumir tickets com baixo custo e falhar em revisão de permissões; outro pode raciocinar melhor e não entregar o formato exigido por uma ferramenta. A empresa não precisa escolher um vencedor total quando consegue avaliar por tipo de tarefa.
 
 ### O contrato do modelo
 
-Declare capabilities, não marca:
+Declare o que o papel exige, não a marca:
 
-- tool calling e comportamento esperado ao escolher tools;
-- structured output e aderência ao schema;
+- uso de ferramentas e comportamento esperado ao escolhê-las;
+- saída estruturada e aderência ao formato;
 - modalidades necessárias;
 - janela e qualidade de uso do contexto;
 - idiomas e domínio;
-- latência e throughput;
+- tempo de resposta e volume;
 - perfil de segurança;
 - limites de custo;
-- política de fallback.
+- plano B quando o candidato falhar.
 
 Use um alias de capacidade — por exemplo, `review-seguranca`, `bulk-mecanico` ou `research-grounded` — e resolva o nome físico na configuração do routing.
 
 O contrato da rota funciona como uma descrição de vaga: declara trabalho, ferramentas necessárias, formato de entrega, limites e riscos que vetam contratação. O modelo físico é quem ocupa a vaga agora. Quando descrição e ocupante se confundem, substituir exige reescrever o cargo. Quando estão separados, candidatos diferentes podem ser avaliados pelo mesmo trabalho.
 
-Isso também inverte a lógica do leaderboard. Primeiro se define o outcome e a tolerância a falhas; depois se procura o menor candidato que satisfaz o gate. Escolher primeiro a marca e adaptar todos os workloads ao perfil dela solda o sistema antes mesmo de existir evidência.
+Isso também inverte a lógica do ranking. Primeiro se define o resultado esperado e a tolerância a falhas; depois se procura o menor candidato que passa no teste. Escolher primeiro a marca e adaptar todas as tarefas ao perfil dela solda o sistema antes mesmo de existir evidência.
 
 ### Adapter não é prova de equivalência
 
-Uma camada compatível com múltiplos providers normaliza chamadas, respostas e exceções. Isso resolve portabilidade **sintática**. Não resolve portabilidade comportamental.
+Uma camada compatível com vários fornecedores padroniza chamadas, respostas e erros. Isso resolve portabilidade de **formato**. Não prova comportamento equivalente.
 
 Dois modelos podem aceitar o mesmo schema e divergir em:
 
@@ -270,29 +278,35 @@ Lock-in consciente pode ser uma decisão correta. Lock-in invisível é que dest
 
 ## Camada 2 — Thin harness
 
-O harness é o plano de controle da capacidade. “Fino” descreve onde ele evita acúmulo; não significa ausência de engenharia.
+O harness é o painel de controle. “Fino” não significa pouco código; significa não carregar inteligência duplicada nem correções antigas sem prova de valor.
 
-Ele transforma capacidade probabilística em operação governada: monta contexto, oferece tools, mantém estado, aplica limites, registra a trajetória e verifica efeitos. O ponto central é separar scaffolding cognitivo de controle operacional. Instruções e decomposições criadas para ajudar o modelo precisam disputar continuamente seu lugar. Permissão, orçamento, idempotência, aprovação e rollback permanecem enquanto o risco existir.
+Ele monta contexto, oferece ferramentas, mantém estado, aplica limites, registra o caminho e verifica efeitos. O ponto central é separar **apoio temporário de raciocínio** de **controle operacional**. Instruções criadas para ajudar um modelo antigo precisam provar que ainda ajudam. Permissão, orçamento, proteção contra ação duplicada, aprovação e volta segura permanecem enquanto o risco existir.
 
 ### Fino nas suposições sobre inteligência
 
 Evite congelar limitações temporárias do modelo em centenas de regras:
 
 - decomposição fixa para tarefas que o modelo já resolve inteiro;
-- parsers que reinterpretam uma resposta que poderia ser estruturada;
-- validators redundantes sem relação com outcome;
+- parsers que reinterpretam uma resposta que já poderia vir estruturada;
+- validadores repetidos sem relação com o resultado real;
 - prompts gigantes para compensar contexto mal recuperado;
-- árvores de decisão que duplicam raciocínio e ficam invisíveis aos evals.
+- árvores de decisão que duplicam raciocínio e ficam invisíveis aos testes.
 
 Esses elementos podem existir. A exigência é que cada um tenha uma hipótese testável e uma condição de remoção.
 
 ### O “delete” que virou viral — ablação, não amnésia
 
-Em julho de 2026, Boris Cherny, criador do Claude Code, deu uma recomendação incomum:
+Em julho de 2026, Boris Cherny, criador do Claude Code, deu uma recomendação incomum. O original importa para preservar a atribuição; a tradução vem logo abaixo para não obrigar o leitor a interromper a aula.
 
+> **Original em inglês**
+>
 > “Every six months, delete your CLAUDE.md. Delete your skills. Delete your hooks. See what the model does.”
-
-Fonte primária: [entrevista da Y Combinator, a partir de 06:52](https://www.youtube.com/watch?v=qyPCVqFUyDo&t=412s).
+>
+> **Tradução livre**
+>
+> “A cada seis meses, apague o seu CLAUDE.md. Apague suas skills. Apague seus hooks. Veja o que o modelo faz.”
+>
+> — Boris Cherny · [Y Combinator, 06:52](https://www.youtube.com/watch?v=qyPCVqFUyDo&t=412s)
 
 A frase é real, mas isolada vira conselho destrutivo. Na mesma resposta, Cherny descreve o método usado pela equipe: retirar o system prompt, executar o modelo, observar falhas e reintroduzir conteúdo linha por linha. A regra volta apenas quando o modelo tropeça repetidamente sem ela. O nome desse experimento é **ablação**.
 
@@ -304,7 +318,7 @@ versionar → retirar → executar → medir → reintroduzir o mínimo
 
 Há uma precisão importante. Cherny citou `CLAUDE.md`, skills e hooks. **Não citou `AGENTS.md` nessa fala.** Aplicar a mesma lógica a `AGENTS.md` é uma inferência arquitetural porque ele também injeta instruções persistentes; não deve ser apresentado como citação de Cherny.
 
-A cadência de seis meses funciona melhor como gatilho de manutenção do que como lei. O objetivo não é um arquivo vazio; é renovar o ônus da prova. Fatos não inferíveis e constraints úteis permanecem. Workarounds antigos voltam apenas quando tarefas representativas demonstram que ainda compram qualidade, segurança ou eficiência.
+A cadência de seis meses funciona melhor como lembrete de manutenção do que como lei. O objetivo não é um arquivo vazio; é renovar o ônus da prova. Fatos que o modelo não consegue descobrir e restrições úteis permanecem. Correções antigas voltam apenas quando tarefas representativas mostram que ainda compram qualidade, segurança ou eficiência.
 
 A recomendação oficial da Anthropic separa dois ritmos:
 
@@ -319,7 +333,7 @@ O mesmo artigo explica o mecanismo. System prompt, skills e pedido do usuário p
 
 ### Quanto um harness pesado pode atrapalhar?
 
-“Pesado” não é sinônimo de longo. É o contexto ou scaffolding cujo custo marginal — atenção, tokens, passos, conflito ou manutenção — não compra ganho de outcome.
+“Pesado” não é sinônimo de longo. É o contexto ou apoio cujo custo — atenção, tokens, passos, conflito ou manutenção — não melhora o resultado.
 
 Na orientação [Favor leaner prompts](https://developers.openai.com/api/docs/guides/latest-model#favor-leaner-prompts), a OpenAI reporta uma amostra de evals internos de coding agents em que configurações mais enxutas produziram:
 
@@ -331,7 +345,7 @@ Na orientação [Favor leaner prompts](https://developers.openai.com/api/docs/gu
 
 São intervalos direcionais, ligados ao baseline e às tarefas da OpenAI. Não são promessa de que podar qualquer arquivo produz a mesma melhora.
 
-O custo também se multiplica por trajetória. Instruções always-on, exemplos, schemas e descrições de tools podem ser reprocessados em vários turnos. Uma redundância pequena no primeiro prompt pode se transformar em milhares de tokens, novas decisões e oportunidades de conflito numa execução longa. Por isso a unidade de medida não é apenas o tamanho do arquivo; é o caminho completo até o outcome.
+O custo também se multiplica ao longo da execução. Instruções sempre ativas, exemplos, formatos e descrições de ferramentas podem ser relidos em várias rodadas. Uma pequena repetição no primeiro prompt pode se transformar em milhares de tokens e novas chances de conflito. Por isso, não meça só o tamanho do arquivo; meça o caminho completo até o resultado.
 
 Dois estudos sobre `AGENTS.md` chegaram a resultados diferentes:
 
@@ -352,10 +366,10 @@ O stress test [IFScale](https://arxiv.org/abs/2507.11538), com 20 modelos e até
 
 1. **Deslocamento de atenção:** regra irrelevante compete com tarefa, código e evidência.
 2. **Interferência de restrições:** regras individualmente razoáveis entram em tensão quando combinadas.
-3. **Multiplicação por turno:** prefixos, schemas e tool descriptions são reprocessados ao longo do loop.
-4. **Hipótese vencida:** workaround para o modelo anterior permanece depois que a capability muda.
-5. **Agência suprimida:** sequência fixa bloqueia outra estratégia, tool ou ordem de investigação.
-6. **Acoplamento do adapter:** formatação e tradução de tools otimizadas para um provider degradam outro.
+3. **Multiplicação por turno:** instruções e descrições de ferramentas são relidas ao longo do loop.
+4. **Hipótese vencida:** a correção do modelo anterior permanece depois que a capacidade muda.
+5. **Caminho engessado:** a sequência fixa bloqueia outra estratégia, ferramenta ou ordem de investigação.
+6. **Dependência escondida:** formatos otimizados para um fornecedor prejudicam o seguinte.
 7. **Máscara de observabilidade:** mais camadas escondem qual regra ou conversão causou a regressão.
 
 No estudo longitudinal [Don't Blame the Large Language Model](https://arxiv.org/html/2607.03691v2), 35 versões de um harness foram comparadas com o LLM fixo em 50 tarefas. Versões posteriores chegaram perto de dobrar tokens e tool calls sem ganho significativo de resolução. É um preprint de um domínio e não prova causalidade universal; mostra por que evolução de harness também precisa de eval comportamental.
@@ -365,26 +379,26 @@ No estudo longitudinal [Don't Blame the Large Language Model](https://arxiv.org/
 1. Versione prompt, `CLAUDE.md`/`AGENTS.md`, skills, hooks, tools e baseline.
 2. Separe fatos não inferíveis, controles, scaffolding cognitivo, referência e história.
 3. Retire uma família por vez — nunca mude modelo, prompt e toolset simultaneamente.
-4. Execute tarefas frequentes, extremas, regressões reais e adversariais em múltiplos trials.
-5. Compare outcome, trajetória, segurança, tokens, custo e latência.
+4. Execute tarefas frequentes, extremas, regressões reais e adversariais em várias tentativas.
+5. Compare resultado, caminho, segurança, tokens, custo e tempo.
 6. Reintroduza apenas o que corrige falha repetida e material.
-7. Mova para enforcement aquilo que precisa valer mesmo se o modelo ignorar a prosa.
+7. Mova para um controle em código aquilo que precisa valer mesmo se o modelo ignorar a prosa.
 8. Registre owner, motivo e próxima revisão do que permaneceu.
 
-Ablação boa preserva rollback. O objetivo não é um arquivo vazio; é um arquivo em que cada linha ainda merece ser always-on.
+Ablação boa preserva uma volta segura. O objetivo não é um arquivo vazio; é um arquivo em que cada linha ainda merece estar sempre ativa.
 
 ### Firme nos invariantes operacionais
 
 O harness continua dono de:
 
 1. **Contrato** — entrada, saída e erro estruturado.
-2. **Autoridade** — auth, ACL, aprovação e least privilege.
-3. **Tools** — schemas, validação, idempotência e confirmação de efeitos.
-4. **Ciclo de vida** — sessão, estado, timeout, retries e stop rules.
-5. **Economia** — budgets, rate limits e routing.
-6. **Observabilidade** — traces, custo, latência e decisões relevantes.
-7. **Verificação** — outcome no ambiente, não apenas a frase “concluído”.
-8. **Recuperação** — fallback, rollback, fila morta e kill switch.
+2. **Autoridade** — identidade, acesso, aprovação e permissão mínima.
+3. **Ferramentas** — formatos, validação, proteção contra repetição e confirmação de efeitos.
+4. **Ciclo de vida** — sessão, estado, tempo máximo, novas tentativas e regras de parada.
+5. **Economia** — orçamento, limites de uso e escolha de rota.
+6. **Observação** — registros, custo, tempo e decisões relevantes.
+7. **Verificação** — resultado no ambiente, não apenas a frase “concluído”.
+8. **Recuperação** — plano B, volta segura, fila morta e botão de emergência.
 
 O artigo [Decoupling the brain from the hands](https://www.anthropic.com/engineering/managed-agents) separa brain/harness, hands e session por interfaces independentes. A lição útil não é copiar a infraestrutura. É impedir que raciocínio, ambiente e ciclo de vida virem uma unidade indivisível.
 
@@ -407,20 +421,20 @@ O teste não mede tamanho do repositório. Mede quantos motivos diferentes obrig
 
 | Plano | Pergunta | Responsabilidades |
 |---|---|---|
-| Execução | O que acontece neste run? | contexto de trabalho, model turn, tools, observações e estado |
-| Controle | O que é permitido? | auth, budgets, routing, approvals, stop rules e blast radius |
-| Evidência | Como sabemos que funcionou? | trace, graders, inspeção de tool calls e outcome no ambiente |
-| Mudança | Como evolui sem aposta cega? | registry de candidatos, datasets, shadow, canary, promoção e rollback |
+| Execução | O que acontece nesta rodada? | contexto de trabalho, modelo, ferramentas, observações e estado |
+| Controle | O que é permitido? | identidade, orçamento, rota, aprovações, parada e alcance do dano |
+| Evidência | Como sabemos que funcionou? | registro, avaliações, ferramentas usadas e resultado no ambiente |
+| Mudança | Como evolui sem aposta cega? | candidatos, casos de teste, sombra, piloto, promoção e volta segura |
 
 Quando esses planos estão misturados, uma mudança de modelo altera autorização; um ajuste de retrieval altera stop rule; um novo grader altera o loop. A espessura perigosa não é quantidade de código. É quantidade de motivos diferentes presos no mesmo componente.
 
 ### O teste de remoção
 
-Para cada peça de scaffolding cognitivo, registre:
+Para cada apoio criado para ajudar o modelo a pensar, registre:
 
 ```yaml
 hipotese: "Sem esta decomposição, o modelo perde etapas críticas"
-metrica: "pass rate do outcome + violações de sequência"
+metrica: "taxa de sucesso do resultado + violações de sequência"
 experimento: "candidato sem a decomposição em 50 casos retidos"
 remover_quando: "não houver regressão material em três rodadas"
 ```
@@ -439,26 +453,26 @@ O cérebro da empresa é o conhecimento institucional que deve sobreviver a mode
 
 O brain existe porque o modelo conhece muitos padrões gerais, mas não sabe automaticamente qual é a verdade desta empresa, para esta identidade, neste momento e nesta missão. Os pesos do modelo não são um bom lugar para uma política que mudou ontem, uma decisão revogável ou um contrato que apenas algumas pessoas podem ler. O modelo interpreta; o sistema precisa entregar a evidência correta.
 
-### Módulos por job
+### Módulos por tipo de memória
 
-Use os jobs do M1b para evitar o “um store para tudo”:
+Use as divisões do M1b para evitar o “um depósito para tudo”:
 
 - **Fonte canônica:** palavras originais, documentos, dados e eventos.
-- **Memória semântica:** fatos e relações normalizados com proveniência.
-- **Memória procedural:** SOPs, skills, contratos, exemplos e rubricas.
-- **Memória episódica:** execuções, decisões, feedback e outcome no tempo.
-- **Síntese:** claims derivados, gaps e conflitos explícitos.
-- **Projeções:** índice lexical, vetorial ou grafo reconstruível.
+- **Fatos organizados (memória semântica):** fatos e relações que apontam para sua origem.
+- **Jeito de trabalhar (memória procedural):** SOPs, skills, contratos, exemplos e rubricas.
+- **Histórico (memória episódica):** execuções, decisões, feedback e resultados ao longo do tempo.
+- **Síntese:** afirmações derivadas, lacunas e conflitos explícitos.
+- **Mapas de busca:** índice lexical, vetorial ou grafo que pode ser reconstruído.
 
 Esses módulos representam trabalhos diferentes, não seis produtos obrigatórios. Uma pasta versionada pode guardar fontes; uma tabela, fatos estruturados; um índice vetorial, recuperação. A arquitetura começa pela responsabilidade e só depois escolhe tecnologia.
 
-A distinção decisiva é entre fonte e projeção. Índice, grafo e síntese ajudam a encontrar ou navegar conhecimento; não se tornam automaticamente a prova. Se uma projeção estiver errada, precisa poder ser reconstruída da fonte. Se um claim não aponta para a evidência que o sustenta, o sistema produz fluência sem auditabilidade.
+A distinção decisiva é entre fonte e mapa. Índice, grafo e síntese ajudam a encontrar ou navegar conhecimento; não se tornam automaticamente a prova. Se um mapa estiver errado, precisa poder ser reconstruído a partir da fonte. Se uma afirmação não aponta para a evidência que a sustenta, o sistema produz fluência sem permitir conferência.
 
 O [CoALA](https://arxiv.org/abs/2309.02427) posiciona o language model dentro de uma arquitetura maior de memória. O [RAG original](https://arxiv.org/abs/2005.11401) separa memória paramétrica da memória recuperável e atualizável.
 
 ### O brain entrega contexto, não o depósito
 
-Uma execução deveria receber uma projeção:
+Uma execução deveria receber um dossiê:
 
 ```text
 pequena + atual + autorizada + relevante + citável
@@ -468,8 +482,8 @@ pequena + atual + autorizada + relevante + citável
 
 - documento revogado;
 - fontes em conflito;
-- falta de proveniência;
-- ACL aplicada tarde demais;
+- origem desconhecida;
+- acesso verificado tarde demais;
 - dados que deveriam ser apagados;
 - síntese que não aponta para a prova.
 
@@ -498,7 +512,7 @@ v3 · válida até 30/jun · aprovação humana acima de R$ 500
 v4 · válida desde 01/jul · aprovação humana acima de R$ 300
 ```
 
-Em 3 de julho, Ana pergunta sobre uma cobrança ocorrida em 28 de junho. “Qual é a política atual?” pede v4. “Qual regra governava a cobrança?” pode exigir v3. O brain precisa representar pelo menos **tempo do fato**, **tempo da consulta**, validade e relação de supersessão. Recuperar apenas o documento mais recente produz uma resposta atual e historicamente errada; recuperar apenas o mais parecido pode esconder a mudança.
+Em 3 de julho, Ana pergunta sobre uma cobrança ocorrida em 28 de junho. “Qual é a política atual?” pede v4. “Qual regra governava a cobrança?” pode exigir v3. O brain precisa guardar pelo menos **a data do fato**, **a data da consulta**, a validade e qual versão substituiu qual. Buscar apenas o documento mais recente produz uma resposta atual e historicamente errada; buscar apenas o mais parecido pode esconder a mudança.
 
 O modelo pode interpretar a regra. Ele não deve inventar qual versão é autorizada nem resolver silenciosamente um conflito institucional.
 
@@ -508,12 +522,12 @@ Todo módulo precisa responder:
 
 - Quem pode ler?
 - Quem pode escrever?
-- Qual fonte prova este claim?
+- Qual fonte prova esta afirmação?
 - Quando expira ou é substituído?
 - Como conflitos aparecem?
 - Como apagar, revogar ou reconstruir?
 
-Grafo e vector store são projeções. A fonte versionada continua sendo a prova. Isso conecta diretamente às aulas [12c](12c-arquivo-fiel-vs-sintese.md), [12d](12d-grafo-projecao-nao-oraculo.md) e [12e](12e-identidade-tempo-isolamento.md).
+Grafo e índice vetorial são mapas. A fonte versionada continua sendo a prova. Isso conecta diretamente às aulas [12c](12c-arquivo-fiel-vs-sintese.md), [12d](12d-grafo-projecao-nao-oraculo.md) e [12e](12e-identidade-tempo-isolamento.md).
 
 ### O caminho de leitura e o caminho de escrita
 
@@ -524,24 +538,24 @@ O brain possui dois fluxos com riscos diferentes.
 ```text
 identidade + missão
 → autorização
-→ recuperação e reranking
+→ busca e ordenação dos trechos
 → resolução de validade e conflito
-→ context pack com citações
+→ dossiê com citações
 → harness
 ```
 
 **Escrita depois de uma execução:**
 
 ```text
-observação + trace + outcome
-→ quarentena
+observação + registro + resultado
+→ separação para revisão
 → classificação: fonte, fato, procedimento ou episódio
 → validação/aprovação
 → escrita versionada
-→ reconstrução das projeções
+→ atualização dos mapas de busca
 ```
 
-O segundo fluxo é frequentemente esquecido. Se toda resposta do agente volta diretamente como “memória”, erro vira evidência, opinião vira política e prompt injection vira conhecimento institucional. O default seguro é: **runs geram candidatos a memória; governança decide o que vira memória**.
+O segundo fluxo é frequentemente esquecido. Se toda resposta do agente volta diretamente como “memória”, erro vira evidência, opinião vira política e instrução maliciosa vira conhecimento institucional. O padrão seguro é: **execuções geram candidatos a memória; a governança decide o que realmente entra**.
 
 ### Conflito não deve desaparecer
 
@@ -549,7 +563,7 @@ Quando duas fontes autorizadas discordam, o brain não deveria escolher silencio
 
 - identidade e autoridade de cada fonte;
 - período de validade;
-- relação de supersessão, quando existe;
+- qual versão substituiu qual, quando isso é conhecido;
 - conflito explícito, quando não existe decisão;
 - regra de escalonamento para resolução humana.
 
@@ -561,12 +575,12 @@ Um brain confiável representa “não sabemos qual regra vale” melhor do que 
 
 Leia de trás para frente:
 
-1. **Brain seleciona.** Recupera uma projeção pequena, atual, autorizada e citável.
-2. **Harness governa.** Monta o contexto, expõe tools, limita autoridade e inicia o trace.
-3. **Adapter traduz.** Converte o contrato estável para as capacidades do provider escolhido.
+1. **Brain seleciona.** Prepara um dossiê pequeno, atual, autorizado e citável.
+2. **Harness governa.** Monta o contexto, expõe ferramentas, limita autoridade e inicia o registro.
+3. **Adapter traduz.** Converte o contrato estável para o fornecedor escolhido.
 4. **Modelo raciocina.** Decide a próxima ação dentro do espaço permitido.
-5. **Ambiente responde.** Tools produzem observações e efeitos reais.
-6. **Gate verifica.** Outcome, trajetória, segurança, custo e latência são medidos.
+5. **Ambiente responde.** Ferramentas produzem observações e efeitos reais.
+6. **Teste verifica.** Resultado, caminho, segurança, custo e tempo são medidos.
 7. **Sistema aprende.** Só feedback aprovado volta ao brain; falha bruta não vira verdade.
 
 O ponto decisivo está na volta. Se o agente diz “ticket encerrado”, mas o sistema real continua aberto, o texto final não vale como prova. O harness deve verificar o estado do ambiente.
@@ -625,45 +639,45 @@ Observe a repetição: o modelo interpreta; o harness limita e prova; o brain fo
 
 ## Protocolo real de substituição
 
-Trocar o alias diretamente em produção testa ao mesmo tempo modelo, tráfego, ferramentas e usuários. Um protocolo seguro reduz variáveis em etapas.
+Trocar diretamente o modelo usado em produção testa ao mesmo tempo modelo, tráfego, ferramentas e usuários. Um protocolo seguro muda uma coisa por vez e libera poder em etapas.
 
-### Etapa 1 — congelar o contrato atual
+### Etapa 1 — guardar o ponto de comparação
 
-Registre versão do prompt, adapters, tools, retrieval policy, parâmetros, dataset e modelo atual. Sem baseline reproduzível, qualquer comparação vira narrativa.
+Registre a versão do prompt, adapter, ferramentas, regra de busca, parâmetros, casos de teste e modelo atual. Sem um ponto de comparação reproduzível, qualquer melhora pode ter vindo de outra mudança.
 
-### Etapa 2 — provar elegibilidade
+### Etapa 2 — conferir os requisitos mínimos
 
-Antes de medir qualidade, verifique capabilities obrigatórias: modalidades, tool calling, schema, região, retenção, idioma, throughput e limites de contexto. Candidato inelegível não precisa consumir o eval inteiro.
+Antes de medir qualidade, verifique o que é obrigatório: modalidades, uso de ferramentas, formato, região, retenção, idioma, volume e limite de contexto. Se faltar um requisito essencial, o candidato não precisa fazer o teste inteiro.
 
-### Etapa 3 — executar eval offline
+### Etapa 3 — executar o teste controlado
 
 Compare o atual e o candidato nos mesmos casos:
 
 - casos frequentes, extremos e adversariais;
-- dados retidos que não serviram para ajustar prompts ou router;
-- múltiplos trials para estimar variância;
-- outcome, trajetória, segurança, custo e latência;
-- revisão humana calibrando graders probabilísticos.
+- casos separados que não serviram para ajustar prompts ou a rota;
+- várias tentativas para observar a variação;
+- resultado, caminho, segurança, custo e tempo;
+- revisão humana para conferir avaliações automáticas.
 
-### Etapa 4 — shadow sem efeitos
+### Etapa 4 — sombra sem efeitos
 
-O candidato recebe uma cópia autorizada do input real, mas suas tool calls são bloqueadas ou simuladas. Compare decisão, trajetória e custo sem alterar o mundo.
+O candidato recebe uma cópia autorizada de situações reais, mas suas ferramentas são bloqueadas ou simuladas. Compare decisão, caminho e custo sem alterar o mundo.
 
-### Etapa 5 — canary com blast radius explícito
+### Etapa 5 — piloto com alcance do dano explícito
 
-Promova para uma fração pequena, workload de menor risco e limites mais estreitos. Preserve fallback, kill switch e reconciliação.
+Libere uma fração pequena, uma tarefa de menor risco e limites estreitos. Preserve o plano B, o botão de emergência e a conferência do estado real.
 
-### Etapa 6 — promover o alias, não apagar a saída
+### Etapa 6 — efetivar a troca sem apagar a saída
 
-Versione a decisão e mantenha rollback até atravessar a janela de observação. Uma promoção é reversível; uma migração destrutiva não é.
+Registre a decisão e mantenha a volta segura durante a janela de observação. Uma promoção é reversível; uma migração destrutiva não é.
 
 | Gate | Pergunta de saída | Evidência mínima |
 |---|---|---|
-| Elegibilidade | possui o que a rota exige? | capability matrix |
-| Offline | atinge thresholds no workload? | relatório por slice + múltiplos trials |
-| Shadow | decide bem em tráfego real sem agir? | comparação pareada de traces |
-| Canary | funciona com efeitos limitados? | outcomes reais + zero violação crítica |
-| Promoção | supera o baseline no conjunto de critérios? | decisão versionada + rollback testado |
+| Requisitos | possui o que a rota exige? | lista de requisitos |
+| Controlado | passa nos limites da tarefa? | relatório por grupo + várias tentativas |
+| Sombra | decide bem em tráfego real sem agir? | execuções comparadas |
+| Piloto | funciona com efeitos limitados? | resultados reais + zero violação crítica |
+| Promoção | supera o ponto de comparação? | decisão registrada + volta testada |
 
 As [boas práticas de avaliação da OpenAI](https://developers.openai.com/api/docs/guides/evaluation-best-practices) recomendam dados representativos da produção, comparação contínua e cobertura de casos típicos, extremos e adversariais. A [Anthropic](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) acrescenta a separação entre avaliação da trajetória e grader de outcome.
 
@@ -676,15 +690,15 @@ Uma composição didática para começar com 100 casos pode ser:
 - 15 regressões reais, retiradas de falhas anteriores;
 - 10 adversariais, tentando acesso indevido, tool errada, ambiguidade ou prompt injection.
 
-Com cinco trials por caso, cada candidato produz 500 trajetórias. Isso não é uma quantidade universal; torna a variância visível e impede que uma única execução favorável decida a troca.
+Com cinco tentativas por caso, cada candidato produz 500 execuções. Isso não é uma quantidade universal; apenas deixa a variação visível e impede que uma única execução favorável decida a troca.
 
 Leia o scorecard em ordem:
 
-1. **Elegibilidade:** capability ausente encerra a avaliação.
+1. **Requisitos:** capacidade obrigatória ausente encerra a avaliação.
 2. **Segurança:** violação crítica veta promoção; não entra numa média compensável.
-3. **Outcome por slice:** média global não pode esconder regressão num segmento crítico.
-4. **Trajetória:** resultado certo por tool proibida continua sendo falha.
-5. **Custo e latência:** só decidem entre candidatos que já passaram nos gates anteriores.
+3. **Resultado por grupo:** média global não pode esconder regressão num segmento crítico.
+4. **Caminho:** resultado certo por ferramenta proibida continua sendo falha.
+5. **Custo e tempo:** só decidem entre candidatos que já passaram nos testes anteriores.
 6. **Variância:** compare distribuição e pior caso, não apenas média.
 
 É parecido com contratar alguém para uma função crítica. Currículo e entrevista verificam elegibilidade; exercício de trabalho verifica capacidade; período supervisionado limita dano; efetivação só ocorre depois de evidência no trabalho real. Leaderboard é currículo, não período de experiência.
@@ -695,7 +709,7 @@ A unidade de promoção é a rota. O modelo pode ganhar em bulk, empatar em rese
 
 ## Onde esta tese tem limites
 
-Esta arquitetura é uma disciplina de separação, não uma lei que obriga toda aplicação a ter multi-provider, RAG, grafo e routing dinâmico.
+Esta arquitetura é uma disciplina de separação, não uma lei que obriga toda aplicação a ter vários fornecedores, RAG, grafo e escolha dinâmica de modelos.
 
 A tese defende opção de mudança, não abstração antecipada em todas as direções. Num protótipo descartável, uma integração direta pode ser racional. Num processo financeiro com anos de histórico, múltiplas fontes e alto custo de erro, separar autoridade, conhecimento e capacidade deixa de ser refinamento e vira condição de operação.
 
@@ -703,9 +717,9 @@ A tese defende opção de mudança, não abstração antecipada em todas as dire
 |---|---|
 | Protótipo reversível, sem dado sensível e sem operação crítica | comece direto; deixe apenas uma fronteira clara para extrair depois |
 | Processo determinístico conhecido, auditável e com pouca ambiguidade | use workflow explícito; um harness “mais espesso” pode ser a solução correta |
-| Capability exclusiva gera vantagem material | aceite lock-in consciente, registre dívida de saída e isole a extensão |
+| Capacidade exclusiva gera vantagem material | aceite a dependência consciente, registre o custo de sair e isole a extensão |
 | Mudança irreversível ou regulada | aumente approvals, verificações e separação de funções; autonomia não é objetivo absoluto |
-| Poucos casos e nenhum outcome confiável | não alegue substituibilidade; primeiro construa evidência |
+| Poucos casos e nenhum resultado confiável | não alegue substituibilidade; primeiro construa evidência |
 | Brain pequeno e estável | arquivos versionados e busca simples podem vencer uma plataforma de memória |
 
 A decisão proporcional começa pelo menor mecanismo que mantém o risco aceitável. Um brain modular pode ser um conjunto governado de arquivos; thin harness pode ser um processo único com bons limites; routing pode começar com dois aliases estáticos. Modularidade descreve fronteiras de responsabilidade, não uma obrigação de distribuir tudo em serviços.
@@ -734,16 +748,16 @@ Uma quinta objeção permanece legítima: às vezes a capability exclusiva de um
 
 | Sintoma | Camada primária | Menor intervenção |
 |---|---|---|
-| Provider aposenta o modelo | Modelo + adapter | avaliar candidato e promover alias |
-| Modelo barato serve bulk, mas falha em segurança | Routing | manter rota por classe de tarefa |
-| Tool aprova pagamento sem confirmação | Harness | approval gate, cap e idempotência |
-| Agente declara sucesso sem efeito real | Harness | outcome grader no ambiente |
-| Resposta usa política revogada | Brain | validade, supersessão e citação |
-| Documentos privados chegam ao prompt | Brain + harness | ACL antes da recuperação e least privilege |
-| Cada pergunta envia o corpus inteiro | Brain | retrieval seletivo e context policy |
-| Novo modelo quebra JSON | Adapter + eval | capability check e tratamento específico |
+| Fornecedor aposenta o modelo | Modelo + adapter | testar candidato e trocar a rota |
+| Modelo barato serve no bulk, mas falha em segurança | Roteamento | manter um modelo por classe de tarefa |
+| Ferramenta aprova pagamento sem confirmação | Harness | aprovação, limite e proteção contra repetição |
+| Agente declara sucesso sem efeito real | Harness | conferir o resultado no ambiente |
+| Resposta usa política revogada | Brain | validade, qual versão substituiu qual e citação |
+| Documentos privados chegam ao prompt | Brain + harness | acesso antes da busca e permissão mínima |
+| Cada pergunta envia o acervo inteiro | Brain | busca seletiva e política de contexto |
+| Novo modelo quebra JSON | Adapter + teste | conferir capacidade e tratar a diferença |
 
-Trocar modelo para corrigir política velha é tratar o termômetro. Construir um knowledge graph para corrigir stop rule é tratar o prontuário. Classificar a camada evita ambos.
+Trocar o modelo para corrigir política velha é tratar o termômetro. Construir um grafo para corrigir uma regra de parada é tratar o prontuário. Classificar a camada evita ambos.
 
 ---
 
@@ -751,21 +765,21 @@ Trocar modelo para corrigir política velha é tratar o termômetro. Construir u
 
 Marque um ponto para cada resposta “sim”:
 
-1. O ID físico do modelo está isolado em configuração ou adapter?
-2. As capabilities obrigatórias da rota estão declaradas?
-3. Tools e schemas pertencem ao contrato do sistema, não ao prompt de um provider?
+1. O nome exato do modelo está isolado em configuração ou adapter?
+2. As capacidades obrigatórias da rota estão declaradas?
+3. Ferramentas e formatos pertencem ao contrato do sistema, não ao prompt de um fornecedor?
 4. Fontes canônicas e memória vivem fora dos pesos e das conversas do modelo?
-5. ACL é aplicada antes de recuperar contexto ou executar ação?
-6. Existe dataset local com outcomes e casos retidos?
-7. Promoção possui shadow ou canary, fallback e rollback testável?
-8. Escrita no brain passa por validação, versão e proveniência?
-9. Cada scaffolding cognitivo possui hipótese, evidência e condição de remoção?
+5. O acesso é verificado antes de buscar contexto ou executar ação?
+6. Existem casos locais com resultados esperados, incluindo falhas antigas?
+7. A troca passa por sombra ou piloto, tem plano B e permite voltar?
+8. A escrita no brain passa por validação, versão e registro da origem?
+9. Cada apoio de raciocínio possui hipótese, evidência e condição de remoção?
 
 Interpretação:
 
 - **0–3 — soldado:** trocar modelo provavelmente vira refactor e aposta operacional;
-- **4–6 — desacoplamento parcial:** a forma está separada, mas faltam provas ou governança;
-- **7–9 — substituição operacional:** existe uma opção real, ainda condicionada ao workload e ao gate.
+- **4–6 — separação parcial:** a forma está separada, mas faltam provas ou regras de uso;
+- **7–9 — troca operacional:** existe uma opção real, ainda condicionada à tarefa e ao teste.
 
 O score não é certificação. Use cada “não” como localização do próximo acoplamento a reduzir.
 
@@ -775,15 +789,15 @@ O score não é certificação. Use cada “não” como localização do próxi
 
 ### Substituível ≠ igual
 
-Mesmo schema não garante mesma qualidade, segurança ou trajetória. A troca é condicionada ao workload e aos evals.
+Mesmo formato não garante a mesma qualidade, segurança ou caminho. A troca depende da tarefa e dos testes.
 
 ### Thin ≠ simplista
 
-Menos scaffolding cognitivo não significa menos auth, budget, trace, approval, idempotência ou rollback.
+Menos apoio de raciocínio não significa menos identidade, orçamento, registro, aprovação, proteção contra repetição ou volta segura.
 
 ### Brain ≠ dump
 
-Guardar tudo e enviar tudo destrói relevância e fronteira de acesso. Um cérebro confiável possui fontes, módulos, validade, proveniência e recusa.
+Guardar tudo e enviar tudo destrói relevância e controle de acesso. Um cérebro confiável possui fontes, módulos, validade, registro da origem e capacidade de recusar.
 
 ---
 

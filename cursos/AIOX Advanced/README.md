@@ -7,13 +7,13 @@ canonical_scope: cursos/AIOX Advanced
 sharing_boundary: cursos
 source: upstream monorepo/apps/aiox-courses
 source_format: lesson.md (via content-to-md.mjs)
-source_version: 2.0.0
+source_version: 2.1.0
 source_status: ready_to_ship
 synced_at: 2026-08-10
 curriculum_modules: 6
-lessons: 29
+lessons: 30
 quizzes: 6
-questions: 48
+questions: 50
 tags: [curso, aiox-advanced, metodo, sdc, determinismo, layer/curso]
 ---
 
@@ -23,9 +23,9 @@ tags: [curso, aiox-advanced, metodo, sdc, determinismo, layer/curso]
 
 O Advanced volta a ter uma promessa única. Ele ensina **como conduzir o trabalho com AIOX**. Construção de capacidades agentic, design e monetização possuem cursos próprios.
 
-**Aulas ativas:** 29 · **Módulos:** 5 + Capstone · **Quizzes:** 6 · **Questões:** 48
+**Aulas ativas:** 30 · **Módulos:** 5 + Capstone · **Quizzes:** 6 · **Questões:** 50
 
-- Avaliações: [[Assessments|6 checkpoints e 48 questões]]
+- Avaliações: [[Assessments|6 checkpoints e 50 questões]]
 - Conclusão: [[Projeto Integrador]] · [[Rubrica]]
 - Mapa histórico (75 aulas): [[MOC-Todas-Aulas]]
 - Dúvidas de campo: [[support/README|Central de suporte]]
@@ -64,7 +64,7 @@ Ao concluir, você consegue:
 1. [[modulos/Módulo 0 - Mindset e Princípios|M0 — Mindset e princípios]] — 5 aulas
 2. [[modulos/Módulo 1 - Sistema e Contexto|M1 — Sistema e contexto]] — 9 aulas
 3. [[modulos/Módulo 2 - SDC e Qualidade|M2 — SDC e qualidade]] — 5 aulas
-4. [[modulos/Módulo 3 - Determinismo e Comando|M3 — Determinismo e comando]] — 4 aulas
+4. [[modulos/Módulo 3 - Determinismo e Comando|M3 — Determinismo e comando]] — 5 aulas
 5. [[modulos/Módulo 4 - Método e Brownfield|M4 — Método e brownfield]] — 4 aulas
 6. [[modulos/Módulo C - Capstone|Capstone — Sinais em sistema entregue]] — 2 aulas
 
@@ -103,19 +103,20 @@ Ao concluir, você consegue:
 20. [[aulas/11-goal-vs-loop|Goal vs Loop]]
 21. [[aulas/20-determinismo-progressivo|Determinismo progressivo]]
 22. [[aulas/21-deterministico-primeiro-llm-onde-gera-ouro|Determinístico primeiro]]
-23. [[aulas/50-rider-modo-elicitacao|Rider: operador como piloto]]
+23. [[aulas/77-gauntlet-loop|Gauntlet Loop: barra, crítico e freio]]
+24. [[aulas/50-rider-modo-elicitacao|Rider: operador como piloto]]
 
 ### M4 — Método e brownfield
 
-24. [[aulas/23-o-que-e-um-squad|O que é um squad]]
-25. [[aulas/24-entidade-como-unidade-de-processo|Entidade como unidade de processo]]
-26. [[aulas/31-brownfield-discovery|Brownfield Discovery]]
-27. [[aulas/53-brownfield-enhancement|Brownfield Enhancement]]
+25. [[aulas/23-o-que-e-um-squad|O que é um squad]]
+26. [[aulas/24-entidade-como-unidade-de-processo|Entidade como unidade de processo]]
+27. [[aulas/31-brownfield-discovery|Brownfield Discovery]]
+28. [[aulas/53-brownfield-enhancement|Brownfield Enhancement]]
 
 ### Capstone
 
-28. [[aulas/44-metodo-s2s|Método S2S]]
-29. [[aulas/74-caso-integrado-end-to-end|Caso integrado end-to-end]]
+29. [[aulas/44-metodo-s2s|Método S2S]]
+30. [[aulas/74-caso-integrado-end-to-end|Caso integrado end-to-end]]
 
 ## O que mudou na edição 2.0
 

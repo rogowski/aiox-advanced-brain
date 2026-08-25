@@ -2,7 +2,7 @@
 type: quiz
 course: aiox-advanced
 module: M3
-question_count: 8
+question_count: 10
 passing_score: 80
 status: canonical
 canonical_scope: cursos/AIOX Advanced
@@ -57,10 +57,22 @@ B. No passo irreversível, com contexto e confirmação não-trivial; o passo me
 C. Em nenhum: o Quality Gate no fim do loop já protege
 D. Só no fim do loop, para não quebrar o ritmo
 
+### 9. Um builder terminou uma landing e o crítico será aberto em contexto novo. O que esse crítico deve receber?
+A. Todo o raciocínio do builder e o histórico das rodadas, para entender o esforço empregado
+B. Somente a frase “seja implacável”, sem referência, para preservar independência
+C. Objetivo, barra, rubrica, restrições, artefato real e outputs dos checks — sem a defesa do builder
+D. Apenas o score anterior, para saber se a nova versão precisa ser aprovada
+
+### 10. Depois de duas rodadas, o Gauntlet só produz mudanças cosméticas, o score não sobe e os checks permanecem iguais. Qual é a decisão correta?
+A. Adicionar mais críticos até surgir um blocker novo
+B. Aumentar o fan-out para gerar diversidade
+C. Trocar o modelo e reiniciar a baseline sem registrar o custo anterior
+D. Parar por ganho marginal insuficiente, registrar o motivo e escalar apenas se o risco exigir decisão humana
+
 <details><summary>Gabarito</summary>
 
-**1. A** · **2. C** · **3. B** · **4. D** · **5. D** · **6. A** · **7. C** · **8. B**
+**1. A** · **2. C** · **3. B** · **4. D** · **5. D** · **6. A** · **7. C** · **8. B** · **9. C** · **10. D**
 </details>
 
 ## Transferência
-Defina stop condition e escalonamento humano para um loop.
+Defina barra, crítico separado, stop condition e escalonamento humano para um loop real.

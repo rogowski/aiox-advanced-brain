@@ -455,4 +455,4 @@ Esta aula é pré-requisito no curso de squads — quando a missão for real, si
 
 ## Navegação
 
-← [[aulas/20-determinismo-progressivo|Determinismo Progressivo: 30, 60, 90]] · ↑ [[modulos/Módulo 3 - Determinismo e Comando|M3 — Determinismo e comando]] · ⌂ [[cursos/AIOX Advanced/README|Curso]] · → [[aulas/50-rider-modo-elicitacao|Rider: quando o operador é o piloto]]
+← [[aulas/20-determinismo-progressivo|Determinismo Progressivo: 30, 60, 90]] · ↑ [[modulos/Módulo 3 - Determinismo e Comando|M3 — Determinismo e comando]] · ⌂ [[cursos/AIOX Advanced/README|Curso]] · → [[aulas/77-gauntlet-loop|Gauntlet Loop: barra, crítico e freio]]
