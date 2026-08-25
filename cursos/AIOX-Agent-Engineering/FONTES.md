@@ -11,7 +11,7 @@ canonical_scope: cursos/AIOX-Agent-Engineering
 
 As aulas 01–20 e 21–27 (arquivos `21-` a `27-`) foram curadas a partir das aulas 22, 28–30, 33–40, 51–52, 54–55, 58–61 e 67–73 do AIOX Advanced. Cada aula registra `source_lesson_id` e `source_path` no frontmatter.
 
-As aulas 12b–12f (módulo M1b) e a 20b são síntese nova, não seed migrado. Evidência **só neste curso**:
+As aulas 12b–12f (módulo M1b), 20b e 21b são síntese nova, não seed migrado. Evidência **só neste curso**:
 
 | Fonte | Aula | O que cobre |
 |-------|------|-------------|
@@ -21,8 +21,9 @@ As aulas 12b–12f (módulo M1b) e a 20b são síntese nova, não seed migrado. 
 | [81](sources/81-identidade-tempo-isolamento.md) | [12e](aulas/12e-identidade-tempo-isolamento.md) | Identidade, tempo, isolamento |
 | [82](sources/82-menor-cerebro-suficiente.md) | [12f](aulas/12f-menor-cerebro-suficiente.md) | Veto: menor cérebro suficiente |
 | [77](sources/77-grafo-codigo-e-memoria-de-processo.md) | [20b](aulas/20b-grafo-codigo-e-memoria-de-processo.md) | Resíduo da wave (job 4) |
+| [83](sources/83-modelos-substituiveis-harness-fino-cerebro-modular.md) | [21b](aulas/21b-modelos-substituiveis-harness-fino-cerebro-modular.md) | Modelos substituíveis + harness fino + brain modular |
 
-As fontes 77–82 são autocontidas neste curso: dá para concluir o M1b e a 20b sem sair do acervo. Os repositórios abaixo são **acesso opcional** ao material original — não são pré-requisito.
+As fontes 77–83 são autocontidas neste curso: dá para concluir o M1b, a 20b e a 21b sem sair do acervo. Os repositórios abaixo são **acesso opcional** ao material original — não são pré-requisito.
 
 ## Acesso ao material (GitHub)
 

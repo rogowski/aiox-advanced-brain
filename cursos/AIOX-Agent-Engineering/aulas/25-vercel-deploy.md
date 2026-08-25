@@ -2,7 +2,7 @@
 type: lesson
 course: aiox-agent-engineering
 title: "Vercel Deploy: do localhost ao mundo"
-lesson_position: 31
+lesson_position: 32
 module: M5
 status: canonical
 canonical_scope: cursos/AIOX-Agent-Engineering

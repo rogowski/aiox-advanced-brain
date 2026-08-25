@@ -16,6 +16,8 @@ canonical_scope: cursos/AIOX-Agent-Engineering
 - Paralelismo, routing ou waves → M3.
 - O agente esquece a wave → aula 20b (job 4, depois do M1b).
 - Harness, API ou execução fora da IDE → M4.
+- “Modelos substituíveis”, thin harness ou cérebro modular da empresa → aula 21b, depois das aulas 19, 12f e 21.
+- Projetar o company brain (conhecimento institucional, ACL, projeção para vários agents) → `cursos/Company-Brain/`; a 21b só introduz a tese.
 - Banco, deploy, CI/CD ou readiness → M5.
 
 ## Contrato de ensino
@@ -35,6 +37,7 @@ canonical_scope: cursos/AIOX-Agent-Engineering
 - Oferta e monetização → `cursos/AIOX-Productizacao/`.
 - Fronteira AE × Productização (1 página) → `cursos/MOC-Agent-Engineering-vs-Productizacao.md`.
 - Ponte de saída → `ponte/saida-para-productizacao.md`.
+- Desenho do company brain → `cursos/Company-Brain/` · `ponte/saida-para-company-brain.md`.
 - Escolha de squad pronto → `cursos/AIOX-Advanced-Squads/`.
 
 ## Formato mínimo

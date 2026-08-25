@@ -11,12 +11,12 @@ canonical_scope: cursos/AIOX-Agent-Engineering
 
 [Módulo M4](../modulos/M4-runtime-fora-da-ide.md) · [Avaliações](../Assessments.md)
 
-### 1. Qual é a função do harness?
+### 1. Qual arranjo permite trocar o modelo sem perder a memória nem a governança da capacidade?
 
-A. Substituir o domínio
-B. Esconder falhas do usuário
-C. Padronizar entrada, execução, estado, observabilidade e saída
-D. Criar mais personas
+A. Guardar regras e fatos no prompt do modelo principal
+B. Usar qualquer API compatível e dispensar avaliações
+C. Separar modelo, thin harness e company brain, promovendo candidatos por evals
+D. Duplicar o conhecimento em cada provider
 
 ### 2. Qual é a primeira etapa segura fora da IDE?
 
@@ -42,7 +42,7 @@ D. Uma execução acionável com contrato, logs e resultado recuperável
 <details>
 <summary>Gabarito comentado</summary>
 
-1. **C.** Harness é o invólucro operacional da capacidade.
+1. **C.** O modelo fica substituível porque operação e conhecimento possuem contratos próprios; adapter sem eval não prova equivalência.
 2. **A.** A primeira interface deve preservar o que já foi validado.
 3. **B.** Autonomia cresce com confiança conquistada.
 4. **D.** Fora da IDE significa execução reproduzível, não apenas prompt portátil.

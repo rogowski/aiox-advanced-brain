@@ -376,4 +376,4 @@ Adaptação autocontida da aula 67 do AIOX Advanced. A fonte histórica permanec
 
 ## Navegação
 
-[← Aula anterior](20b-grafo-codigo-e-memoria-de-processo.md) · [↑ M4](../modulos/M4-runtime-fora-da-ide.md) · [Curso](../README.md) · [Próxima aula →](22-squad-fora-da-ide.md)
+[← Aula anterior](20b-grafo-codigo-e-memoria-de-processo.md) · [↑ M4](../modulos/M4-runtime-fora-da-ide.md) · [Curso](../README.md) · [Próxima aula →](21b-modelos-substituiveis-harness-fino-cerebro-modular.md)

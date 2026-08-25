@@ -2,7 +2,7 @@
 type: lesson
 course: aiox-agent-engineering
 title: "Prontidão de produção: checklist final"
-lesson_position: 33
+lesson_position: 34
 module: M5
 status: canonical
 canonical_scope: cursos/AIOX-Agent-Engineering

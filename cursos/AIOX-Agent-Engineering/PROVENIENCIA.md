@@ -18,7 +18,8 @@ O curso separa do AIOX Advanced a performance terminal “construir e operar uma
 - navegação refeita dentro deste curso;
 - frontmatter registra a origem por aula;
 - capstone criado especificamente para a nova performance terminal;
-- aulas 11b, 20b e 20c (fontes 77–79) acrescentadas por síntese de jobs de memória/grafo — não são seed do Advanced.
+- aulas 12b–12f e 20b (fontes 77–82) acrescentadas por síntese de jobs de memória/grafo — não são seed do Advanced;
+- aula 21b (fonte 83) acrescentada por síntese de pesquisa sobre modelos substituíveis, harness fino e cérebro modular da empresa.
 
 ## Não duplicação
 

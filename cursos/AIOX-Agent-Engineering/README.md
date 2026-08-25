@@ -5,10 +5,10 @@ title: AIOX Agent Engineering
 status: canonical
 canonical_scope: cursos/AIOX-Agent-Engineering
 sharing_boundary: cursos
-source: curadoria de 27 aulas da edição 1 do AIOX Advanced + capstone + M1b memória/grafo
-source_version: 1.4.0
+source: curadoria de 27 aulas da edição 1 do AIOX Advanced + capstone + sínteses de memória/grafo e arquitetura modular
+source_version: 1.5.0
 curriculum_modules: 8
-lessons: 34
+lessons: 35
 quizzes: 7
 questions: 28
 tags: [curso, agentes, orquestracao, runtime, producao, layer/curso]
@@ -20,7 +20,7 @@ tags: [curso, agentes, orquestracao, runtime, producao, layer/curso]
 
 Essa é a promessa única do curso. Research reduz incerteza; arquitetura e construção materializam a capacidade; orquestração, runtime e produção provam que ela funciona fora da sessão do autor.
 
-**Aulas:** 34 · **Módulos:** 7 + Capstone · **Quizzes:** 7 · **Questões:** 28
+**Aulas:** 35 · **Módulos:** 7 + Capstone · **Quizzes:** 7 · **Questões:** 28
 
 - [Avaliações](Assessments.md)
 - [Projeto integrador](Projeto-Integrador.md)
@@ -69,7 +69,7 @@ A escada técnica deste curso (script → runner → API) **não** substitui a d
 3. [M1b — Memória persistente e grafo da capacidade](modulos/M1b-memoria-e-grafo-da-capacidade.md) — aulas 12b–12f
 4. [M2 — Construção de capacidade](modulos/M2-construcao-de-capacidade.md) — aulas 13–16
 5. [M3 — Orquestração e escala](modulos/M3-orquestracao-e-escala.md) — aulas 17–20b
-6. [M4 — Runtime fora da IDE](modulos/M4-runtime-fora-da-ide.md) — aulas 21–23
+6. [M4 — Runtime fora da IDE](modulos/M4-runtime-fora-da-ide.md) — aulas 21, 21b, 22–23
 7. [M5 — Produção](modulos/M5-producao.md) — aulas 24–27
 8. [Capstone](modulos/MC-capstone.md) — aula 28
 
@@ -127,19 +127,20 @@ O curso inteiro é a rota principal. Quem já possui uma capacidade pronta pode 
 ### M4 — Runtime fora da IDE
 
 27. [Harness](aulas/21-harness.md)
-28. [Squad fora da IDE](aulas/22-squad-fora-da-ide.md)
-29. [Escada progressiva](aulas/23-escada-progressiva.md)
+28. [O modelo passa, o sistema fica](aulas/21b-modelos-substituiveis-harness-fino-cerebro-modular.md)
+29. [Squad fora da IDE](aulas/22-squad-fora-da-ide.md)
+30. [Escada progressiva](aulas/23-escada-progressiva.md)
 
 ### M5 — Produção
 
-30. [Supabase via data engineer](aulas/24-supabase-via-data-engineer.md)
-31. [Vercel Deploy](aulas/25-vercel-deploy.md)
-32. [CI/CD](aulas/26-cicd.md)
-33. [Prontidão de produção](aulas/27-prontidao-de-producao.md)
+31. [Supabase via data engineer](aulas/24-supabase-via-data-engineer.md)
+32. [Vercel Deploy](aulas/25-vercel-deploy.md)
+33. [CI/CD](aulas/26-cicd.md)
+34. [Prontidão de produção](aulas/27-prontidao-de-producao.md)
 
 ### Capstone
 
-34. [Capstone: capacidade agentic em produção](aulas/28-capstone-capacidade-em-producao.md)
+35. [Capstone: capacidade agentic em produção](aulas/28-capstone-capacidade-em-producao.md)
 
 ## Evidência de conclusão
 

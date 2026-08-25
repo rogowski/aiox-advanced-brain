@@ -5,7 +5,7 @@ module: M4
 sequence: 4
 status: canonical
 canonical_scope: cursos/AIOX-Agent-Engineering
-source_version: 1.1.0
+source_version: 1.2.0
 ---
 
 # M4 — Runtime fora da IDE
@@ -16,7 +16,7 @@ Capacidade acessível por runner, API ou harness reproduzível, sem depender da 
 
 ## Aulas
 
-[21](../aulas/21-harness.md) · [22](../aulas/22-squad-fora-da-ide.md) · [23](../aulas/23-escada-progressiva.md)
+[21](../aulas/21-harness.md) · [21b](../aulas/21b-modelos-substituiveis-harness-fino-cerebro-modular.md) · [22](../aulas/22-squad-fora-da-ide.md) · [23](../aulas/23-escada-progressiva.md)
 
 ## Checkpoint
 

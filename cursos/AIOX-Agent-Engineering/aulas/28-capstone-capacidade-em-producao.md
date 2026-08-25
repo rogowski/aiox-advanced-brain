@@ -2,7 +2,7 @@
 type: lesson
 course: aiox-agent-engineering
 title: "Capstone: capacidade agentic em produção"
-lesson_position: 34
+lesson_position: 35
 module: MC
 status: canonical
 canonical_scope: cursos/AIOX-Agent-Engineering

@@ -2,7 +2,7 @@
 type: lesson
 course: aiox-agent-engineering
 title: "Escada Progressiva: Script → Squad → Workflow → Runner → API → App → SaaS"
-lesson_position: 29
+lesson_position: 30
 module: M4
 status: canonical
 canonical_scope: cursos/AIOX-Agent-Engineering

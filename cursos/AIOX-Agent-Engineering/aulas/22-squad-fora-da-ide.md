@@ -2,7 +2,7 @@
 type: lesson
 course: aiox-agent-engineering
 title: "Extrair Squad do Claude Code para API própria"
-lesson_position: 28
+lesson_position: 29
 module: M4
 status: canonical
 canonical_scope: cursos/AIOX-Agent-Engineering
@@ -378,4 +378,4 @@ Adaptação autocontida da aula 68 do AIOX Advanced. A fonte histórica permanec
 
 ## Navegação
 
-[← Aula anterior](21-harness.md) · [↑ M4](../modulos/M4-runtime-fora-da-ide.md) · [Curso](../README.md) · [Próxima aula →](23-escada-progressiva.md)
+[← Aula anterior](21b-modelos-substituiveis-harness-fino-cerebro-modular.md) · [↑ M4](../modulos/M4-runtime-fora-da-ide.md) · [Curso](../README.md) · [Próxima aula →](23-escada-progressiva.md)
